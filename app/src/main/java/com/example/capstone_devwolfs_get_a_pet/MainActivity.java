@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.capstone_devwolfs_get_a_pet.classes.Shelter;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class MainActivity extends AppCompatActivity {
@@ -36,7 +38,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                String name = sName.getText().toString().trim();
+                String email = sEmail.getText().toString().trim();
+                String password = sPassword.getText().toString().trim();
+                String phone = sPhone.getText().toString().trim();
+                String address = sAddress.getText().toString().trim();
+                String description = sDescription.getText().toString().trim();
 
+                Shelter shelter = new Shelter(name,email,Integer.parseInt(phone),address,description,password);
+
+                db.collection("Shelters").add(shelter);
+                Toast.makeText(getApplicationContext(),"Shelter Added",Toast.LENGTH_LONG).show();
             }
         });
 
