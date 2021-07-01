@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     EditText sName, sEmail,sPassword,sPhone,sAddress,sDescription;
     Button save;
 
-    public static final String TAG = "aman";
+    public static final String TAG = "test";
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
