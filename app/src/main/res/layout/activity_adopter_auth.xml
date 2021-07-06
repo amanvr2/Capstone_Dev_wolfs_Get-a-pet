@@ -86,7 +86,7 @@
         app:layout_constraintTop_toBottomOf="@+id/adopterDescription" />
 
     <Button
-        android:id="@+id/adopterLoginBtn"
+        android:id="@+id/adoptersaveBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="163dp"
@@ -96,7 +96,7 @@
         app:layout_constraintTop_toBottomOf="@+id/adopterPassword" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/adopterLoginRedirect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="136dp"
@@ -104,5 +104,5 @@
         android:text="Already a user ? Login"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/adopterLoginBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/adoptersaveBtn" />
 </androidx.constraintlayout.widget.ConstraintLayout>

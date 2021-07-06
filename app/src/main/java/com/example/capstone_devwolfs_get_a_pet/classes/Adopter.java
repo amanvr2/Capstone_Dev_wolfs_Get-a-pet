@@ -1,0 +1,68 @@
+package com.example.capstone_devwolfs_get_a_pet.classes;
+
+public class Adopter {
+
+    private String adopterName;
+    private String adopterEmail;
+    private Integer adopterPhone;
+    private String adopterAddress;
+    private String adopterDescription;
+    private String adopterPassword;
+
+    public Adopter(String adopterName, String adopterEmail, Integer adopterPhone, String adopterAddress, String adopterDescription, String adopterPassword) {
+        this.adopterName = adopterName;
+        this.adopterEmail = adopterEmail;
+        this.adopterPhone = adopterPhone;
+        this.adopterAddress = adopterAddress;
+        this.adopterDescription = adopterDescription;
+        this.adopterPassword = adopterPassword;
+    }
+
+    public String getAdopterName() {
+        return adopterName;
+    }
+
+    public void setAdopterName(String adopterName) {
+        this.adopterName = adopterName;
+    }
+
+    public String getAdopterEmail() {
+        return adopterEmail;
+    }
+
+    public void setAdopterEmail(String adopterEmail) {
+        this.adopterEmail = adopterEmail;
+    }
+
+    public Integer getAdopterPhone() {
+        return adopterPhone;
+    }
+
+    public void setAdopterPhone(Integer adopterPhone) {
+        this.adopterPhone = adopterPhone;
+    }
+
+    public String getAdopterAddress() {
+        return adopterAddress;
+    }
+
+    public void setAdopterAddress(String adopterAddress) {
+        this.adopterAddress = adopterAddress;
+    }
+
+    public String getAdopterDescription() {
+        return adopterDescription;
+    }
+
+    public void setAdopterDescription(String adopterDescription) {
+        this.adopterDescription = adopterDescription;
+    }
+
+    public String getAdopterPassword() {
+        return adopterPassword;
+    }
+
+    public void setAdopterPassword(String adopterPassword) {
+        this.adopterPassword = adopterPassword;
+    }
+}
