@@ -7,8 +7,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.capstone_devwolfs_get_a_pet.R;
+import com.example.capstone_devwolfs_get_a_pet.classes.Adopter;
+import com.example.capstone_devwolfs_get_a_pet.classes.Shelter;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class AdopterAuthActivity extends AppCompatActivity {
@@ -40,7 +43,17 @@ public class AdopterAuthActivity extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String name = aName.getText().toString().trim();
+                String email = aEmail.getText().toString().trim();
+                String password = aPassword.getText().toString().trim();
+                String phone = aPhone.getText().toString().trim();
+                String address = aAddress.getText().toString().trim();
+                String description = aDescription.getText().toString().trim();
 
+                Adopter adopter = new Adopter(name,email,Integer.parseInt(phone),address,description,password);
+
+                db.collection("Adopters").add(adopter);
+                Toast.makeText(getApplicationContext(),"Adopter Added",Toast.LENGTH_LONG).show();
             }
         });
     }
