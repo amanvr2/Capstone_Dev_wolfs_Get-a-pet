@@ -48,14 +48,23 @@ public class ShelterLoginActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
 
-                        for(QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots){
+                        if(queryDocumentSnapshots.size() == 1) {
+
+                            for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
 
 
-                            shelterUsName = documentSnapshot.getString("shelterEmail");
-                            Intent intent = new Intent(v.getContext(), ShelterDashboardActivity.class);
-                            startActivity(intent);
-                            Toast.makeText(getApplicationContext(),"Login Successfull",Toast.LENGTH_LONG).show();
+                                shelterUsName = documentSnapshot.getString("shelterEmail");
 
+                                Intent intent = new Intent(v.getContext(), ShelterDashboardActivity.class);
+                                startActivity(intent);
+                                Toast.makeText(getApplicationContext(), "Login Successfull", Toast.LENGTH_LONG).show();
+
+                            }
+
+                        }
+
+                        else {
+                            Toast.makeText(getApplicationContext(), "Invalid user", Toast.LENGTH_LONG).show();
                         }
 
 
