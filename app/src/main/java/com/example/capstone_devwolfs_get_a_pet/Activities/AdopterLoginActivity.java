@@ -55,9 +55,9 @@ public class AdopterLoginActivity extends AppCompatActivity {
 
                                 adopterUsName = documentSnapshot.getString("adopterEmail");
 
-                                Intent intent = new Intent(v.getContext(), ShelterDashboardActivity.class);
+                                Intent intent = new Intent(v.getContext(), AdopterDashboardActivity.class);
                                 startActivity(intent);
-                                Toast.makeText(getApplicationContext(), "Login Successfull", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(), "Login Succsessful", Toast.LENGTH_LONG).show();
 
                             }
 
