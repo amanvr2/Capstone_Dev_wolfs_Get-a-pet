@@ -54,6 +54,7 @@ public class AdopterAuthActivity extends AppCompatActivity {
                 Adopter adopter = new Adopter(name,email,Integer.parseInt(phone),address,description,password);
 
                 db.collection("Adopters").add(adopter);
+                clearFields();
                 Toast.makeText(getApplicationContext(),"Adopter Added",Toast.LENGTH_LONG).show();
             }
         });
@@ -66,5 +67,16 @@ public class AdopterAuthActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+
+    private void clearFields(){
+
+        aName.setText("");
+        aEmail.setText("");
+        aPhone.setText("");
+        aAddress.setText("");
+        aDescription.setText("");
+        aPassword.setText("");
     }
 }
