@@ -51,7 +51,7 @@ public class AdopterLoginActivity extends AppCompatActivity {
                         if(queryDocumentSnapshots.size() == 1) {
 
                             for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
-
+                                //adopterUsName = documentSnapshot.getId();
 
                                 adopterUsName = documentSnapshot.getString("adopterEmail");
 

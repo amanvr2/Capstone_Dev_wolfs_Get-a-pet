@@ -8,9 +8,9 @@
 
     <EditText
         android:id="@+id/shelterName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="96dp"
+        android:layout_width="207dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="28dp"
         android:ems="10"
         android:hint="Name"
@@ -20,8 +20,8 @@
 
     <EditText
         android:id="@+id/shelterPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="215dp"
+        android:layout_height="43dp"
         android:layout_marginStart="100dp"
         android:layout_marginTop="256dp"
         android:ems="10"
@@ -44,8 +44,8 @@
 
     <EditText
         android:id="@+id/shelterEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="206dp"
+        android:layout_height="41dp"
         android:layout_marginStart="100dp"
         android:layout_marginTop="30dp"
         android:ems="10"
@@ -69,8 +69,8 @@
 
     <EditText
         android:id="@+id/shelterDescription"
-        android:layout_width="209dp"
-        android:layout_height="69dp"
+        android:layout_width="213dp"
+        android:layout_height="70dp"
         android:layout_marginStart="99dp"
         android:layout_marginTop="27dp"
         android:ems="10"
@@ -97,7 +97,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="156dp"
         android:layout_marginTop="38dp"
-        android:text="Button"
+        android:text="Register"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/shelterPassword" />
 

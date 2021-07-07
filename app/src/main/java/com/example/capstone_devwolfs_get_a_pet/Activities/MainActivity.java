@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 Shelter shelter = new Shelter(name,email,Integer.parseInt(phone),address,description,password);
 
                 db.collection("Shelters").add(shelter);
+                clearFields();
                 Toast.makeText(getApplicationContext(),"Shelter Added",Toast.LENGTH_LONG).show();
             }
         });
@@ -68,5 +69,15 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    private void clearFields(){
+
+        sName.setText("");
+        sEmail.setText("");
+        sPhone.setText("");
+        sAddress.setText("");
+        sDescription.setText("");
+        sPassword.setText("");
     }
 }
