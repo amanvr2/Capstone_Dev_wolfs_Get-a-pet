@@ -51,7 +51,7 @@ public class AdopterAuthActivity extends AppCompatActivity {
                 String address = aAddress.getText().toString().trim();
                 String description = aDescription.getText().toString().trim();
 
-                Adopter adopter = new Adopter(name,email,Integer.parseInt(phone),address,description,password);
+                Adopter adopter = new Adopter(name,email,phone,address,description,password);
 
                 db.collection("Adopters").add(adopter);
                 clearFields();

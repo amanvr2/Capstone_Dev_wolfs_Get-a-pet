@@ -50,9 +50,10 @@ public class MainActivity extends AppCompatActivity {
                 String address = sAddress.getText().toString().trim();
                 String description = sDescription.getText().toString().trim();
 
-                Shelter shelter = new Shelter(name,email,Integer.parseInt(phone),address,description,password);
+                Shelter shelter = new Shelter(name,email,phone,address,description,password);
 
                 db.collection("Shelters").add(shelter);
+
                 clearFields();
                 Toast.makeText(getApplicationContext(),"Shelter Added",Toast.LENGTH_LONG).show();
             }

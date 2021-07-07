@@ -4,12 +4,12 @@ public class Adopter {
 
     private String adopterName;
     private String adopterEmail;
-    private Integer adopterPhone;
+    private String adopterPhone;
     private String adopterAddress;
     private String adopterDescription;
     private String adopterPassword;
 
-    public Adopter(String adopterName, String adopterEmail, Integer adopterPhone, String adopterAddress, String adopterDescription, String adopterPassword) {
+    public Adopter(String adopterName, String adopterEmail, String adopterPhone, String adopterAddress, String adopterDescription, String adopterPassword) {
         this.adopterName = adopterName;
         this.adopterEmail = adopterEmail;
         this.adopterPhone = adopterPhone;
@@ -34,11 +34,11 @@ public class Adopter {
         this.adopterEmail = adopterEmail;
     }
 
-    public Integer getAdopterPhone() {
+    public String getAdopterPhone() {
         return adopterPhone;
     }
 
-    public void setAdopterPhone(Integer adopterPhone) {
+    public void setAdopterPhone(String adopterPhone) {
         this.adopterPhone = adopterPhone;
     }
 
