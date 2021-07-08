@@ -32,7 +32,7 @@ public class AdopterAuthActivity extends AppCompatActivity {
 
         aName = findViewById(R.id.adopterName);
         aEmail = findViewById(R.id.adopterEmail);
-        aPassword = findViewById(R.id.adopterDescription);
+        aPassword = findViewById(R.id.adopterPassword);
         aDescription = findViewById(R.id.adopterDescription);
         aPhone = findViewById(R.id.adopterPhone);
         aAddress = findViewById(R.id.adopterAddress);
