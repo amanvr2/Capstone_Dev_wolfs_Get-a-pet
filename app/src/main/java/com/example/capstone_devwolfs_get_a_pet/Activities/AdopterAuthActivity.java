@@ -12,7 +12,6 @@ import android.widget.Toast;
 
 import com.example.capstone_devwolfs_get_a_pet.R;
 import com.example.capstone_devwolfs_get_a_pet.classes.Adopter;
-import com.example.capstone_devwolfs_get_a_pet.classes.Shelter;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class AdopterAuthActivity extends AppCompatActivity {
@@ -33,7 +32,7 @@ public class AdopterAuthActivity extends AppCompatActivity {
 
         aName = findViewById(R.id.adopterName);
         aEmail = findViewById(R.id.adopterEmail);
-        aPassword = findViewById(R.id.adopterPassword);
+        aPassword = findViewById(R.id.adopterDescription);
         aDescription = findViewById(R.id.adopterDescription);
         aPhone = findViewById(R.id.adopterPhone);
         aAddress = findViewById(R.id.adopterAddress);
