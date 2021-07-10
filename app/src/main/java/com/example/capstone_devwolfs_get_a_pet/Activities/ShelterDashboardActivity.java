@@ -2,7 +2,10 @@ package com.example.capstone_devwolfs_get_a_pet.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.capstone_devwolfs_get_a_pet.R;
@@ -11,6 +14,7 @@ public class ShelterDashboardActivity extends AppCompatActivity {
 
 
     TextView shelterUs;
+    Button addPet;
     String us = ShelterLoginActivity.shelterUsName;
 
     @Override
@@ -19,7 +23,16 @@ public class ShelterDashboardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_shelter_dashboard);
 
         shelterUs = findViewById(R.id.shelterUsname);
+        addPet = findViewById(R.id.addPetRedirect);
         shelterUs.setText(us);
+
+        addPet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), ShelterLoginActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
