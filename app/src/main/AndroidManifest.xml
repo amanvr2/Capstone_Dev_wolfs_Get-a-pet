@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Capstone_devwolfs_getapet">
-        <activity android:name=".Activities.addPetActivity"></activity>
+        <activity android:name=".Activities.addPetActivity" />
         <activity android:name=".Activities.AdopterDashboardActivity" />
         <activity android:name=".Activities.AdopterLoginActivity" />
         <activity android:name=".Activities.ShelterDashboardActivity" />
