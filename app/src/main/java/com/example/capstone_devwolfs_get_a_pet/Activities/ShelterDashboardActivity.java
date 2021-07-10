@@ -14,7 +14,7 @@ public class ShelterDashboardActivity extends AppCompatActivity {
 
 
     TextView shelterUs;
-    Button addPet;
+    Button addPet,viewProfile;
     String us = ShelterLoginActivity.shelterUsName;
 
     @Override
@@ -24,12 +24,22 @@ public class ShelterDashboardActivity extends AppCompatActivity {
 
         shelterUs = findViewById(R.id.shelterUsname);
         addPet = findViewById(R.id.addPetRedirect);
+        viewProfile = findViewById(R.id.viewProfileBtn);
+
         shelterUs.setText(us);
 
         addPet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), addPetActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        viewProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), ShelterProfileActivity.class);
                 startActivity(intent);
             }
         });

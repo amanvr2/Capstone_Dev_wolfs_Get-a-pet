@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.capstone_devwolfs_get_a_pet.R;
 import com.example.capstone_devwolfs_get_a_pet.classes.Shelter;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = "test";
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+    DocumentReference ref = db.collection("Shelters").document();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +53,9 @@ public class MainActivity extends AppCompatActivity {
                 String address = sAddress.getText().toString().trim();
                 String description = sDescription.getText().toString().trim();
 
-                Shelter shelter = new Shelter(name,email,phone,address,description,password);
+                String id = ref.getId();
+
+                Shelter shelter = new Shelter(id,name,email,phone,address,description,password);
 
                 db.collection("Shelters").add(shelter);
 

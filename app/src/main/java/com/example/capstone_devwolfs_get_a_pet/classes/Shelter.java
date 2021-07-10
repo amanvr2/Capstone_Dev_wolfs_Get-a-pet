@@ -2,6 +2,7 @@ package com.example.capstone_devwolfs_get_a_pet.classes;
 
 public class Shelter {
 
+    private String shelterId;
     private String shelterName;
     private String shelterEmail;
     private String shelterPhone;
@@ -9,13 +10,22 @@ public class Shelter {
     private String shelterDescription;
     private String shelterPassword;
 
-    public Shelter(String shelterName, String shelterEmail, String shelterPhone, String shelterAddress, String shelterDescription, String shelterPassword) {
+    public Shelter(String shelterId, String shelterName, String shelterEmail, String shelterPhone, String shelterAddress, String shelterDescription, String shelterPassword) {
+        this.shelterId = shelterId;
         this.shelterName = shelterName;
         this.shelterEmail = shelterEmail;
         this.shelterPhone = shelterPhone;
         this.shelterAddress = shelterAddress;
         this.shelterDescription = shelterDescription;
         this.shelterPassword = shelterPassword;
+    }
+
+    public String getShelterId() {
+        return shelterId;
+    }
+
+    public void setShelterId(String shelterId) {
+        this.shelterId = shelterId;
     }
 
     public String getShelterName() {
