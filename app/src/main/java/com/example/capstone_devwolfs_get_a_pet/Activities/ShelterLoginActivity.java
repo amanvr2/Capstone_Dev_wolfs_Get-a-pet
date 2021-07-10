@@ -26,6 +26,7 @@ public class ShelterLoginActivity extends AppCompatActivity {
     private CollectionReference userRef = db.collection("Shelters");
 
     public static String shelterUsName = "";
+    public static String shelterUsID = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +55,7 @@ public class ShelterLoginActivity extends AppCompatActivity {
 
 
                                 shelterUsName = documentSnapshot.getString("shelterEmail");
+                                shelterUsID = documentSnapshot.getId();
 
                                 Intent intent = new Intent(v.getContext(), ShelterDashboardActivity.class);
                                 startActivity(intent);

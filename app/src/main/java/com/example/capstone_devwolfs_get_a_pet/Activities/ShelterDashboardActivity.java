@@ -29,7 +29,7 @@ public class ShelterDashboardActivity extends AppCompatActivity {
         addPet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), ShelterLoginActivity.class);
+                Intent intent = new Intent(v.getContext(), addPetActivity.class);
                 startActivity(intent);
             }
         });
