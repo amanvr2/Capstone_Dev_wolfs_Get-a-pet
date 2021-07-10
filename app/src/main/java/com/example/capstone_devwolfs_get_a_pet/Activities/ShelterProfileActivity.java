@@ -36,40 +36,40 @@ public class ShelterProfileActivity extends AppCompatActivity {
         descp = findViewById(R.id.shelterDescriptionTv);
         password = findViewById(R.id.shelterPasswordTv);
 
-        //loadData();
+        loadData();
 
 
     }
 
-//    private void loadData(){
-//
-//
-//        userRef.whereEqualTo("shelterEmail",test).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-//            @Override
-//            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-//
-//
-//                for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
-//
-//                    String shName = documentSnapshot.getString("shelterName");
-//                    String shEmail = documentSnapshot.getString("shelterEmail");
-//                    String shPhone = documentSnapshot.getString("shelterPhone");
-//                    String shAddress = documentSnapshot.getString("shelterAddress");
-//                    String shDescp = documentSnapshot.getString("shelterDescription");
-//                    String shPass = documentSnapshot.getString("shelterPassword");
-//
-//                    name.setText(shName);
-//                    email.setText(shEmail);
-//                    phone.setText(shPhone);
-//                    address.setText(shAddress);
-//                    descp.setText(shDescp);
-//                    password.setText(shPass);
-//
-//                }
-//
-//
-//            }
-//        });
-//
-//    }
+    private void loadData(){
+
+
+        userRef.whereEqualTo("shelterEmail",test).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+            @Override
+            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+
+
+                for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
+
+                    String shName = documentSnapshot.getString("shelterName");
+                    String shEmail = documentSnapshot.getString("shelterEmail");
+                    String shPhone = documentSnapshot.getString("shelterPhone");
+                    String shAddress = documentSnapshot.getString("shelterAddress");
+                    String shDescp = documentSnapshot.getString("shelterDescription");
+                    String shPass = documentSnapshot.getString("shelterPassword");
+
+                    name.setText(shName);
+                    email.setText(shEmail);
+                    phone.setText(shPhone);
+                    address.setText(shAddress);
+                    descp.setText(shDescp);
+                    password.setText(shPass);
+
+                }
+
+
+            }
+        });
+
+    }
 }
