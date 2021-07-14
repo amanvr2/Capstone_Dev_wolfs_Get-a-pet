@@ -14,13 +14,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp">
 
             <TextView
                 android:id="@+id/textView"
-                android:layout_width="171dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="128dp"
                 android:layout_marginTop="32dp"
                 android:paddingBottom="40dp"
                 android:text="My Profile"
@@ -28,7 +29,7 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <TextView
+            <EditText
                 android:id="@+id/shelterNameTv"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
@@ -36,7 +37,7 @@
                 android:textAlignment="center"
                 android:textSize="18sp" />
 
-            <TextView
+            <EditText
                 android:id="@+id/shelterEmailTv"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
@@ -44,7 +45,7 @@
                 android:textAlignment="center"
                 android:textSize="18sp" />
 
-            <TextView
+            <EditText
                 android:id="@+id/shelterPhoneTv"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
@@ -52,7 +53,7 @@
                 android:textAlignment="center"
                 android:textSize="18sp" />
 
-            <TextView
+            <EditText
                 android:id="@+id/shelterAddressTv"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
@@ -60,7 +61,7 @@
                 android:textAlignment="center"
                 android:textSize="18sp" />
 
-            <TextView
+            <EditText
                 android:id="@+id/shelterDescriptionTv"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
@@ -69,7 +70,7 @@
                 android:textSize="18sp" />
 
 
-            <TextView
+            <EditText
                 android:id="@+id/shelterPasswordTv"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"

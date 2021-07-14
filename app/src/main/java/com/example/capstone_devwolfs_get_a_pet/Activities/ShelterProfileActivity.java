@@ -2,8 +2,11 @@ package com.example.capstone_devwolfs_get_a_pet.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,17 +20,19 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 public class ShelterProfileActivity extends AppCompatActivity {
 
-    TextView name,email,phone,address,descp,password;
+    EditText name,email,phone,address,descp,password;
+    SharedPreferences sharedPreferences;
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference userRef = db.collection("Shelters");
 
-    String test = ShelterLoginActivity.shelterUsName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shelter_profile);
+
+        sharedPreferences = getSharedPreferences("Shelter", Context.MODE_PRIVATE);
 
         name = findViewById(R.id.shelterNameTv);
         email = findViewById(R.id.shelterEmailTv);
@@ -36,40 +41,17 @@ public class ShelterProfileActivity extends AppCompatActivity {
         descp = findViewById(R.id.shelterDescriptionTv);
         password = findViewById(R.id.shelterPasswordTv);
 
-        loadData();
+
+
+        name.setText(sharedPreferences.getString("Name","Shelter Name"));
+        email.setText(sharedPreferences.getString("Email","Shelter Email"));
+        phone.setText(sharedPreferences.getString("Phone","Shelter Phone"));
+        address.setText(sharedPreferences.getString("Address","Shelter Address"));
+        descp.setText(sharedPreferences.getString("Description","Shelter Description"));
+        password.setText(sharedPreferences.getString("Password","New Password"));
 
 
     }
 
-    private void loadData(){
 
-
-        userRef.whereEqualTo("shelterEmail",test).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-            @Override
-            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-
-
-                for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
-
-                    String shName = documentSnapshot.getString("shelterName");
-                    String shEmail = documentSnapshot.getString("shelterEmail");
-                    String shPhone = documentSnapshot.getString("shelterPhone");
-                    String shAddress = documentSnapshot.getString("shelterAddress");
-                    String shDescp = documentSnapshot.getString("shelterDescription");
-                    String shPass = documentSnapshot.getString("shelterPassword");
-
-                    name.setText(shName);
-                    email.setText(shEmail);
-                    phone.setText(shPhone);
-                    address.setText(shAddress);
-                    descp.setText(shDescp);
-                    password.setText(shPass);
-
-                }
-
-
-            }
-        });
-
-    }
 }

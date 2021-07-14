@@ -26,7 +26,6 @@ public class ShelterLoginActivity extends AppCompatActivity {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference userRef = db.collection("Shelters");
 
-    public static String shelterUsName = "";
     public static String shelterUsID = "";
     public static String shelterAddress = "";
     public static String shelterDescription = "";
@@ -58,7 +57,6 @@ public class ShelterLoginActivity extends AppCompatActivity {
 
                             for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
 
-                                 shelterUsName = documentSnapshot.getString("shelterEmail");
                                  shelterUsID = documentSnapshot.getId();
                                  shelterAddress = documentSnapshot.getString("shelterAddress");
                                  shelterDescription = documentSnapshot.getString("shelterDescription");
@@ -66,15 +64,13 @@ public class ShelterLoginActivity extends AppCompatActivity {
                                  shelterName = documentSnapshot.getString("shelterName");
                                  shelterPhone = documentSnapshot.getString("shelterPhone");
 
-
-
+                                 //saves information on internal storage
+                                PersistentData.saveShelterData(shelterUsID,shelterAddress,shelterDescription,shelterEmail,shelterName,shelterPhone,v.getContext());
 
                                 Intent intent = new Intent(v.getContext(), ShelterDashboardActivity.class);
                                 startActivity(intent);
                                 Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_LONG).show();
-
                             }
-
                         }
 
                         else {

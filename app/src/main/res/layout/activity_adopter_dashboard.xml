@@ -6,21 +6,24 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingLeft="50dp"
+    android:paddingTop="32dp"
     android:paddingRight="50dp"
     tools:context=".Activities.AdopterDashboardActivity">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="154dp"
+        android:layout_height="176dp"
         android:contentDescription="userPhoto"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@mipmap/adopter_icon_foreground" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/adopterNameDash"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_marginTop="25dp"
+        android:text="AdopterName"
+        android:textAlignment="center" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,27 +32,29 @@
 
         <Button
             android:id="@+id/button"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="45dp"
             android:layout_marginRight="15dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="1"
+            android:maxWidth="120dp"
             android:minHeight="120dp"
-            android:text="Button" />
+            android:text="Wishlist" />
 
         <Button
             android:id="@+id/button2"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="45dp"
             android:layout_marginRight="15dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="1"
+            android:maxWidth="120dp"
             android:minHeight="120dp"
-            android:text="Button" />
+            android:text="Profile" />
 
     </LinearLayout>
 
@@ -60,7 +65,7 @@
 
         <Button
             android:id="@+id/button5"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="45dp"
@@ -68,11 +73,11 @@
             android:layout_marginBottom="10dp"
             android:layout_weight="1"
             android:minHeight="120dp"
-            android:text="Button" />
+            android:text="Shelters" />
 
         <Button
             android:id="@+id/button6"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="45dp"
@@ -80,6 +85,14 @@
             android:layout_marginBottom="10dp"
             android:layout_weight="1"
             android:minHeight="120dp"
-            android:text="Button" />
+            android:text="Donation" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Logout"
+        android:textAlignment="center" />
 </LinearLayout>

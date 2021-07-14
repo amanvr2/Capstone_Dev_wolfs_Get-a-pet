@@ -61,7 +61,6 @@ public class AdopterLoginActivity extends AppCompatActivity {
 
                             for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
 
-
                                 adopterUsName = documentSnapshot.getString("adopterEmail");
                                 adopterName = documentSnapshot.getString("adopterName");
                                 adopterID = documentSnapshot.getId();
@@ -85,7 +84,6 @@ public class AdopterLoginActivity extends AppCompatActivity {
                         else {
                             Toast.makeText(getApplicationContext(), "Invalid user", Toast.LENGTH_LONG).show();
                         }
-
 
                     }
                 });

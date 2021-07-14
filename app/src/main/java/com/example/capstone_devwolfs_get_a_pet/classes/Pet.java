@@ -9,7 +9,6 @@ public class Pet {
     private String size;
     private String description;
 
-
     public Pet(String petName, String shelterId, String breed, String type, String size, String description){
         this.petName = petName;
         this.shelterId = shelterId;
