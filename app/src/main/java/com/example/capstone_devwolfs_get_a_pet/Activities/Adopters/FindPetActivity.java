@@ -1,4 +1,4 @@
-package com.example.capstone_devwolfs_get_a_pet.Activities.Adopter;
+package com.example.capstone_devwolfs_get_a_pet.Activities.Adopters;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,7 +18,7 @@ public class FindPetActivity extends AppCompatActivity {
     }
 
     public void petDetails(View view) {
-        Intent intent = new Intent(FindPetActivity.this, PetDetailsActivity.class);
+        Intent intent = new Intent(FindPetActivity.this, com.example.capstone_devwolfs_get_a_pet.Activities.Adopter.PetDetailsActivity);
         startActivity(intent);
     }
 }
