@@ -7,39 +7,51 @@
     android:orientation="vertical"
     tools:context=".Activities.ShelterLoginActivity">
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="237dp"
+        app:srcCompat="@mipmap/get_a_pet_icon_foreground" />
+
+
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
         android:layout_marginTop="36dp"
         android:text="Login as Shelter"
-        android:textSize="18sp"
+        android:textAlignment="center"
+        android:textSize="24sp"
         android:textStyle="bold" />
 
     <EditText
         android:id="@+id/userName"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="62"
+        android:layout_marginRight="45dp"
         android:ems="10"
+        android:hint="Email"
         android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
+        android:layout_marginLeft="45dp"
         android:layout_marginTop="52dp"
+        android:layout_marginRight="45dp"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:hint="Password"
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/shelterLoginBtn"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="165dp"
+        android:layout_marginLeft="45dp"
         android:layout_marginTop="56dp"
+        android:layout_marginRight="45dp"
         android:text="Login" />
 </LinearLayout>
