@@ -18,7 +18,7 @@ public class FindPetActivity extends AppCompatActivity {
     }
 
     public void petDetails(View view) {
-        Intent intent = new Intent(FindPetActivity.this, com.example.capstone_devwolfs_get_a_pet.Activities.Adopter.PetDetailsActivity);
+        Intent intent = new Intent(FindPetActivity.this, PetDetailsActivity.class);
         startActivity(intent);
     }
 }

@@ -1,4 +1,4 @@
-package com.example.capstone_devwolfs_get_a_pet.Activities.Adopter;
+package com.example.capstone_devwolfs_get_a_pet.Activities.Adopters;
 
 import androidx.appcompat.app.AppCompatActivity;
 
