@@ -8,14 +8,16 @@ public class Pet {
     private String type;
     private String size;
     private String description;
+    private String petImage;
 
-    public Pet(String petName, String shelterId, String breed, String type, String size, String description){
+    public Pet(String petName, String shelterId, String breed, String type, String size, String description,String petImage){
         this.petName = petName;
         this.shelterId = shelterId;
         this.breed = breed;
         this.type = type;
         this.size = size;
         this.description = description;
+        this.petImage =  petImage;
     }
 
     public String getPetName() {
@@ -64,5 +66,12 @@ public class Pet {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+    public String getPetImage() {
+        return petImage;
+    }
+
+    public void setPetImage(String petImage) {
+        this.petImage = petImage;
     }
 }
