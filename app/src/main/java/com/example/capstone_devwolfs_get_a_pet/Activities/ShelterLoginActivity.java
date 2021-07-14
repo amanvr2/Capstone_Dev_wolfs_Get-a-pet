@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.capstone_devwolfs_get_a_pet.InternalData.PersistentData;
 import com.example.capstone_devwolfs_get_a_pet.R;
 import com.example.capstone_devwolfs_get_a_pet.classes.Shelter;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -27,6 +28,11 @@ public class ShelterLoginActivity extends AppCompatActivity {
 
     public static String shelterUsName = "";
     public static String shelterUsID = "";
+    public static String shelterAddress = "";
+    public static String shelterDescription = "";
+    public static String shelterEmail = "";
+    public static String shelterName = "";
+    public static String shelterPhone = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +50,6 @@ public class ShelterLoginActivity extends AppCompatActivity {
                 String username = userName.getText().toString().trim();
                 String passWord = password.getText().toString().trim();
 
-
                 userRef.whereEqualTo("shelterEmail",username).whereEqualTo("shelterPassword",passWord).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
@@ -53,13 +58,20 @@ public class ShelterLoginActivity extends AppCompatActivity {
 
                             for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
 
+                                 shelterUsName = documentSnapshot.getString("shelterEmail");
+                                 shelterUsID = documentSnapshot.getId();
+                                 shelterAddress = documentSnapshot.getString("shelterAddress");
+                                 shelterDescription = documentSnapshot.getString("shelterDescription");
+                                 shelterEmail = documentSnapshot.getString("shelterEmail");
+                                 shelterName = documentSnapshot.getString("shelterName");
+                                 shelterPhone = documentSnapshot.getString("shelterPhone");
 
-                                shelterUsName = documentSnapshot.getString("shelterEmail");
-                                shelterUsID = documentSnapshot.getId();
+
+
 
                                 Intent intent = new Intent(v.getContext(), ShelterDashboardActivity.class);
                                 startActivity(intent);
-                                Toast.makeText(getApplicationContext(), "Login Successfull", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_LONG).show();
 
                             }
 
@@ -68,7 +80,6 @@ public class ShelterLoginActivity extends AppCompatActivity {
                         else {
                             Toast.makeText(getApplicationContext(), "Invalid user", Toast.LENGTH_LONG).show();
                         }
-
 
                     }
                 });

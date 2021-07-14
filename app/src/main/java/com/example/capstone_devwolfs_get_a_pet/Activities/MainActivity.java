@@ -76,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void clearFields(){
-
         sName.setText("");
         sEmail.setText("");
         sPhone.setText("");

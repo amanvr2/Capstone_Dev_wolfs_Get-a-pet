@@ -10,7 +10,7 @@ import com.example.capstone_devwolfs_get_a_pet.R;
 public class AdopterDashboardActivity extends AppCompatActivity {
 
     TextView adopterUs;
-    String us = AdopterLoginActivity.adopterUsName;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +18,7 @@ public class AdopterDashboardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_shelter_dashboard);
 
         adopterUs = findViewById(R.id.shelterUsname);
-        adopterUs.setText(us);
+
 
     }
 }
