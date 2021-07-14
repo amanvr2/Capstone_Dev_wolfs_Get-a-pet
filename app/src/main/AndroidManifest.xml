@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Capstone_devwolfs_getapet">
-        <activity android:name=".Activities.AdopterProfileActivity"></activity>
+        <activity android:name=".Activities.AdopterProfileActivity" />
         <activity android:name=".Activities.ShelterProfileActivity" />
         <activity android:name=".Activities.addPetActivity" />
         <activity android:name=".Activities.AdopterDashboardActivity" />
@@ -17,7 +17,11 @@
         <activity android:name=".Activities.ShelterDashboardActivity" />
         <activity android:name=".Activities.ShelterLoginActivity" />
         <activity android:name=".Activities.AdopterAuthActivity" />
+        <activity android:name=".Activities.Adopters.FindPetActivity" />
+        <activity android:name=".Activities.Adopters.FindShelterActivity" />
+        <activity android:name=".Activities.Adopters.PetDetailsActivity" />
         <activity android:name=".Activities.HomeActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
