@@ -5,95 +5,133 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingLeft="50dp"
-    android:paddingTop="32dp"
-    android:paddingRight="50dp"
     tools:context=".Activities.AdopterDashboardActivity">
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="176dp"
-        android:contentDescription="userPhoto"
-        tools:srcCompat="@mipmap/adopter_icon_foreground" />
-
-    <TextView
-        android:id="@+id/adopterNameDash"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="AdopterName"
-        android:textAlignment="center" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/wishlistBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="45dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"
-            android:maxWidth="120dp"
-            android:minHeight="120dp"
-            android:text="Wishlist" />
-
-        <Button
-            android:id="@+id/profileBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="45dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"
-            android:maxWidth="120dp"
-            android:minHeight="120dp"
-            android:onClick="profileBtnClick"
-            android:text="Profile" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/shelterBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="45dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"
-            android:minHeight="120dp"
-            android:text="Shelters" />
-
-        <Button
-            android:id="@+id/donationBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="45dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"
-            android:minHeight="120dp"
-            android:text="Donation" />
-    </LinearLayout>
 
     <TextView
         android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Welcome"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="32dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/circle_bg" />
+    <TextView
+         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="Edit Profile"
+        android:textSize="18sp"
+        android:textColor="@android:color/holo_blue_light"
+        android:textStyle="bold"
+      />
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Logout"
-        android:textAlignment="center" />
+        android:weightSum="2"
+        android:orientation="horizontal"
+        >
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/sqaure_bg"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:text="WishList"
+                android:layout_centerInParent="true"
+                android:textSize="18sp"
+                android:textColor="@android:color/holo_blue_light"
+                android:textStyle="bold"
+                />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/sqaure_bg"
+            android:onClick="findPet"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="Find a Pet"
+                android:layout_centerInParent="true"
+                android:textSize="18sp"
+                android:textColor="@android:color/holo_blue_light"
+                android:textStyle="bold"
+                />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        >
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_margin="20dp"
+            android:onClick="findShelter"
+            android:background="@drawable/sqaure_bg"
+
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:text="Find a Shelter"
+                android:layout_centerInParent="true"
+                android:textSize="18sp"
+                android:textColor="@android:color/holo_blue_light"
+                android:textStyle="bold"
+                />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/sqaure_bg"
+
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="Donation"
+                android:layout_centerInParent="true"
+                android:textSize="18sp"
+                android:textColor="@android:color/holo_blue_light"
+                android:textStyle="bold"
+                />
+
+        </RelativeLayout>
+    </LinearLayout>
 </LinearLayout>
