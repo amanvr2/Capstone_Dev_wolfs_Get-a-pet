@@ -1,22 +1,18 @@
 package com.example.capstone_devwolfs_get_a_pet.Activities.Adopters;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
-import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
-import android.widget.Toast;
 
-import com.example.capstone_devwolfs_get_a_pet.Activities.ShelterDashboardActivity;
-import com.example.capstone_devwolfs_get_a_pet.InternalData.PersistentData;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
 import com.example.capstone_devwolfs_get_a_pet.R;
 import com.example.capstone_devwolfs_get_a_pet.classes.Shelter;
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -37,10 +33,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Objects;
 
 public class FindShelterActivity extends AppCompatActivity implements OnMapReadyCallback {
     private GoogleMap map;
@@ -49,6 +42,7 @@ public class FindShelterActivity extends AppCompatActivity implements OnMapReady
     private CollectionReference userRef = db.collection("Shelters");
     private ArrayList<Shelter> shelters = new ArrayList<Shelter>();
     private Location currentLocation;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
