@@ -7,6 +7,7 @@
     android:orientation="vertical"
     android:paddingLeft="35dp"
     android:paddingRight="35dp"
+    android:background="@drawable/background_act"
     tools:context=".Activities.AdopterLoginActivity">
 
     <ImageView
