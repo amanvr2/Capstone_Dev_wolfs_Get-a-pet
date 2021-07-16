@@ -22,6 +22,10 @@ public class Shelter {
         //this.shelterImage = shelterImage;
     }
 
+    public Shelter() {
+
+    }
+
     public String getShelterId() {
         return shelterId;
     }
