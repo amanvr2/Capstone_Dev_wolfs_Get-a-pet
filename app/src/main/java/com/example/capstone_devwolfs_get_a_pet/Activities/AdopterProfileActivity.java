@@ -1,11 +1,11 @@
 package com.example.capstone_devwolfs_get_a_pet.Activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.capstone_devwolfs_get_a_pet.R;
 
@@ -34,8 +34,6 @@ public class AdopterProfileActivity extends AppCompatActivity {
         adopterPhone.setText(sharedPreferences.getString("Phone","Adopter Phone"));
         adopterAddress.setText(sharedPreferences.getString("Address","Adopter Address"));
         adopterDescription.setText(sharedPreferences.getString("Description","Adopter Description"));
-
-
 
     }
 }
