@@ -1,7 +1,5 @@
 package com.example.capstone_devwolfs_get_a_pet.Activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,9 +7,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.capstone_devwolfs_get_a_pet.InternalData.PersistentData;
 import com.example.capstone_devwolfs_get_a_pet.R;
-import com.example.capstone_devwolfs_get_a_pet.classes.Shelter;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;

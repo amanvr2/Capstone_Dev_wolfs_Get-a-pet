@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:paddingLeft="25dp"
+    android:paddingRight="25dp"
     tools:context=".Activities.MainActivity">
 
     <ScrollView
@@ -13,18 +15,18 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="25dp">
 
             <TextView
                 android:id="@+id/textView"
-                android:layout_width="142dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="128dp"
                 android:layout_marginTop="32dp"
                 android:text="Add Pet"
                 android:textAlignment="center"
-                android:textSize="20sp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
             <EditText
@@ -74,23 +76,19 @@
                 android:layout_height="wrap_content"
                 tools:srcCompat="@tools:sample/avatars" />
 
-            <Switch
-                android:id="@+id/switch1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Switch" />
-
             <Button
                 android:id="@+id/petSaveBtn"
-                android:layout_width="253dp"
-                android:layout_height="37dp"
-                android:text="Add" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add Pet" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/floatingActionButtonPet"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:clickable="true"
+                android:cropToPadding="false"
                 app:srcCompat="@drawable/ic_photo_camera_black_48dp" />
 
 

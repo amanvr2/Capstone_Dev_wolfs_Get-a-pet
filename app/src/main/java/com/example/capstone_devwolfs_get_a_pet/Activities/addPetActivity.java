@@ -107,9 +107,8 @@ public class addPetActivity extends AppCompatActivity {
         String size = pSize.getText().toString().trim();
 
         FirebaseStorage storage = FirebaseStorage.getInstance();
-        //StorageReference uploader = storage.getReference("image1" +new Random().nextInt(50));
         StorageReference storageRef = storage.getReferenceFromUrl("gs://capstone-100bc.appspot.com/");
-        StorageReference imageName = storageRef.child("petimage"+System.currentTimeMillis()+"file.jpg");
+        StorageReference imageName = storageRef.child("petimage"+System.currentTimeMillis()+".jpg");
 
         imageName.putFile(petImageUri)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -119,10 +118,10 @@ public class addPetActivity extends AppCompatActivity {
                         imageName.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                             @Override
                             public void onSuccess(Uri uri) {
-                                //DatabaseReference root = db.getReference();
+
                                 Pet pet = new Pet(name,shelterid,breed,type,size,description,uri.toString());
                                 db.collection("Pets").add(pet);
-                                //clearFields();
+                                clearFields();
                                 Toast.makeText(getApplicationContext(),"Pet Added",Toast.LENGTH_LONG).show();
 
                             }
@@ -156,6 +155,14 @@ public class addPetActivity extends AppCompatActivity {
         }
        }
 
+    void clearFields(){
+        pName.setText("");
+        pBreed.setText("");
+        pType.setText("");
+        pDescription.setText("");
+        pSize.setText("");
+        petImage.setImageBitmap(null);
 
+    }
 
 }

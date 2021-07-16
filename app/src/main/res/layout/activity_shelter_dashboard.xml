@@ -34,6 +34,12 @@
         android:text="Add Pet" />
 
     <Button
+        android:id="@+id/allPetsShelterBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="All pets" />
+
+    <Button
         android:id="@+id/viewProfileBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

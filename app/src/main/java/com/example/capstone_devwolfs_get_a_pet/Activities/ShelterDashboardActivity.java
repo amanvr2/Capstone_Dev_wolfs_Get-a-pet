@@ -1,19 +1,19 @@
 package com.example.capstone_devwolfs_get_a_pet.Activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.capstone_devwolfs_get_a_pet.Activities.Shelters.ShowAllPetsShelter;
 import com.example.capstone_devwolfs_get_a_pet.R;
 
 public class ShelterDashboardActivity extends AppCompatActivity {
 
 
-    Button addPet,viewProfile;
+    Button addPet,viewProfile,seeAllPets;
 
 
     @Override
@@ -23,6 +23,7 @@ public class ShelterDashboardActivity extends AppCompatActivity {
 
         addPet = findViewById(R.id.addPetRedirect);
         viewProfile = findViewById(R.id.viewProfileBtn);
+        seeAllPets = findViewById(R.id.allPetsShelterBtn);
 
 
         addPet.setOnClickListener(new View.OnClickListener() {
@@ -40,6 +41,15 @@ public class ShelterDashboardActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        seeAllPets.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), ShowAllPetsShelter.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 }
