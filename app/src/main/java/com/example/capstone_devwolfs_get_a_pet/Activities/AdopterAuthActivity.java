@@ -1,9 +1,13 @@
 package com.example.capstone_devwolfs_get_a_pet.Activities;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -15,14 +19,22 @@ import android.widget.Toast;
 
 import com.example.capstone_devwolfs_get_a_pet.R;
 import com.example.capstone_devwolfs_get_a_pet.classes.Adopter;
+import com.example.capstone_devwolfs_get_a_pet.classes.Shelter;
 import com.github.dhaval2404.imagepicker.ImagePicker;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.appcheck.FirebaseAppCheck;
 import com.google.firebase.appcheck.safetynet.SafetyNetAppCheckProviderFactory;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+
+import org.jetbrains.annotations.NotNull;
+
+import java.io.InputStream;
 
 public class AdopterAuthActivity extends AppCompatActivity {
 
@@ -91,6 +103,9 @@ public class AdopterAuthActivity extends AppCompatActivity {
             }
 
             private void uploadtoFireBase() {
+                ProgressDialog dialog = new ProgressDialog(AdopterAuthActivity.this);
+                dialog.setTitle("Creating adopter profile...");
+                dialog.show();
                 String name = aName.getText().toString().trim();
                 String email = aEmail.getText().toString().trim();
                 String password = aPassword.getText().toString().trim();
@@ -101,6 +116,32 @@ public class AdopterAuthActivity extends AppCompatActivity {
                 FirebaseStorage storage = FirebaseStorage.getInstance();
                 StorageReference storageRef = storage.getReferenceFromUrl("gs://capstone-100bc.appspot.com/");
                 StorageReference imageName = storageRef.child("adopterProfileImage"+System.currentTimeMillis()+".jpg");
+
+                imageName.putFile(adopterImageUri)
+                        .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                            @Override
+                            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                                dialog.dismiss();
+                                imageName.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                    @Override
+                                    public void onSuccess(Uri uri) {
+                                        Adopter adopter = new Adopter(name,email,phone,address,description,password,uri.toString());
+
+                                        db.collection("Adopters").add(adopter);
+                                        clearFields();
+                                        Toast.makeText(getApplicationContext(),"Adopter Added",Toast.LENGTH_LONG).show();
+                                    }
+                                });
+
+                            }
+                        })
+                        .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                            @Override
+                            public void onProgress(@NonNull @NotNull UploadTask.TaskSnapshot snapshot) {
+                                float percent =(100*snapshot.getBytesTransferred())/snapshot.getTotalByteCount();
+                                dialog.setMessage("uploaded: " +(int)percent +"%");
+                            }
+                        });
 
 
             }
@@ -116,7 +157,20 @@ public class AdopterAuthActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable @org.jetbrains.annotations.Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        adopterImageUri = data.getData();
+        try{
+            InputStream inputStream = getContentResolver().openInputStream(adopterImageUri);
+            abitmap= BitmapFactory.decodeStream(inputStream);
+            adopterImage.setImageBitmap(abitmap);
 
+        } catch (Exception e)
+        {
+
+        }
+    }
     private void clearFields(){
 
         aName.setText("");

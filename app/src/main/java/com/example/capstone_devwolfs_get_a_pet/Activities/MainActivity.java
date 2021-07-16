@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
 
             private void uploadtoFireBase() {
                 ProgressDialog dialog = new ProgressDialog(MainActivity.this);
-                dialog.setTitle("File uploader");
+                dialog.setTitle("Creating shelter Profile...");
                 dialog.show();
                 String name = sName.getText().toString().trim();
                 String email = sEmail.getText().toString().trim();

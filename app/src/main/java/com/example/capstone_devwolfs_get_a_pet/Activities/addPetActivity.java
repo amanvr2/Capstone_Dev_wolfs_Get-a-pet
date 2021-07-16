@@ -95,7 +95,7 @@ public class addPetActivity extends AppCompatActivity {
 
     private void uploadtoFireBase() {
         ProgressDialog dialog = new ProgressDialog(addPetActivity.this);
-        dialog.setTitle("File uploader");
+        dialog.setTitle("Adding your Pet for adoption...");
         dialog.show();
         String shelterid = ShelterLoginActivity.shelterUsID;
         String name = pName.getText().toString().trim();

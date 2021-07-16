@@ -10,13 +10,14 @@ public class Adopter {
     private String adopterPassword;
     private String adopterImage;
 
-    public Adopter(String adopterName, String adopterEmail, String adopterPhone, String adopterAddress, String adopterDescription, String adopterPassword) {
+    public Adopter(String adopterName, String adopterEmail, String adopterPhone, String adopterAddress, String adopterDescription, String adopterPassword, String adopterImage) {
         this.adopterName = adopterName;
         this.adopterEmail = adopterEmail;
         this.adopterPhone = adopterPhone;
         this.adopterAddress = adopterAddress;
         this.adopterDescription = adopterDescription;
         this.adopterPassword = adopterPassword;
+        this.adopterImage = adopterImage;
     }
 
     public String getAdopterName() {
@@ -65,5 +66,13 @@ public class Adopter {
 
     public void setAdopterPassword(String adopterPassword) {
         this.adopterPassword = adopterPassword;
+    }
+
+    public String getAdopterImage() {
+        return adopterImage;
+    }
+
+    public void setAdopterImage(String adopterName) {
+        this.adopterImage = adopterImage;
     }
 }
