@@ -9,9 +9,9 @@ public class Shelter {
     private String shelterAddress;
     private String shelterDescription;
     private String shelterPassword;
-    //private String shelterImage;
+    private String shelterImage;
 
-    public Shelter(String shelterId, String shelterName, String shelterEmail, String shelterPhone, String shelterAddress, String shelterDescription, String shelterPassword) {
+    public Shelter(String shelterId, String shelterName, String shelterEmail, String shelterPhone, String shelterAddress, String shelterDescription, String shelterPassword,String shelterImage) {
         this.shelterId = shelterId;
         this.shelterName = shelterName;
         this.shelterEmail = shelterEmail;
@@ -19,7 +19,7 @@ public class Shelter {
         this.shelterAddress = shelterAddress;
         this.shelterDescription = shelterDescription;
         this.shelterPassword = shelterPassword;
-        //this.shelterImage = shelterImage;
+        this.shelterImage = shelterImage;
     }
 
     public Shelter() {
@@ -80,5 +80,12 @@ public class Shelter {
 
     public void setShelterPassword(String shelterPassword) {
         this.shelterPassword = shelterPassword;
+    }
+    public String getShelterImage() {
+        return shelterImage;
+    }
+
+    public void setShelterImage(String shelterImage) {
+        this.shelterImage = shelterImage;
     }
 }
