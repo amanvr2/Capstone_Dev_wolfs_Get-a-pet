@@ -36,6 +36,8 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     // Import the BoM for the Firebase platform
     implementation platform('com.google.firebase:firebase-bom:28.2.0')
+    implementation 'com.google.firebase:firebase-appcheck-safetynet:16.0.0-beta02'
+
 
     implementation 'com.google.firebase:firebase-firestore'
     implementation 'com.google.firebase:firebase-analytics:19.0.0'

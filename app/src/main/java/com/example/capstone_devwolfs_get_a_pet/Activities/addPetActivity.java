@@ -1,10 +1,5 @@
 package com.example.capstone_devwolfs_get_a_pet.Activities;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -15,15 +10,20 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.capstone_devwolfs_get_a_pet.R;
 import com.example.capstone_devwolfs_get_a_pet.classes.Pet;
-import com.example.capstone_devwolfs_get_a_pet.classes.Shelter;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.appcheck.FirebaseAppCheck;
+import com.google.firebase.appcheck.safetynet.SafetyNetAppCheckProviderFactory;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
@@ -47,11 +47,16 @@ public class addPetActivity extends AppCompatActivity {
     public static final String TAG = "test";
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_pet);
+
+        FirebaseApp.initializeApp(/*context=*/ this);
+        FirebaseAppCheck firebaseAppCheck = FirebaseAppCheck.getInstance();
+        firebaseAppCheck.installAppCheckProviderFactory(
+                SafetyNetAppCheckProviderFactory.getInstance());
+
 
         pName = findViewById(R.id.petName);
         pBreed = findViewById(R.id.petBreed);
@@ -103,13 +108,16 @@ public class addPetActivity extends AppCompatActivity {
         String size = pSize.getText().toString().trim();
 
         FirebaseStorage storage = FirebaseStorage.getInstance();
-        StorageReference uploader = storage.getReference("image1" +new Random().nextInt(50));
-        uploader.putFile(petImageUri)
+        //StorageReference uploader = storage.getReference("image1" +new Random().nextInt(50));
+        StorageReference storageRef = storage.getReferenceFromUrl("gs://capstone-100bc.appspot.com/");
+        StorageReference imageName = storageRef.child("petimage"+new Random().nextInt(9999)+"file.jpg");
+
+        imageName.putFile(petImageUri)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         dialog.dismiss();
-                        uploader.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        imageName.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                             @Override
                             public void onSuccess(Uri uri) {
                                 //DatabaseReference root = db.getReference();
