@@ -15,6 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Capstone_devwolfs_getapet">
+        <activity android:name=".Activities.Adopters.ShelterDetailActivity"></activity>
         <activity android:name=".Activities.Shelters.ShowAllPetsShelter"></activity>
         <activity android:name=".Activities.AdopterProfileActivity" />
         <activity android:name=".Activities.ShelterProfileActivity" />

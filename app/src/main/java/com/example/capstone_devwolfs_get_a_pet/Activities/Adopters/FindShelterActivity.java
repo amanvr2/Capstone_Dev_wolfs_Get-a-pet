@@ -88,22 +88,27 @@ public class FindShelterActivity extends AppCompatActivity implements OnMapReady
     public void onMapReady(GoogleMap googleMap) {
         map = googleMap;
 
-        map.setOnMapLongClickListener(new GoogleMap.OnMapLongClickListener() {
-            @Override
-            public void onMapLongClick(LatLng latLng) {
-
-            }
-        });
 
         map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
                 //int position = (int)(marker.getTag());
-
-
+                for (Shelter shlter: shelters) {
+                    if (marker.getTitle().equals(shlter.getShelterName())){
+                        Intent intent = new Intent(FindShelterActivity.this, ShelterDetailActivity.class);
+                        intent.putExtra("shelterName", shlter.getShelterName());
+                        intent.putExtra("shelterEmail", shlter.getShelterEmail());
+                        intent.putExtra("shelterAddress", shlter.getShelterAddress());
+                        intent.putExtra("shelterDes", shlter.getShelterDescription());
+                        startActivity(intent);
+                        return false;
+                    }
+                }
                 return false;
             }
         });
+
+
         if (checkPermission())
             requestPermission();
         else {
@@ -173,7 +178,7 @@ public class FindShelterActivity extends AppCompatActivity implements OnMapReady
                 .title("Your Location")
                 .snippet("You are here");
         map.addMarker(markerOptions);
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 8));
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 1));
         setShelters();
     }
 
@@ -186,16 +191,16 @@ public class FindShelterActivity extends AppCompatActivity implements OnMapReady
 
 
             if (shlter.getShelterAddress().toLowerCase().contains("toronto")){
-                markerOptions.position(new LatLng(43.65,79.38));
+                markerOptions.position(new LatLng(43.653225,-79.383186));
             }
             else  if (shlter.getShelterAddress().toLowerCase().contains("brampton")){
-                markerOptions.position(new LatLng(43.75,79.78));
+                markerOptions.position(new LatLng(43.731548,-79.762421));
             }
             else  if (shlter.getShelterAddress().toLowerCase().contains("mississauga")){
-                markerOptions.position(new LatLng(43.58,79.64));
+                markerOptions.position(new LatLng(43.589046,-79.644119));
             }
             else {
-                markerOptions.position(new LatLng(43.25,79.87));
+                markerOptions.position(new LatLng(43.2557,-79.871101));
             }
             markerOptions.title(shlter.getShelterName());
             map.addMarker(markerOptions);
