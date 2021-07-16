@@ -18,6 +18,7 @@
             android:paddingLeft="25dp"
             android:paddingRight="25dp">
 
+
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
@@ -28,6 +29,7 @@
                 android:textAlignment="center"
                 android:textSize="20sp"
                 android:textStyle="bold" />
+
 
             <EditText
                 android:id="@+id/shelterNameTv"
@@ -78,19 +80,7 @@
                 android:textAlignment="center"
                 android:textSize="18sp" />
 
-            <ImageView
-                android:id="@+id/shelterImage"
-                android:layout_width="365dp"
-                android:layout_height="192dp"
-                android:scaleType="centerCrop"
-                tools:srcCompat="@tools:sample/avatars" />
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/floatingActionButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                app:srcCompat="@drawable/ic_photo_camera_black_48dp" />
 
 
         </LinearLayout>

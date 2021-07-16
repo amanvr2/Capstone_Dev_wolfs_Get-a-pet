@@ -21,8 +21,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class ShelterProfileActivity extends AppCompatActivity {
 
     EditText name,email,phone,address,descp,password;
-    ImageView addShelterImage;
-    FloatingActionButton fab;
+
     SharedPreferences sharedPreferences;
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -42,19 +41,6 @@ public class ShelterProfileActivity extends AppCompatActivity {
         address = findViewById(R.id.shelterAddressTv);
         descp = findViewById(R.id.shelterDescriptionTv);
         password = findViewById(R.id.shelterPasswordTv);
-        addShelterImage = findViewById(R.id.shelterImage);
-        fab = findViewById(R.id.floatingActionButton);
-        fab.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                ImagePicker.with(ShelterProfileActivity.this)
-                        .crop()	    			//Crop image(Optional), Check Customization for more option
-                        .compress(1024)			//Final image size will be less than 1 MB(Optional)
-                        .maxResultSize(1080, 1080)	//Final image resolution will be less than 1080 x 1080(Optional)
-                        .start();
-            }
-        });
-
 
 
         name.setText(sharedPreferences.getString("Name","Shelter Name"));
@@ -67,10 +53,5 @@ public class ShelterProfileActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable @org.jetbrains.annotations.Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        Uri uri = data.getData();
-        addShelterImage.setImageURI(uri);
-    }
+
 }
