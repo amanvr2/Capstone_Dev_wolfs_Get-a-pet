@@ -9,6 +9,7 @@ public class Shelter {
     private String shelterAddress;
     private String shelterDescription;
     private String shelterPassword;
+    //private String shelterImage;
 
     public Shelter(String shelterId, String shelterName, String shelterEmail, String shelterPhone, String shelterAddress, String shelterDescription, String shelterPassword) {
         this.shelterId = shelterId;
@@ -18,6 +19,7 @@ public class Shelter {
         this.shelterAddress = shelterAddress;
         this.shelterDescription = shelterDescription;
         this.shelterPassword = shelterPassword;
+        //this.shelterImage = shelterImage;
     }
 
     public String getShelterId() {

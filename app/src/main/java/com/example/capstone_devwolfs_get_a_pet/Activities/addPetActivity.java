@@ -33,7 +33,6 @@ import com.google.firebase.storage.UploadTask;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.InputStream;
-import java.util.Random;
 
 public class addPetActivity extends AppCompatActivity {
 
@@ -110,7 +109,7 @@ public class addPetActivity extends AppCompatActivity {
         FirebaseStorage storage = FirebaseStorage.getInstance();
         //StorageReference uploader = storage.getReference("image1" +new Random().nextInt(50));
         StorageReference storageRef = storage.getReferenceFromUrl("gs://capstone-100bc.appspot.com/");
-        StorageReference imageName = storageRef.child("petimage"+new Random().nextInt(9999)+"file.jpg");
+        StorageReference imageName = storageRef.child("petimage"+System.currentTimeMillis()+"file.jpg");
 
         imageName.putFile(petImageUri)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {

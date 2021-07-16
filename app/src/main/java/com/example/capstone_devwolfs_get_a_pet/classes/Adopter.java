@@ -8,6 +8,7 @@ public class Adopter {
     private String adopterAddress;
     private String adopterDescription;
     private String adopterPassword;
+    private String adopterImage;
 
     public Adopter(String adopterName, String adopterEmail, String adopterPhone, String adopterAddress, String adopterDescription, String adopterPassword) {
         this.adopterName = adopterName;
