@@ -56,7 +56,6 @@ public class addPetActivity extends AppCompatActivity {
         firebaseAppCheck.installAppCheckProviderFactory(
                 SafetyNetAppCheckProviderFactory.getInstance());
 
-
         pName = findViewById(R.id.petName);
         pBreed = findViewById(R.id.petBreed);
         pType = findViewById(R.id.petType);
@@ -65,7 +64,6 @@ public class addPetActivity extends AppCompatActivity {
         save = findViewById(R.id.petSaveBtn);
         petImage = findViewById(R.id.petAddImage);
         FabPet = findViewById(R.id.floatingActionButtonPet);
-
 
         FabPet.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -118,15 +116,12 @@ public class addPetActivity extends AppCompatActivity {
                         imageName.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                             @Override
                             public void onSuccess(Uri uri) {
-
                                 Pet pet = new Pet(name,shelterid,breed,type,size,description,uri.toString());
                                 db.collection("Pets").add(pet);
                                 clearFields();
                                 Toast.makeText(getApplicationContext(),"Pet Added",Toast.LENGTH_LONG).show();
-
                             }
                         });
-
                     }
                 })
                 .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
@@ -137,7 +132,6 @@ public class addPetActivity extends AppCompatActivity {
                     }
                 });
 
-
     }
 
     @Override
@@ -146,7 +140,7 @@ public class addPetActivity extends AppCompatActivity {
         petImageUri = data.getData();
         try{
             InputStream inputStream = getContentResolver().openInputStream(petImageUri);
-            bitmap= BitmapFactory.decodeStream(inputStream);
+            bitmap = BitmapFactory.decodeStream(inputStream);
             petImage.setImageBitmap(bitmap);
 
         } catch (Exception e)
@@ -162,7 +156,6 @@ public class addPetActivity extends AppCompatActivity {
         pDescription.setText("");
         pSize.setText("");
         petImage.setImageBitmap(null);
-
     }
 
 }

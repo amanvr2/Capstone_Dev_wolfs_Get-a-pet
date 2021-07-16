@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,6 +20,7 @@ import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
+import com.squareup.picasso.Picasso;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -65,6 +67,7 @@ public class ShowAllPetsShelter extends AppCompatActivity {
             @Override
             protected void onBindViewHolder(@NonNull @NotNull PetsViewHolder holder, int position, @NonNull @NotNull PetInShelterModel model) {
                 holder.petName.setText(model.getPetName());
+                Picasso.get().load(model.getPetImage()).into(holder.petPhoto);
             }
         };
 
@@ -78,11 +81,13 @@ public class ShowAllPetsShelter extends AppCompatActivity {
     private class PetsViewHolder extends RecyclerView.ViewHolder {
 
         private TextView petName;
+        private ImageView petPhoto;
 
         public PetsViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
 
             petName = itemView.findViewById(R.id.petNameShelter);
+            petPhoto = itemView.findViewById(R.id.petImageShelter);
 
         }
     }
@@ -98,6 +103,7 @@ public class ShowAllPetsShelter extends AppCompatActivity {
         super.onStart();
         adapter.startListening();
     }
+
 
 
 }
