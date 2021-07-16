@@ -85,6 +85,20 @@
         android:hint="Password"
         android:inputType="textPersonName" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/adopterProfileImagefloatingActionButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:srcCompat="@drawable/ic_photo_camera_black_48dp" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_adopterImage"
+        android:layout_width="121dp"
+        android:layout_height="92dp"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp" />
+
     <Button
         android:id="@+id/adoptersaveBtn"
         android:layout_width="match_parent"
