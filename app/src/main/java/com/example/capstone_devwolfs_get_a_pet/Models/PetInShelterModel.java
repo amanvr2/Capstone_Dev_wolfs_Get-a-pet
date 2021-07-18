@@ -1,13 +1,17 @@
 package com.example.capstone_devwolfs_get_a_pet.Models;
 
+import com.google.firebase.firestore.DocumentId;
+
 public class PetInShelterModel {
 
+    private String petID;
     private String petName;
     private String breed;
     private String description;
     private String petImage;
     private String size;
     private String type;
+    private String shelterId;
 
 
     public String getBreed() {
@@ -57,5 +61,16 @@ public class PetInShelterModel {
         this.petName = petName;
     }
 
+    @DocumentId
+    public String getPetID() {
+        return petID;
+    }
 
+    public String getShelterId() {
+        return shelterId;
+    }
+
+    public void setShelterId(String shelterId) {
+        this.shelterId = shelterId;
+    }
 }

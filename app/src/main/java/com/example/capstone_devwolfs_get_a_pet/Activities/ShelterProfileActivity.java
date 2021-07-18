@@ -1,20 +1,13 @@
 package com.example.capstone_devwolfs_get_a_pet.Activities;
 
-import androidx.annotation.Nullable;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.widget.EditText;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.net.Uri;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.ImageView;
-
 import com.example.capstone_devwolfs_get_a_pet.R;
-import com.github.dhaval2404.imagepicker.ImagePicker;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -48,7 +41,7 @@ public class ShelterProfileActivity extends AppCompatActivity {
         phone.setText(sharedPreferences.getString("Phone","Shelter Phone"));
         address.setText(sharedPreferences.getString("Address","Shelter Address"));
         descp.setText(sharedPreferences.getString("Description","Shelter Description"));
-        password.setText(sharedPreferences.getString("Password","New Password"));
+        password.setText(sharedPreferences.getString("ShelterID","New Password"));
 
 
     }

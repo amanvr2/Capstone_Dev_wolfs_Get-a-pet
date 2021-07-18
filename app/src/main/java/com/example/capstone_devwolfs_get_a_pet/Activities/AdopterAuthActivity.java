@@ -1,9 +1,5 @@
 package com.example.capstone_devwolfs_get_a_pet.Activities;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -17,9 +13,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.capstone_devwolfs_get_a_pet.R;
 import com.example.capstone_devwolfs_get_a_pet.classes.Adopter;
-import com.example.capstone_devwolfs_get_a_pet.classes.Shelter;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -70,6 +69,7 @@ public class AdopterAuthActivity extends AppCompatActivity {
         alogin = findViewById(R.id.adopterLoginRedirect);
         adopterImage = findViewById(R.id.profile_adopterImage);
         fabAdopter = findViewById(R.id.adopterProfileImagefloatingActionButton);
+
         fabAdopter.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -142,7 +142,6 @@ public class AdopterAuthActivity extends AppCompatActivity {
                                 dialog.setMessage("uploaded: " +(int)percent +"%");
                             }
                         });
-
 
             }
         });

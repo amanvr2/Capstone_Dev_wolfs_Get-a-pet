@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -68,6 +70,29 @@ public class ShowAllPetsShelter extends AppCompatActivity {
             protected void onBindViewHolder(@NonNull @NotNull PetsViewHolder holder, int position, @NonNull @NotNull PetInShelterModel model) {
                 holder.petName.setText(model.getPetName());
                 Picasso.get().load(model.getPetImage()).into(holder.petPhoto);
+
+                holder.editPet.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        Toast.makeText(getApplicationContext(), "Edit Pet"+model.getPetName(), Toast.LENGTH_LONG).show();
+
+                    }
+                });
+
+
+                holder.deletePet.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        Toast.makeText(getApplicationContext(), "Pet Deleted", Toast.LENGTH_LONG).show();
+                        firebaseFirestore.collection("Pets").document(model.getPetID()).delete();
+
+                    }
+                });
+
+
+
             }
         };
 
@@ -82,12 +107,15 @@ public class ShowAllPetsShelter extends AppCompatActivity {
 
         private TextView petName;
         private ImageView petPhoto;
+        private ImageButton editPet,deletePet;
 
         public PetsViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
 
             petName = itemView.findViewById(R.id.petNameShelter);
             petPhoto = itemView.findViewById(R.id.petImageShelter);
+            editPet = itemView.findViewById(R.id.editPetShelter);
+            deletePet = itemView.findViewById(R.id.deletePetShelter);
 
         }
     }
