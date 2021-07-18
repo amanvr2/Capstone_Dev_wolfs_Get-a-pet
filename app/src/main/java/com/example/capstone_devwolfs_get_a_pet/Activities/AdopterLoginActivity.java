@@ -1,14 +1,13 @@
 package com.example.capstone_devwolfs_get_a_pet.Activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.capstone_devwolfs_get_a_pet.InternalData.PersistentData;
 import com.example.capstone_devwolfs_get_a_pet.R;
@@ -33,6 +32,7 @@ public class AdopterLoginActivity extends AppCompatActivity {
     public static String adopterDescription = "";
     public static String adopterEmail = "";
     public static String adopterPhone = "";
+    public static String adopterPhoto = "";
 
     //SharedPreferences sharedPreferences;
 
@@ -69,9 +69,10 @@ public class AdopterLoginActivity extends AppCompatActivity {
                                 adopterEmail = documentSnapshot.getString("adopterEmail");
                                 adopterName = documentSnapshot.getString("adopterName");
                                 adopterPhone = documentSnapshot.getString("adopterPhone");
+                                adopterPhoto = documentSnapshot.getString("adopterImage");
 
                                 //Saving Adopter data inside the internal storage of the phone
-                                PersistentData.saveAdopterData(adopterID,adopterAddress,adopterDescription,adopterEmail,adopterName,adopterPhone,v.getContext());
+                                PersistentData.saveAdopterData(adopterID,adopterAddress,adopterDescription,adopterEmail,adopterName,adopterPhone,adopterPhoto,v.getContext());
 
                                 Intent intent = new Intent(v.getContext(), AdopterDashboardActivity.class);
                                 startActivity(intent);

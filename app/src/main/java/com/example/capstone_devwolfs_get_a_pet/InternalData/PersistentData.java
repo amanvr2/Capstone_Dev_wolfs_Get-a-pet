@@ -4,15 +4,16 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 public class PersistentData {
+
     public static SharedPreferences sharedpreferences;
-
-
     public static final String SavedAdopter = "Adopter";
     public static final String SavedShelter = "Shelter";
 
+    public static final String DefaultAdopterImage = "https://firebasestorage.googleapis.com/v0/b/capstone-100bc.appspot.com/o/adopter.png?alt=media&token=3094aa35-ca2e-4d04-977e-a537680a78e6";
+
 
     //Saving Adopter data inside the internal storage of the phone
-    public static void saveAdopterData(String UserID, String Address, String Description, String email, String name, String phone, Context context){
+    public static void saveAdopterData(String UserID, String Address, String Description, String email, String name, String phone,String photo, Context context){
 
         sharedpreferences = context.getSharedPreferences(SavedAdopter, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedpreferences.edit();
@@ -24,8 +25,17 @@ public class PersistentData {
         editor.putString("Email",email);
         editor.putString("Name", name);
         editor.putString("Phone", phone);
+        editor.putString("Photo", photo);
 
         editor.commit();
+
+    }
+
+    public static String getAdopterImage(Context context){
+
+        sharedpreferences = context.getSharedPreferences(SavedAdopter, Context.MODE_PRIVATE);
+
+        return sharedpreferences.getString("Photo",DefaultAdopterImage);
 
     }
 
