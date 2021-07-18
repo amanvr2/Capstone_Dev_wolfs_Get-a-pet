@@ -8,7 +8,7 @@
     android:paddingLeft="25dp"
     android:paddingRight="25dp"
     android:background="@drawable/background_act"
-    tools:context=".Activities.MainActivity">
+    tools:context=".Activities.Shelters.EditPetShelter">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -25,10 +25,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:text="Add Pet"
+                android:text="Edit Pet"
                 android:textAlignment="center"
                 android:textSize="24sp"
                 android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/petImageEdited"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:srcCompat="@tools:sample/avatars" />
 
             <EditText
                 android:id="@+id/petNameEdited"
@@ -71,17 +77,11 @@
                 android:hint="Description"
                 android:inputType="textPersonName" />
 
-            <ImageView
-                android:id="@+id/petImageEdited"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:srcCompat="@tools:sample/avatars" />
-
             <Button
                 android:id="@+id/petEditBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Add Pet" />
+                android:text="Update Pet" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/floatingActionButtonPetEdit"

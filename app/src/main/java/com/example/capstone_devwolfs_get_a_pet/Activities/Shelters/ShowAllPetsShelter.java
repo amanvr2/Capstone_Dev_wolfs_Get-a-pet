@@ -1,6 +1,7 @@
 package com.example.capstone_devwolfs_get_a_pet.Activities.Shelters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -75,7 +76,9 @@ public class ShowAllPetsShelter extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
 
-                        Toast.makeText(getApplicationContext(), "Edit Pet"+model.getPetName(), Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(v.getContext(), EditPetShelter.class);
+                        intent.putExtra("editedPetID",model.getPetID());
+                        startActivity(intent);
 
                     }
                 });
@@ -90,8 +93,6 @@ public class ShowAllPetsShelter extends AppCompatActivity {
 
                     }
                 });
-
-
 
             }
         };

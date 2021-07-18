@@ -35,7 +35,6 @@ public class ShelterProfileActivity extends AppCompatActivity {
         descp = findViewById(R.id.shelterDescriptionTv);
         password = findViewById(R.id.shelterPasswordTv);
 
-
         name.setText(sharedPreferences.getString("Name","Shelter Name"));
         email.setText(sharedPreferences.getString("Email","Shelter Email"));
         phone.setText(sharedPreferences.getString("Phone","Shelter Phone"));

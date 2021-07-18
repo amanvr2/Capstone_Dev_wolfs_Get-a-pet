@@ -56,14 +56,14 @@ public class addPetActivity extends AppCompatActivity {
         firebaseAppCheck.installAppCheckProviderFactory(
                 SafetyNetAppCheckProviderFactory.getInstance());
 
-        pName = findViewById(R.id.petName);
-        pBreed = findViewById(R.id.petBreed);
-        pType = findViewById(R.id.petType);
-        pDescription = findViewById(R.id.petDescription);
-        pSize = findViewById(R.id.petSize);
-        save = findViewById(R.id.petSaveBtn);
-        petImage = findViewById(R.id.petAddImage);
-        FabPet = findViewById(R.id.floatingActionButtonPet);
+        pName = findViewById(R.id.petNameEdited);
+        pBreed = findViewById(R.id.petBreedEdited);
+        pType = findViewById(R.id.petTypeEdited);
+        pDescription = findViewById(R.id.petDescriptionEdited);
+        pSize = findViewById(R.id.petSizeEdited);
+        save = findViewById(R.id.petEditBtn);
+        petImage = findViewById(R.id.petImageEdited);
+        FabPet = findViewById(R.id.floatingActionButtonPetEdit);
 
         FabPet.setOnClickListener(new View.OnClickListener(){
             @Override
