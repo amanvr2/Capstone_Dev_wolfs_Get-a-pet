@@ -79,9 +79,7 @@ public class AdopterLoginActivity extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_LONG).show();
 
                             }
-
                         }
-
                         else {
                             Toast.makeText(getApplicationContext(), "Invalid user", Toast.LENGTH_LONG).show();
                         }

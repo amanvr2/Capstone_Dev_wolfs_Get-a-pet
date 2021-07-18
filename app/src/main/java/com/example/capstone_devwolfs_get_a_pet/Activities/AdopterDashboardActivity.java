@@ -24,10 +24,10 @@ public class AdopterDashboardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_adopter_dashboard);
 
         //Loads adopter Image
-        String imagelink = PersistentData.getAdopterImage(getApplicationContext());
+        String imageLink = PersistentData.getAdopterImage(getApplicationContext());
         AdopterPhoto = findViewById(R.id.imageViewAdopter);
-        Picasso.get().load(imagelink).into(AdopterPhoto);
-        Log.d("IMAGE", "onCreate: "+imagelink);
+        Picasso.get().load(imageLink).into(AdopterPhoto);
+        Log.d("IMAGE", "onCreate: "+imageLink);
 
     }
 

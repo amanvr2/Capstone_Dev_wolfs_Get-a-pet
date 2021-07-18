@@ -31,6 +31,7 @@ public class ShelterLoginActivity extends AppCompatActivity {
     public static String shelterEmail = "";
     public static String shelterName = "";
     public static String shelterPhone = "";
+    public static String shelterPhoto = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,9 +63,10 @@ public class ShelterLoginActivity extends AppCompatActivity {
                                  shelterEmail = documentSnapshot.getString("shelterEmail");
                                  shelterName = documentSnapshot.getString("shelterName");
                                  shelterPhone = documentSnapshot.getString("shelterPhone");
+                                 shelterPhoto = documentSnapshot.getString("shelterImage");
 
                                  //saves information on internal storage
-                                PersistentData.saveShelterData(shelterUsID,shelterAddress,shelterDescription,shelterEmail,shelterName,shelterPhone,v.getContext());
+                                PersistentData.saveShelterData(shelterUsID,shelterAddress,shelterDescription,shelterEmail,shelterName,shelterPhone,shelterPhoto,v.getContext());
 
                                 Intent intent = new Intent(v.getContext(), ShelterDashboardActivity.class);
                                 startActivity(intent);

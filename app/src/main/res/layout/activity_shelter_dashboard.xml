@@ -12,7 +12,7 @@
     tools:context=".Activities.ShelterDashboardActivity">
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/shelterPhoto"
         android:layout_width="match_parent"
         android:layout_height="190dp"
         app:srcCompat="@mipmap/shelter_icon" />
