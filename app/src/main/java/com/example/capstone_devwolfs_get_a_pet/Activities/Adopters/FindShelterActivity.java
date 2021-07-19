@@ -1,8 +1,11 @@
 package com.example.capstone_devwolfs_get_a_pet.Activities.Adopters;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
 import android.os.Looper;
@@ -33,7 +36,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class FindShelterActivity extends AppCompatActivity implements OnMapReadyCallback {
     private GoogleMap map;
@@ -175,28 +180,47 @@ public class FindShelterActivity extends AppCompatActivity implements OnMapReady
         setShelters();
     }
 
+    //Creates a marker for every Shelter in the database
     private void setShelters(){
         for (Shelter shlter: shelters){
             // Creating a marker
             MarkerOptions markerOptions = new MarkerOptions();
 
             // Setting the position for the marker
+            LatLng coordinates = getLocationFromAddress(getApplicationContext(),shlter.getShelterAddress());
 
+            if (coordinates != null){
+                markerOptions.position(coordinates);
+            }
 
-            if (shlter.getShelterAddress().toLowerCase().contains("toronto")){
-                markerOptions.position(new LatLng(43.653225,-79.383186));
-            }
-            else  if (shlter.getShelterAddress().toLowerCase().contains("brampton")){
-                markerOptions.position(new LatLng(43.731548,-79.762421));
-            }
-            else  if (shlter.getShelterAddress().toLowerCase().contains("mississauga")){
-                markerOptions.position(new LatLng(43.589046,-79.644119));
-            }
-            else {
-                markerOptions.position(new LatLng(43.2557,-79.871101));
-            }
             markerOptions.title(shlter.getShelterName());
             map.addMarker(markerOptions);
         }
     }
+
+    //Convert Address to LatLng
+    public LatLng getLocationFromAddress(Context context, String strAddress) {
+
+        Geocoder coder = new Geocoder(context);
+        List<Address> address;
+        LatLng p1 = null;
+
+        try {
+            // May throw an IOException
+            address = coder.getFromLocationName(strAddress, 1);
+            if (address == null) {
+                p1 = null;
+            }
+            Address location = address.get(0);
+            p1 = new LatLng(location.getLatitude(), location.getLongitude() );
+
+        } catch (IOException ex) {
+
+            ex.printStackTrace();
+        }
+
+        return p1;
+    }
+
+
 }

@@ -113,8 +113,8 @@ public class ShowAllPetsShelter extends AppCompatActivity {
         public PetsViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
 
-            petName = itemView.findViewById(R.id.petNameShelter);
-            petPhoto = itemView.findViewById(R.id.petImageShelter);
+            petName = itemView.findViewById(R.id.petNameMapShelter);
+            petPhoto = itemView.findViewById(R.id.petImageMapShelter);
             editPet = itemView.findViewById(R.id.editPetShelter);
             deletePet = itemView.findViewById(R.id.deletePetShelter);
 
