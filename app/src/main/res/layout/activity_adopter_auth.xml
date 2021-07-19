@@ -9,111 +9,123 @@
     tools:context=".Activities.MainActivity">
 
 
-    <TextView
-        android:id="@+id/textView3"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="38dp"
-        android:text="Register as Adopter"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/adopterName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="25dp"
-        android:ems="10"
-        android:hint="Name"
-        android:inputType="textPersonName" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-    <EditText
-        android:id="@+id/adopterEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="25dp"
-        android:ems="10"
-        android:hint="Email"
-        android:inputType="textPersonName" />
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="38dp"
+                android:text="Register as Adopter"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/adopterPhone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="25dp"
-        android:ems="10"
-        android:hint="Phone"
-        android:inputType="textPersonName" />
+            <EditText
+                android:id="@+id/adopterName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="25dp"
+                android:ems="10"
+                android:hint="Name"
+                android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/adopterDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="25dp"
-        android:ems="10"
-        android:hint="Description"
-        android:inputType="textPersonName" />
+            <EditText
+                android:id="@+id/adopterEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="25dp"
+                android:ems="10"
+                android:hint="Email"
+                android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/adopterAddress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="25dp"
-        android:ems="10"
-        android:hint="Address"
-        android:inputType="textPersonName" />
+            <EditText
+                android:id="@+id/adopterPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="25dp"
+                android:ems="10"
+                android:hint="Phone"
+                android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/adopterPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="25dp"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPersonName" />
+            <EditText
+                android:id="@+id/adopterDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="25dp"
+                android:ems="10"
+                android:hint="Description"
+                android:inputType="textPersonName" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/adopterProfileImagefloatingActionButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        app:srcCompat="@drawable/ic_photo_camera_black_48dp" />
+            <EditText
+                android:id="@+id/adopterAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="25dp"
+                android:ems="10"
+                android:hint="Address"
+                android:inputType="textPersonName" />
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_adopterImage"
-        android:layout_width="121dp"
-        android:layout_height="92dp"
-        app:civ_border_color="#FF000000"
-        app:civ_border_width="2dp" />
+            <EditText
+                android:id="@+id/adopterPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="25dp"
+                android:ems="10"
+                android:hint="Password"
+                android:inputType="textPersonName" />
 
-    <Button
-        android:id="@+id/adoptersaveBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="45dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="45dp"
-        android:text="Register" />
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/adopterProfileImagefloatingActionButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:srcCompat="@drawable/ic_photo_camera_black_48dp" />
 
-    <TextView
-        android:id="@+id/adopterLoginRedirect"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="39dp"
-        android:text="Already a user ? Login"
-        android:textAlignment="center"
-        android:textStyle="bold" />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_adopterImage"
+                android:layout_width="121dp"
+                android:layout_height="92dp"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="2dp" />
+
+            <Button
+                android:id="@+id/adoptersaveBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="45dp"
+                android:text="Register" />
+
+            <TextView
+                android:id="@+id/adopterLoginRedirect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="39dp"
+                android:text="Already a user ? Login"
+                android:textAlignment="center"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>
