@@ -28,10 +28,19 @@
             android:id="@+id/petNameMapShelter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.7"
+            android:layout_weight="1"
             android:gravity="center"
             android:text="PetName"
             android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/petTypeMapShelter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="PetType"
+            android:textAlignment="center" />
 
 
     </LinearLayout>

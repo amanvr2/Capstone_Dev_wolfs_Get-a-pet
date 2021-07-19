@@ -80,15 +80,7 @@ public class addPetActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 uploadtoFireBase();
-
-//                String shelterid = ShelterLoginActivity.shelterUsID;
-//                String name = pName.getText().toString().trim();
-//                String breed = pBreed.getText().toString().trim();
-//                String type = pType.getText().toString().trim();
-//                String description = pDescription.getText().toString().trim();
-//                String size = pSize.getText().toString().trim();
-
-       }
+            }
         });
 
     }
@@ -142,9 +134,7 @@ public class addPetActivity extends AppCompatActivity {
             InputStream inputStream = getContentResolver().openInputStream(petImageUri);
             bitmap = BitmapFactory.decodeStream(inputStream);
             petImage.setImageBitmap(bitmap);
-
-        } catch (Exception e)
-        {
+        } catch (Exception e) {
 
         }
        }

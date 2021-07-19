@@ -1,5 +1,7 @@
 package com.example.capstone_devwolfs_get_a_pet.classes;
 
+import com.google.firebase.firestore.DocumentId;
+
 public class Shelter {
 
     private String shelterId;
@@ -26,6 +28,7 @@ public class Shelter {
 
     }
 
+    @DocumentId
     public String getShelterId() {
         return shelterId;
     }

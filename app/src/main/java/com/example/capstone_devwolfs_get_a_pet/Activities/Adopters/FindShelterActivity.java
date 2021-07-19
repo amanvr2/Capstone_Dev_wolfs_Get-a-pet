@@ -74,6 +74,7 @@ public class FindShelterActivity extends AppCompatActivity implements OnMapReady
                     shelter.setShelterDescription(documentSnapshot.getString("shelterDescription"));
                     shelter.setShelterEmail(documentSnapshot.getString("shelterEmail"));
                     shelter.setShelterName(documentSnapshot.getString("shelterName"));
+                    shelter.setShelterImage(documentSnapshot.getString("shelterImage"));
                     shelters.add(shelter);
                 }
 
@@ -90,14 +91,17 @@ public class FindShelterActivity extends AppCompatActivity implements OnMapReady
         map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
-                //int position = (int)(marker.getTag());
+
                 for (Shelter shlter: shelters) {
                     if (marker.getTitle().equals(shlter.getShelterName())){
+
                         Intent intent = new Intent(FindShelterActivity.this, ShelterDetailActivity.class);
+                        intent.putExtra("shelterId", shlter.getShelterId());
                         intent.putExtra("shelterName", shlter.getShelterName());
                         intent.putExtra("shelterEmail", shlter.getShelterEmail());
                         intent.putExtra("shelterAddress", shlter.getShelterAddress());
                         intent.putExtra("shelterDes", shlter.getShelterDescription());
+                        intent.putExtra("shelterImage", shlter.getShelterImage());
                         startActivity(intent);
                         return false;
                     }

@@ -4,15 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#8BC34A"
     android:orientation="vertical"
-    android:background="@drawable/background_act"
     tools:context=".Activities.Adopters.PetDetailsActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -25,18 +24,19 @@
                 android:layout_centerVertical="true"
                 android:layout_marginStart="32dp"
                 app:srcCompat="@mipmap/adopter_icon_foreground" />
+
             <TextView
+                android:id="@+id/backToProfile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
                 android:layout_gravity="center"
                 android:layout_marginStart="20dp"
-                android:text="Pet Name"
-                android:textSize="18sp"
-                android:layout_centerVertical="true"
                 android:layout_toRightOf="@+id/imageViewAdopter"
+                android:text="Pet Name"
                 android:textColor="@android:color/holo_blue_light"
-                android:textStyle="bold"
-                />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
 
         </RelativeLayout>
@@ -48,15 +48,9 @@
             android:layout_gravity="end"
             android:layout_marginEnd="20dp"
             android:text="Add To WishList"
-            android:textSize="18sp"
             android:textColor="@android:color/holo_blue_light"
-            android:textStyle="bold"
-            />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_margin="20dp"/>
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -65,107 +59,125 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/petNameProfile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
                 android:layout_marginEnd="20dp"
-                android:text="Bruno    2y"
-                android:textSize="18sp"
+                android:text="Bruno "
                 android:textColor="@android:color/black"
-                 /> <TextView
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/petSizeProfile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
                 android:layout_marginStart="50dp"
                 android:text="Dog Size"
-                android:textSize="18sp"
                 android:textColor="@android:color/black"
-                 />
+                android:textSize="18sp" />
         </LinearLayout>
 
         <!---->
         <TextView
+            android:id="@+id/petBreedProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:layout_marginStart="20dp"
             android:text="Dog Race"
-            android:textSize="18sp"
             android:textColor="@android:color/black"
-            />
+            android:textSize="18sp" />
+
         <TextView
+            android:id="@+id/petDescProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
-            android:text="Discription about the pet size"
-            android:textSize="18sp"
+            android:text="Discription about the pet"
             android:textColor="@android:color/black"
-            />
+            android:textSize="18sp" />
 
-        <LinearLayout
+        <ImageView
+            android:id="@+id/imageViewPetProfile"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_margin="20dp"/>
+            android:layout_height="200dp"
+            tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginEnd="20dp"
             android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
             android:text="Recommended Products"
-            android:textSize="25sp"
             android:textColor="@android:color/black"
-            /> <TextView
+            android:textSize="25sp" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginEnd="20dp"
             android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
             android:text="Product Name"
-            android:textSize="25sp"
             android:textColor="@android:color/black"
-            /><TextView
+            android:textSize="25sp" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginEnd="20dp"
             android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
             android:text="Buy"
-            android:textSize="25sp"
             android:textColor="@android:color/black"
-            />
-<TextView
+            android:textSize="25sp" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:text="About the Shelter"
-            android:textSize="18sp"
             android:textColor="@android:color/black"
-            /><TextView
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/shelterNamePetProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Shelter Name"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textShelterDescPetProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:text="Description about the Shelter."
-            android:textSize="18sp"
             android:textColor="@android:color/black"
-            /><TextView
+            android:textSize="16sp" />
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-           android:layout_margin="20dp"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:padding="15dp"
             android:text="Contact Shelter"
-            android:textSize="18sp"
-        android:gravity="center"
-        android:padding="15dp"
-        android:textColor="@android:color/black"
-            />
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
 
     </LinearLayout>
 
