@@ -128,14 +128,15 @@ public class PetDetailsActivity extends AppCompatActivity {
                             DocumentSnapshot document = task.getResult();
                             if (document.exists()) {
 
-                                if(document.contains("wishlist")){
+                                if(document.contains("wishlist") && document.getString("wishlist") != ""){
 
                                     String updatedWishlist = document.getString("wishlist");
                                     updatedWishlist += ","+petID;
 
                                     user.update("wishlist", updatedWishlist);
                                     PersistentData.updateAdopterWishlist(getApplicationContext(),updatedWishlist);
-                                    Toast.makeText(getApplicationContext(), "Pet Added to the Wishlist", Toast.LENGTH_LONG).show();
+                                    //Toast.makeText(getApplicationContext(), "Pet Added to the Wishlist", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getApplicationContext(), PersistentData.getAdopterWishlist(getApplicationContext()), Toast.LENGTH_LONG).show();
 
                                 }else{
                                     user.update("wishlist", petID);
