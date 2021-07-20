@@ -105,8 +105,6 @@ public class Wishlist extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
 
-
-
                         String finalResult = "";
                         List<String> list = Arrays.asList(finalElements);
                         ArrayList<String> listOfString = new ArrayList<String>(list);
@@ -148,6 +146,7 @@ public class Wishlist extends AppCompatActivity {
 
         petsListWishlist.setHasFixedSize(true);
         petsListWishlist.setLayoutManager(new LinearLayoutManager(this));
+        //petsListWishlist.setLayoutManager(new GridLayoutManager(this,3));
         petsListWishlist.setAdapter(adapter);
 
     }
