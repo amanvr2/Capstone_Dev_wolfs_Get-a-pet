@@ -34,7 +34,6 @@
                 android:layout_marginStart="20dp"
                 android:layout_toRightOf="@+id/imageViewAdopter"
                 android:text="Pet Name"
-                android:background="draw"
                 android:fontFamily="@font/coustard"
                 android:textColor="@color/design_default_color_error"
                 android:textSize="18sp"
@@ -90,7 +89,7 @@
                 android:fontFamily="@font/coustard"
                 android:textColor="@color/design_default_color_error"
                 android:textSize="18sp"
-                android:textStyle="bold"" />
+                android:textStyle="bold" />
         </LinearLayout>
 
         <!---->

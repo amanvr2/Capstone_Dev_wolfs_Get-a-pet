@@ -28,7 +28,6 @@
                 android:text="My Profile"
                 android:textAlignment="center"
                 android:textSize="24sp"
-                android:background="draw"
                 android:fontFamily="@font/coustard"
                 android:textColor="@color/design_default_color_error"
                 android:textStyle="bold" />

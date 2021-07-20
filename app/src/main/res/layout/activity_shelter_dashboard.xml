@@ -12,7 +12,7 @@
     tools:context=".Activities.ShelterDashboardActivity">
 
     <ImageView
-        android:id="@+id/shelterPhoto1"
+        android:id="@+id/shelterPhoto"
         android:layout_width="match_parent"
         android:layout_height="190dp"
         app:srcCompat="@mipmap/shelter_icon" />
@@ -25,7 +25,6 @@
         android:layout_marginTop="16dp"
         android:text="ShelterName"
         android:textAlignment="center"
-        android:background="draw"
         android:fontFamily="@font/coustard"
         android:textColor="@color/design_default_color_error"
         android:textSize="24sp"
@@ -37,7 +36,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="Add Pet"
-        android:background="draw"
         android:fontFamily="@font/coustard"
         android:textColor="@color/design_default_color_error"
         android:textSize="24sp"
@@ -48,7 +46,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="All pets"
-        android:background="draw"
         android:fontFamily="@font/coustard"
         android:textColor="@color/design_default_color_error"
         android:textSize="24sp"
@@ -60,7 +57,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="My Profile"
-        android:background="draw"
         android:fontFamily="@font/coustard"
         android:textColor="@color/design_default_color_error"
         android:textSize="24sp"
@@ -72,7 +68,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="45dp"
         android:text="Logout"
-        android:background="draw"
         android:fontFamily="@font/coustard"
         android:textColor="@color/design_default_color_error"
         android:textSize="18sp"
