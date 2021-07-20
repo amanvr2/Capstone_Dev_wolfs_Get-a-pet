@@ -134,6 +134,7 @@ public class PetDetailsActivity extends AppCompatActivity {
                                     updatedWishlist += ","+petID;
 
                                     user.update("wishlist", updatedWishlist);
+                                    PersistentData.updateAdopterWishlist(getApplicationContext(),updatedWishlist);
                                     Toast.makeText(getApplicationContext(), "Pet Added to the Wishlist", Toast.LENGTH_LONG).show();
 
                                 }else{
@@ -154,10 +155,6 @@ public class PetDetailsActivity extends AppCompatActivity {
 
                     }
                 });
-
-
-
-
 
             }
         });

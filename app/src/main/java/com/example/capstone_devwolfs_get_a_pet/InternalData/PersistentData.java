@@ -13,7 +13,7 @@ public class PersistentData {
     public static final String DefaultShelterImage = "https://firebasestorage.googleapis.com/v0/b/capstone-100bc.appspot.com/o/shelter.png?alt=media&token=abc6708a-8b6e-40f4-8fe9-95f1964e44c2";
 
     //Saving Adopter data inside the internal storage of the phone
-    public static void saveAdopterData(String UserID, String Address, String Description, String email, String name, String phone,String photo, Context context){
+    public static void saveAdopterData(String UserID, String Address, String Description, String email, String name, String phone,String photo, String wishlist, Context context){
 
         sharedpreferences = context.getSharedPreferences(SavedAdopter, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedpreferences.edit();
@@ -26,6 +26,7 @@ public class PersistentData {
         editor.putString("Name", name);
         editor.putString("Phone", phone);
         editor.putString("Photo", photo);
+        editor.putString("Wishlist", wishlist);
 
         editor.commit();
 
@@ -43,6 +44,22 @@ public class PersistentData {
         sharedpreferences = context.getSharedPreferences(SavedAdopter, Context.MODE_PRIVATE);
         return sharedpreferences.getString("UserID","");
 
+    }
+
+    public static String getAdopterWishlist(Context context){
+
+        sharedpreferences = context.getSharedPreferences(SavedAdopter, Context.MODE_PRIVATE);
+        return sharedpreferences.getString("Wishlist","");
+
+    }
+
+    public static void updateAdopterWishlist(Context context,String wishlist){
+
+        sharedpreferences = context.getSharedPreferences(SavedAdopter, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+        editor.putString("Wishlist", wishlist);
+
+        editor.commit();
     }
 
 

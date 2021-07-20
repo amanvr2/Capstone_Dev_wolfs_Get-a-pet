@@ -33,6 +33,7 @@ public class AdopterLoginActivity extends AppCompatActivity {
     public static String adopterEmail = "";
     public static String adopterPhone = "";
     public static String adopterPhoto = "";
+    public static String adopterWishlist = "";
 
     //SharedPreferences sharedPreferences;
 
@@ -70,9 +71,10 @@ public class AdopterLoginActivity extends AppCompatActivity {
                                 adopterName = documentSnapshot.getString("adopterName");
                                 adopterPhone = documentSnapshot.getString("adopterPhone");
                                 adopterPhoto = documentSnapshot.getString("adopterImage");
+                                adopterWishlist = documentSnapshot.getString("wishlist");
 
                                 //Saving Adopter data inside the internal storage of the phone
-                                PersistentData.saveAdopterData(adopterID,adopterAddress,adopterDescription,adopterEmail,adopterName,adopterPhone,adopterPhoto,v.getContext());
+                                PersistentData.saveAdopterData(adopterID,adopterAddress,adopterDescription,adopterEmail,adopterName,adopterPhone,adopterPhoto,adopterWishlist,v.getContext());
 
                                 Intent intent = new Intent(v.getContext(), AdopterDashboardActivity.class);
                                 startActivity(intent);
