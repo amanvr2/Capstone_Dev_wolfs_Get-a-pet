@@ -1,5 +1,7 @@
 package com.example.capstone_devwolfs_get_a_pet.Activities.Adopters;
 
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,6 +22,7 @@ import com.example.capstone_devwolfs_get_a_pet.Models.PetInShelterModel;
 import com.example.capstone_devwolfs_get_a_pet.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FieldPath;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
@@ -26,7 +30,9 @@ import com.squareup.picasso.Picasso;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 
 public class Wishlist extends AppCompatActivity {
@@ -34,7 +40,7 @@ public class Wishlist extends AppCompatActivity {
     private FirebaseFirestore firebaseFirestore;
     private RecyclerView petsListWishlist;
     private FirestoreRecyclerAdapter adapter;
-
+    public String[] elements;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,13 +51,14 @@ public class Wishlist extends AppCompatActivity {
 
         //Retrieve the wishlist from the user
         String wishlistStr = PersistentData.getAdopterWishlist(this);
-        Toast.makeText(getApplicationContext(), wishlistStr, Toast.LENGTH_LONG).show();
-        String[] elements = wishlistStr.split("\\s*,\\s*");
+        elements = wishlistStr.split("\\s*,\\s*");
 
         if(wishlistStr.equals("") || wishlistStr == null){
-            Toast.makeText(getApplicationContext(), "No pet Found", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "No pets Found", Toast.LENGTH_LONG).show();
             elements = new String[]{"noPet"};
+            petsListWishlist.setVisibility(View.INVISIBLE);
         }
+        Toast.makeText(getApplicationContext(), wishlistStr, Toast.LENGTH_LONG).show();
 
 
         //This is the query
@@ -64,6 +71,7 @@ public class Wishlist extends AppCompatActivity {
                 .build();
 
         //Adapter
+        String[] finalElements = elements;
         adapter =  new FirestoreRecyclerAdapter<PetInShelterModel, PetsViewHolderWishlist>(options) {
 
             @NonNull
@@ -79,18 +87,61 @@ public class Wishlist extends AppCompatActivity {
                 holder.petName.setText(model.getPetName());
                 Picasso.get().load(model.getPetImage()).into(holder.petPhoto);
 
-               /*
 
-                holder.deletePet.setOnClickListener(new View.OnClickListener() {
+                holder.petPhoto.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
 
-                        Toast.makeText(getApplicationContext(), "Pet Deleted", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(v.getContext(), PetDetailsActivity.class);
+                        intent.putExtra("petId",model.getPetID());
+                        intent.putExtra("shelterId",model.getShelterId());
+                        startActivity(intent);
 
                     }
                 });
 
-                */
+                holder.deletePet.setOnClickListener(new View.OnClickListener() {
+                    @RequiresApi(api = Build.VERSION_CODES.N)
+                    @Override
+                    public void onClick(View v) {
+
+
+
+                        String finalResult = "";
+                        List<String> list = Arrays.asList(finalElements);
+                        ArrayList<String> listOfString = new ArrayList<String>(list);
+                        listOfString.removeIf( name -> name.equals(model.getPetID()));
+                        StringBuilder sb = new StringBuilder();
+                        for (String s: listOfString) {
+                            sb.append(s);
+                            sb.append(",");
+                        }
+                        if(sb.toString().length() == 0){
+                        finalResult = "";
+                        }else {
+                            finalResult = sb.substring(0,sb.toString().length()-1);
+                        }
+
+                        Toast.makeText(getApplicationContext(), sb.toString(), Toast.LENGTH_LONG).show();
+
+                        String userID = PersistentData.getAdopterId(getApplicationContext());
+                        DocumentReference selectedUser = firebaseFirestore.collection("Adopters").document(userID);
+
+                        //updating PersistentData
+                        PersistentData.updateAdopterWishlist(getApplicationContext(),finalResult);
+                        //updating Database wishlist
+                        selectedUser.update("wishlist",finalResult);
+                        Toast.makeText(getApplicationContext(), "Removing pet from the wishlist", Toast.LENGTH_LONG).show();
+
+                        finish();
+                        overridePendingTransition(0, 0);
+                        startActivity(getIntent());
+                        overridePendingTransition(0, 0);
+
+                    }
+                });
+
+
 
             }
         };
@@ -127,10 +178,7 @@ public class Wishlist extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
         adapter.startListening();
-
-
     }
 
 
