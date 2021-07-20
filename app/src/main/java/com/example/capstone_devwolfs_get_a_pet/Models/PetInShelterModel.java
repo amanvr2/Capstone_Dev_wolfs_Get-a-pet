@@ -14,6 +14,17 @@ public class PetInShelterModel {
     private String shelterId;
 
 
+    public PetInShelterModel(String petID, String petName, String breed, String description, String petImage, String size, String type, String shelterId) {
+        this.petID = petID;
+        this.petName = petName;
+        this.breed = breed;
+        this.description = description;
+        this.petImage = petImage;
+        this.size = size;
+        this.type = type;
+        this.shelterId = shelterId;
+    }
+
     public String getBreed() {
         return breed;
     }

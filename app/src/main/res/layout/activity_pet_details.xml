@@ -43,14 +43,21 @@
 
         <!---->
         <TextView
+            android:id="@+id/addWishListBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginEnd="20dp"
             android:text="Add To WishList"
-            android:textColor="@android:color/holo_blue_light"
+            android:textColor="@color/teal_200"
             android:textSize="18sp"
             android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageViewPetProfile"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            tools:srcCompat="@tools:sample/avatars" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -100,12 +107,6 @@
             android:text="Discription about the pet"
             android:textColor="@android:color/black"
             android:textSize="18sp" />
-
-        <ImageView
-            android:id="@+id/imageViewPetProfile"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
             android:layout_width="wrap_content"

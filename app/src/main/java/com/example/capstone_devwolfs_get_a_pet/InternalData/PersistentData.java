@@ -38,6 +38,14 @@ public class PersistentData {
 
     }
 
+    public static String getAdopterId(Context context){
+
+        sharedpreferences = context.getSharedPreferences(SavedAdopter, Context.MODE_PRIVATE);
+        return sharedpreferences.getString("UserID","");
+
+    }
+
+
     //Saving Shelter data inside the internal storage of the phone
     public static void saveShelterData(String ShelterID, String Address, String Description, String email, String name, String phone, String photo, Context context){
 

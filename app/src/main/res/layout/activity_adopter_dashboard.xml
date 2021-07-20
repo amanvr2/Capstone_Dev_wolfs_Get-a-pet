@@ -53,8 +53,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-
                 android:text="WishList"
+                android:onClick="openWishlist"
                 android:layout_centerInParent="true"
                 android:textSize="18sp"
                 android:textColor="@android:color/holo_blue_light"
@@ -102,7 +102,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-
                 android:text="Find a Shelter"
                 android:layout_centerInParent="true"
                 android:textSize="18sp"

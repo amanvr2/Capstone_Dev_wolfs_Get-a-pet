@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.capstone_devwolfs_get_a_pet.Activities.Adopters.FindPetActivity;
 import com.example.capstone_devwolfs_get_a_pet.Activities.Adopters.FindShelterActivity;
+import com.example.capstone_devwolfs_get_a_pet.Activities.Adopters.Wishlist;
 import com.example.capstone_devwolfs_get_a_pet.InternalData.PersistentData;
 import com.example.capstone_devwolfs_get_a_pet.R;
 import com.squareup.picasso.Picasso;
@@ -39,6 +40,11 @@ public class AdopterDashboardActivity extends AppCompatActivity {
 
     public void findPet(View view) {
         Intent intent = new Intent(AdopterDashboardActivity.this, FindPetActivity.class);
+        startActivity(intent);
+    }
+
+    public void openWishlist(View view){
+        Intent intent = new Intent(AdopterDashboardActivity.this, Wishlist.class);
         startActivity(intent);
     }
 }

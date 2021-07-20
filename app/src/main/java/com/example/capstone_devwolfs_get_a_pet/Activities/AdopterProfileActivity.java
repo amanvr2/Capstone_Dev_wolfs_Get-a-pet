@@ -27,8 +27,6 @@ public class AdopterProfileActivity extends AppCompatActivity {
         adopterAddress = findViewById(R.id.adopterAddressTv);
         adopterDescription = findViewById(R.id.adopterDescriptionTv);
 
-
-
         adopterName.setText(sharedPreferences.getString("Name","Adopter Name"));
         adopterEmail.setText(sharedPreferences.getString("Email","Adopter Email"));
         adopterPhone.setText(sharedPreferences.getString("Phone","Adopter Phone"));
