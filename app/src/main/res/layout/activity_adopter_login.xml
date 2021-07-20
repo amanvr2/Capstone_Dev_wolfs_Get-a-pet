@@ -24,6 +24,9 @@
         android:text="Login as Adopter"
         android:textAlignment="center"
         android:textSize="24sp"
+        android:background="draw"
+        android:fontFamily="@font/coustard"
+        android:textColor="@color/design_default_color_error"
         android:textStyle="bold" />
 
     <EditText
@@ -49,5 +52,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="72dp"
-        android:text="Login" />
+        android:text="Login"
+        android:textSize="24sp"
+        android:background="draw"
+        android:fontFamily="@font/coustard"
+        android:textColor="@color/design_default_color_error"
+        android:textStyle="bold"/>
 </LinearLayout>

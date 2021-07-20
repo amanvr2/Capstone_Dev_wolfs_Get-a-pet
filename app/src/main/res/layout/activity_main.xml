@@ -88,6 +88,7 @@
                 android:layout_height="wrap_content"
                 android:clickable="true"
                 app:srcCompat="@drawable/ic_photo_camera_black_48dp" />
+
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/profile_shelterImage"
                 android:layout_width="121dp"
@@ -102,7 +103,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="38dp"
-                android:text="Register" />
+                android:text="Register"
+                android:background="draw"
+                android:fontFamily="@font/coustard"
+                android:textColor="@color/design_default_color_error"
+                android:textSize="24sp"
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/loginRedirect"

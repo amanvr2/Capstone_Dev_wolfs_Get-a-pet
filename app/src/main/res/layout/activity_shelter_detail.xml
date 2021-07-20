@@ -27,8 +27,10 @@
                 android:layout_marginBottom="32dp"
                 android:text="Shelter Profile"
                 android:textAlignment="center"
-                android:textSize="28sp"
-                android:textStyle="bold" />
+                android:fontFamily="@font/coustard"
+                android:textColor="@color/design_default_color_error"
+                android:textSize="24sp"
+                android:textStyle="bold"/>
 
             <ImageView
                 android:id="@+id/imageDetailShelter"

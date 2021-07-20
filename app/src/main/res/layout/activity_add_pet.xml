@@ -25,6 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
+                android:fontFamily="@font/coustard"
                 android:text="Add Pet"
                 android:textAlignment="center"
                 android:textSize="24sp"
@@ -36,6 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
+                android:fontFamily="@font/allerta"
                 android:hint="Name"
                 android:inputType="textPersonName" />
 
@@ -44,6 +46,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
+                android:fontFamily="@font/allerta"
                 android:hint="Breed"
                 android:inputType="textPersonName" />
 
@@ -51,6 +54,7 @@
                 android:id="@+id/petTypeEdited"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/allerta"
                 android:layout_marginTop="25dp"
                 android:hint="Type"
                 android:inputType="textPersonName" />
@@ -60,6 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
+                android:fontFamily="@font/allerta"
                 android:hint="Size"
                 android:inputType="textPersonName" />
 
@@ -67,22 +72,10 @@
                 android:id="@+id/petDescriptionEdited"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/allerta"
                 android:layout_marginTop="25dp"
                 android:hint="Description"
                 android:inputType="textPersonName" />
-
-            <ImageView
-                android:id="@+id/petImageEdited"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:srcCompat="@tools:sample/avatars" />
-
-            <Button
-                android:id="@+id/petEditBtn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Add Pet" />
-
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/floatingActionButtonPetEdit"
                 android:layout_width="match_parent"
@@ -91,6 +84,26 @@
                 android:clickable="true"
                 android:cropToPadding="false"
                 app:srcCompat="@drawable/ic_photo_camera_black_48dp" />
+
+            <ImageView
+                android:id="@+id/petImageEdited"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:srcCompat="@tools:sample/avatars" />
+
+
+            <Button
+                android:id="@+id/petEditBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add Pet"
+                android:background="draw"
+                android:fontFamily="@font/coustard"
+                android:textColor="@color/design_default_color_error"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+
 
 
         </LinearLayout>

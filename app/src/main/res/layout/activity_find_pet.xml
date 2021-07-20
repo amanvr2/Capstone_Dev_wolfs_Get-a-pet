@@ -30,10 +30,11 @@
             android:layout_gravity="center"
             android:layout_marginStart="20dp"
             android:text="Find a Pet"
-            android:textSize="18sp"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/imageViewAdopter"
-            android:textColor="@android:color/holo_blue_light"
+            android:textSize="24sp"
+            android:fontFamily="@font/coustard"
+            android:textColor="@color/design_default_color_error"
             android:textStyle="bold"
             />
 
@@ -52,8 +53,11 @@
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:text="Filter By:"
-            android:textColor="@android:color/black"
-            android:textSize="18sp" />
+            android:textSize="24sp"
+            android:background="draw"
+            android:fontFamily="@font/coustard"
+            android:textColor="@color/design_default_color_error"
+            android:textStyle="bold"/>
 
         <LinearLayout
             android:layout_width="match_parent"

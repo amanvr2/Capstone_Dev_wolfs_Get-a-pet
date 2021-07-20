@@ -34,7 +34,11 @@
                 android:layout_weight="3"
                 android:gravity="center"
                 android:text="PetName"
-                android:textSize="16sp" />
+                android:background="draw"
+                android:fontFamily="@font/coustard"
+                android:textColor="@color/design_default_color_error"
+                android:textSize="22sp"
+                />
         </LinearLayout>
 
         <ImageButton

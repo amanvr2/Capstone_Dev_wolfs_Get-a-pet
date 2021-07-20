@@ -28,7 +28,9 @@
                 android:text="Edit Pet"
                 android:textAlignment="center"
                 android:textSize="24sp"
-                android:textStyle="bold" />
+                android:fontFamily="@font/coustard"
+                android:textColor="@color/design_default_color_error"
+                android:textStyle="bold"/>
 
             <ImageView
                 android:id="@+id/petImageEdited"
@@ -76,13 +78,6 @@
                 android:layout_marginTop="25dp"
                 android:hint="Description"
                 android:inputType="textPersonName" />
-
-            <Button
-                android:id="@+id/petEditBtn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Update Pet" />
-
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/floatingActionButtonPetEdit"
                 android:layout_width="match_parent"
@@ -91,6 +86,19 @@
                 android:clickable="true"
                 android:cropToPadding="false"
                 app:srcCompat="@drawable/ic_photo_camera_black_48dp" />
+
+            <Button
+                android:id="@+id/petEditBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Update Pet"
+                android:textSize="24sp"
+                android:background="draw"
+                android:fontFamily="@font/coustard"
+                android:textColor="@color/design_default_color_error"
+                android:textStyle="bold"/>
+
+
 
 
         </LinearLayout>
