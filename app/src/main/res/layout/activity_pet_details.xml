@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#8BC34A"
+    android:background="@drawable/background_act"
     android:orientation="vertical"
     tools:context=".Activities.Adopters.PetDetailsActivity">
 
@@ -34,7 +34,9 @@
                 android:layout_marginStart="20dp"
                 android:layout_toRightOf="@+id/imageViewAdopter"
                 android:text="Pet Name"
-                android:textColor="@android:color/holo_blue_light"
+                android:background="draw"
+                android:fontFamily="@font/coustard"
+                android:textColor="@color/design_default_color_error"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -49,7 +51,8 @@
             android:layout_gravity="end"
             android:layout_marginEnd="20dp"
             android:text="Add To WishList"
-            android:textColor="@color/teal_200"
+            android:fontFamily="@font/coustard"
+            android:textColor="@color/design_default_color_error"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -72,8 +75,10 @@
                 android:layout_gravity="start"
                 android:layout_marginEnd="20dp"
                 android:text="Bruno "
-                android:textColor="@android:color/black"
-                android:textSize="18sp" />
+                android:fontFamily="@font/coustard"
+                android:textColor="@color/design_default_color_error"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/petSizeProfile"
@@ -82,8 +87,10 @@
                 android:layout_gravity="start"
                 android:layout_marginStart="50dp"
                 android:text="Dog Size"
-                android:textColor="@android:color/black"
-                android:textSize="18sp" />
+                android:fontFamily="@font/coustard"
+                android:textColor="@color/design_default_color_error"
+                android:textSize="18sp"
+                android:textStyle="bold"" />
         </LinearLayout>
 
         <!---->
@@ -94,8 +101,10 @@
             android:layout_gravity="start"
             android:layout_marginStart="20dp"
             android:text="Dog Race"
-            android:textColor="@android:color/black"
-            android:textSize="18sp" />
+            android:fontFamily="@font/coustard"
+            android:textColor="@color/design_default_color_error"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/petDescProfile"
@@ -105,8 +114,10 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:text="Discription about the pet"
-            android:textColor="@android:color/black"
-            android:textSize="18sp" />
+            android:fontFamily="@font/coustard"
+            android:textColor="@color/design_default_color_error"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -115,6 +126,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
             android:text="Recommended Products"
+            android:fontFamily="@font/coustard"
             android:textColor="@android:color/black"
             android:textSize="25sp" />
 
@@ -125,6 +137,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
             android:text="Product Name"
+            android:fontFamily="@font/coustard"
             android:textColor="@android:color/black"
             android:textSize="25sp" />
 
@@ -134,9 +147,10 @@
             android:layout_gravity="end"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
+            android:fontFamily="@font/coustard"
             android:text="Buy"
             android:textColor="@android:color/black"
-            android:textSize="25sp" />
+            android:textSize="22sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -156,6 +170,7 @@
             android:layout_marginTop="10dp"
             android:text="Shelter Name"
             android:textColor="#000000"
+            android:fontFamily="@font/coustard"
             android:textSize="20sp" />
 
         <TextView
@@ -165,6 +180,7 @@
             android:layout_gravity="start"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/coustard"
             android:text="Description about the Shelter."
             android:textColor="@android:color/black"
             android:textSize="16sp" />
@@ -177,6 +193,7 @@
             android:gravity="center"
             android:padding="15dp"
             android:text="Contact Shelter"
+            android:fontFamily="@font/coustard"
             android:textColor="@android:color/black"
             android:textSize="18sp" />
 

@@ -54,5 +54,10 @@
         android:layout_marginLeft="45dp"
         android:layout_marginTop="56dp"
         android:layout_marginRight="45dp"
-        android:text="Login" />
+        android:text="Login"
+        android:background="draw"
+        android:fontFamily="@font/coustard"
+        android:textColor="@color/design_default_color_error"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
 </LinearLayout>
