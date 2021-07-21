@@ -26,7 +26,7 @@ public class AdopterDashboardActivity extends AppCompatActivity {
 
         //Loads adopter Image
         String imageLink = PersistentData.getAdopterImage(getApplicationContext());
-        AdopterPhoto = findViewById(R.id.imageViewAdopter);
+        AdopterPhoto = findViewById(R.id.imageViewAdopterPetFinder);
         Picasso.get().load(imageLink).into(AdopterPhoto);
         Log.d("IMAGE", "onCreate: "+imageLink);
 
@@ -35,7 +35,6 @@ public class AdopterDashboardActivity extends AppCompatActivity {
     public void findShelter(View view) {
         Intent intent = new Intent(AdopterDashboardActivity.this, FindShelterActivity.class);
         startActivity(intent);
-
     }
 
     public void findPet(View view) {

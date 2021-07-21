@@ -123,7 +123,6 @@ public class addPetActivity extends AppCompatActivity {
                      dialog.setMessage("uploaded: " +(int)percent +"%");
                     }
                 });
-
     }
 
     @Override

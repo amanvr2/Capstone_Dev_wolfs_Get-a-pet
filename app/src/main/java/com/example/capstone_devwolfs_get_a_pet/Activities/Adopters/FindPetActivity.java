@@ -5,13 +5,17 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.capstone_devwolfs_get_a_pet.InternalData.PersistentData;
 import com.example.capstone_devwolfs_get_a_pet.Models.PetInShelterModel;
 import com.example.capstone_devwolfs_get_a_pet.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
@@ -22,12 +26,17 @@ import com.squareup.picasso.Picasso;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class FindPetActivity extends AppCompatActivity {
 
 
     private FirebaseFirestore firebaseFirestore;
     private RecyclerView findAllPetsGridRV;
     private FirestoreRecyclerAdapter adapter;
+    private Spinner sizeSpinner, typeSpinner;
+    private ImageView profilePic;
 
 
     @Override
@@ -37,6 +46,69 @@ public class FindPetActivity extends AppCompatActivity {
 
         firebaseFirestore = FirebaseFirestore.getInstance();
         findAllPetsGridRV = findViewById(R.id.gridRecyclerViewFindPets);
+        typeSpinner = findViewById(R.id.spinnerTypes);
+        sizeSpinner = findViewById(R.id.spinnerSizes);
+        profilePic = findViewById(R.id.imageViewAdopterPetFinder);
+
+        //Sizes types
+        List<String> types = new ArrayList<String>();
+        types.add("All Types");
+        types.add("Cat");
+        types.add("Dog");
+        types.add("Bird");
+
+        //Sizes options
+        List<String> sizes = new ArrayList<String>();
+        sizes.add("All sizes");
+        sizes.add("Small");
+        sizes.add("Medium");
+        sizes.add("Big");
+
+        //Spinner Adapters
+        ArrayAdapter<String> dataAdapterTypeSpinner = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, types);
+        ArrayAdapter<String> dataAdapterSizeSpinner = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, sizes);
+
+        //Spinners Resources
+        dataAdapterTypeSpinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        dataAdapterSizeSpinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        //Attaching data adapters to spinners
+        typeSpinner.setAdapter(dataAdapterTypeSpinner);
+        sizeSpinner.setAdapter(dataAdapterSizeSpinner);
+
+        //Event listeners for Spinners
+        typeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                //Make the type filter here
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+
+
+        sizeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                //Make the size filter here
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        //Loading User's Picture
+        String imageLink = PersistentData.getAdopterImage(this);
+        Picasso.get().load(imageLink).into(profilePic);
+
+
 
         //Query
         Query query = firebaseFirestore.collection("Pets").whereNotEqualTo("petName","No pet found");
