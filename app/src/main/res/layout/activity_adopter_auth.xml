@@ -36,6 +36,8 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="25dp"
                 android:ems="10"
+                android:fontFamily="@font/coustard"
+                android:textSize="20sp"
                 android:hint="Name"
                 android:inputType="textPersonName" />
 
@@ -47,6 +49,8 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="25dp"
                 android:ems="10"
+                android:fontFamily="@font/coustard"
+                android:textSize="20sp"
                 android:hint="Email"
                 android:inputType="textPersonName" />
 
@@ -58,6 +62,8 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="25dp"
                 android:ems="10"
+                android:fontFamily="@font/coustard"
+                android:textSize="20sp"
                 android:hint="Phone"
                 android:inputType="textPersonName" />
 
@@ -69,6 +75,8 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="25dp"
                 android:ems="10"
+                android:fontFamily="@font/coustard"
+                android:textSize="20sp"
                 android:hint="Description"
                 android:inputType="textPersonName" />
 
@@ -80,6 +88,8 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="25dp"
                 android:ems="10"
+                android:fontFamily="@font/coustard"
+                android:textSize="20sp"
                 android:hint="Address"
                 android:inputType="textPersonName" />
 
@@ -91,6 +101,8 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="25dp"
                 android:ems="10"
+                android:fontFamily="@font/coustard"
+                android:textSize="20sp"
                 android:hint="Password"
                 android:inputType="textPersonName" />
 
@@ -119,6 +131,8 @@
                 android:textColor="@color/design_default_color_error"
                 android:textStyle="bold"
                 android:textSize="24sp"
+                app:rippleColor="@android:color/holo_red_dark"
+                android:background="draw"
                 android:text="Register" />
 
             <TextView

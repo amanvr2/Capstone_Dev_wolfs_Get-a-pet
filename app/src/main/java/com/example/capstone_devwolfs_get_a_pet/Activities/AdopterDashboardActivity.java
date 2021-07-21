@@ -45,5 +45,7 @@ public class AdopterDashboardActivity extends AppCompatActivity {
     public void openWishlist(View view){
         Intent intent = new Intent(AdopterDashboardActivity.this, Wishlist.class);
         startActivity(intent);
+
+
     }
 }

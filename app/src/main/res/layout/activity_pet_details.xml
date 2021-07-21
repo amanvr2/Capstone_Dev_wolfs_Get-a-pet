@@ -36,7 +36,7 @@
                 android:text="Pet Name"
                 android:fontFamily="@font/coustard"
                 android:textColor="@color/design_default_color_error"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
 
@@ -52,7 +52,7 @@
             android:text="Add To WishList"
             android:fontFamily="@font/coustard"
             android:textColor="@color/design_default_color_error"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <ImageView
@@ -149,7 +149,7 @@
             android:fontFamily="@font/coustard"
             android:text="Buy"
             android:textColor="@android:color/black"
-            android:textSize="22sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -159,7 +159,7 @@
             android:layout_marginTop="10dp"
             android:text="About the Shelter"
             android:textColor="@android:color/black"
-            android:textSize="18sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/shelterNamePetProfile"

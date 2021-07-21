@@ -59,6 +59,7 @@
                     android:layout_marginBottom="10dp"
                     android:text="Filters"
                     android:textAlignment="center"
+                    android:fontFamily="@font/coustard"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -80,6 +81,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Pet type"
+                            android:fontFamily="@font/coustard"
+                            android:textSize="20sp"
+                            app:rippleColor="@android:color/holo_red_dark"
                             android:textStyle="bold" />
 
                         <Spinner
@@ -99,6 +103,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Pet size"
+                            android:fontFamily="@font/coustard"
+                            android:textSize="20sp"
+                            app:rippleColor="@android:color/holo_red_dark"
                             android:textStyle="bold" />
 
                         <Spinner
@@ -113,6 +120,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Pet breed"
+                    app:rippleColor="@android:color/holo_red_dark"
+                    android:fontFamily="@font/coustard"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -121,6 +130,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
+                    android:fontFamily="@font/coustard"
+                    android:textSize="20sp"
                     android:inputType="textPersonName" />
 
             </LinearLayout>
