@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,6 +38,8 @@ public class FindPetActivity extends AppCompatActivity {
     private FirestoreRecyclerAdapter adapter;
     private Spinner sizeSpinner, typeSpinner;
     private ImageView profilePic;
+    public String selectedType, selectedSize;
+    public List<String> selectedSizes;
 
 
     @Override
@@ -52,10 +55,11 @@ public class FindPetActivity extends AppCompatActivity {
 
         //Sizes types
         List<String> types = new ArrayList<String>();
-        types.add("All Types");
+        types.add("All types");
         types.add("Cat");
         types.add("Dog");
         types.add("Bird");
+        selectedType = "All types";
 
         //Sizes options
         List<String> sizes = new ArrayList<String>();
@@ -63,6 +67,7 @@ public class FindPetActivity extends AppCompatActivity {
         sizes.add("Small");
         sizes.add("Medium");
         sizes.add("Big");
+        selectedSize = "All sizes";
 
         //Spinner Adapters
         ArrayAdapter<String> dataAdapterTypeSpinner = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, types);
@@ -76,12 +81,23 @@ public class FindPetActivity extends AppCompatActivity {
         typeSpinner.setAdapter(dataAdapterTypeSpinner);
         sizeSpinner.setAdapter(dataAdapterSizeSpinner);
 
+        //Loading User's Picture
+        String imageLink = PersistentData.getAdopterImage(this);
+        Picasso.get().load(imageLink).into(profilePic);
+
+        loadPets(selectedType,selectedSize);
+
         //Event listeners for Spinners
         typeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 //Make the type filter here
+                selectedType = typeSpinner.getSelectedItem().toString().trim();
 
+                loadPets(selectedType,selectedSize);
+                adapter.stopListening();
+                adapter.startListening();
+                adapter.notifyDataSetChanged();
             }
 
             @Override
@@ -89,13 +105,14 @@ public class FindPetActivity extends AppCompatActivity {
 
             }
         });
-
-
 
         sizeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                //Make the size filter here
+                selectedSize = sizeSpinner.getSelectedItem().toString().trim();
+                loadPets(selectedType,selectedSize);
+                adapter.stopListening();
+                adapter.startListening();
             }
 
             @Override
@@ -104,14 +121,22 @@ public class FindPetActivity extends AppCompatActivity {
             }
         });
 
-        //Loading User's Picture
-        String imageLink = PersistentData.getAdopterImage(this);
-        Picasso.get().load(imageLink).into(profilePic);
+    }
 
+    public void loadPets(String type,String size){
 
-
-        //Query
         Query query = firebaseFirestore.collection("Pets").whereNotEqualTo("petName","No pet found");
+
+        if(type != "All types" && size != "All sizes"){
+            Toast.makeText(getApplicationContext(), "Type 3", Toast.LENGTH_LONG).show();
+            query = query.whereEqualTo("type",type).whereEqualTo("size",size);
+        }else if(size != "All sizes"){
+            Toast.makeText(getApplicationContext(), "Type 2", Toast.LENGTH_LONG).show();
+            query = query.whereEqualTo("size",size);
+        }else if(type != "All types"){
+            Toast.makeText(getApplicationContext(), "Type 1", Toast.LENGTH_LONG).show();
+            query = query.whereEqualTo("type",type);
+        }
 
         //This is the code that builds the cells of each pet
         FirestoreRecyclerOptions<PetInShelterModel> options = new FirestoreRecyclerOptions.Builder<PetInShelterModel>()
@@ -147,15 +172,15 @@ public class FindPetActivity extends AppCompatActivity {
 
                     }
                 });
-
             }
         };
 
-        //findAllPetsGridRV.setHasFixedSize(true);
         findAllPetsGridRV.setLayoutManager(new GridLayoutManager(this,3));
         findAllPetsGridRV.setAdapter(adapter);
 
     }
+
+
 
     //View Holder
     private class PetsGridViewHolder extends RecyclerView.ViewHolder {

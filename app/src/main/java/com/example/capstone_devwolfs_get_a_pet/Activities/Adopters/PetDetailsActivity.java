@@ -86,7 +86,6 @@ public class PetDetailsActivity extends AppCompatActivity {
                     Log.d("DATABASE ERROR", "get failed with ", task.getException());
                 }
 
-
             }
         });
 
@@ -135,8 +134,8 @@ public class PetDetailsActivity extends AppCompatActivity {
 
                                     user.update("wishlist", updatedWishlist);
                                     PersistentData.updateAdopterWishlist(getApplicationContext(),updatedWishlist);
-                                    //Toast.makeText(getApplicationContext(), "Pet Added to the Wishlist", Toast.LENGTH_LONG).show();
-                                    Toast.makeText(getApplicationContext(), PersistentData.getAdopterWishlist(getApplicationContext()), Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getApplicationContext(), "Pet Added to the Wishlist", Toast.LENGTH_LONG).show();
+                                    //Toast.makeText(getApplicationContext(), PersistentData.getAdopterWishlist(getApplicationContext()), Toast.LENGTH_LONG).show();
 
                                 }else{
                                     user.update("wishlist", petID);

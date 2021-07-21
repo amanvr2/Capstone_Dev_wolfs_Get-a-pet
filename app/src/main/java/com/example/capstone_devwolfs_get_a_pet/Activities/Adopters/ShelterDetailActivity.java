@@ -64,7 +64,6 @@ public class ShelterDetailActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), query.toString(), Toast.LENGTH_LONG).show();
 
 
-
         //This is the code that builds the cells of each pet
         FirestoreRecyclerOptions<PetInShelterModel> options = new FirestoreRecyclerOptions.Builder<PetInShelterModel>()
                 .setQuery(query, PetInShelterModel.class)

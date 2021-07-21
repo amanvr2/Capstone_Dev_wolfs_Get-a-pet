@@ -69,7 +69,7 @@ public class addPetActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ImagePicker.with(addPetActivity.this)
-                        .crop()	    			//Crop image(Optional), Check Customization for more option
+                        .cropSquare()	    	//Crop image(Optional), Check Customization for more option
                         .compress(1024)			//Final image size will be less than 1 MB(Optional)
                         .maxResultSize(1080, 1080)	//Final image resolution will be less than 1080 x 1080(Optional)
                         .start();
@@ -129,13 +129,13 @@ public class addPetActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable @org.jetbrains.annotations.Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         petImageUri = data.getData();
-        try{
-            InputStream inputStream = getContentResolver().openInputStream(petImageUri);
-            bitmap = BitmapFactory.decodeStream(inputStream);
-            petImage.setImageBitmap(bitmap);
-        } catch (Exception e) {
+            try{
+                InputStream inputStream = getContentResolver().openInputStream(petImageUri);
+                bitmap = BitmapFactory.decodeStream(inputStream);
+                petImage.setImageBitmap(bitmap);
+            } catch (Exception e) {
 
-        }
+            }
        }
 
     void clearFields(){

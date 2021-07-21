@@ -119,6 +119,8 @@ public class ShowAllPetsShelter extends AppCompatActivity {
             deletePet = itemView.findViewById(R.id.deletePetShelter);
 
         }
+
+
     }
 
     @Override
