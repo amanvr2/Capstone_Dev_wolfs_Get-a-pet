@@ -34,6 +34,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
         android:ems="10"
+        android:fontFamily="@font/coustard"
+        android:textSize="20sp"
         android:hint="Email"
         android:inputType="textEmailAddress" />
 
@@ -43,6 +45,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="45dp"
         android:ems="10"
+        android:fontFamily="@font/coustard"
+        android:textSize="20sp"
         android:hint="Password"
         android:inputType="textPersonName" />
 
@@ -52,6 +56,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="72dp"
         android:text="Login"
+        android:background="draw"
+        app:rippleColor="@android:color/holo_red_dark"
         android:textSize="24sp"
         android:fontFamily="@font/coustard"
         android:textColor="@color/design_default_color_error"

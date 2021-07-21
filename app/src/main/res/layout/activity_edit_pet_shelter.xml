@@ -40,7 +40,8 @@
 
             <EditText
                 android:id="@+id/petNameEdited"
-
+                android:fontFamily="@font/coustard"
+                android:textSize="20sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
@@ -53,6 +54,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:hint="Breed"
+                android:fontFamily="@font/coustard"
+                android:textSize="20sp"
                 android:inputType="textPersonName" />
 
             <EditText
@@ -61,6 +64,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:hint="Type"
+                android:fontFamily="@font/coustard"
+                android:textSize="20sp"
                 android:inputType="textPersonName" />
 
             <EditText
@@ -69,6 +74,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:hint="Size"
+                android:fontFamily="@font/coustard"
+                android:textSize="20sp"
                 android:inputType="textPersonName" />
 
             <EditText
@@ -77,7 +84,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:hint="Description"
+                android:fontFamily="@font/coustard"
+                android:textSize="20sp"
                 android:inputType="textPersonName" />
+
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/floatingActionButtonPetEdit"
                 android:layout_width="match_parent"
@@ -93,6 +103,8 @@
                 android:layout_height="wrap_content"
                 android:text="Update Pet"
                 android:textSize="24sp"
+                android:background="draw"
+                app:rippleColor="@android:color/holo_red_dark"
                 android:fontFamily="@font/coustard"
                 android:textColor="@color/design_default_color_error"
                 android:textStyle="bold"/>

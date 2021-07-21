@@ -37,8 +37,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:paddingStart="10dp"
+                android:fontFamily="@font/coustard"
+                android:textSize="20sp"
                 android:textAlignment="center"
-                android:textSize="18sp" />
+                 />
 
             <EditText
                 android:id="@+id/adopterEmailTv"
@@ -54,7 +56,8 @@
                 android:layout_height="60dp"
                 android:paddingStart="10dp"
                 android:textAlignment="center"
-                android:textSize="18sp" />
+                android:fontFamily="@font/coustard"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/adopterAddressTv"
@@ -62,7 +65,8 @@
                 android:layout_height="60dp"
                 android:paddingStart="10dp"
                 android:textAlignment="center"
-                android:textSize="18sp" />
+                android:fontFamily="@font/coustard"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/adopterDescriptionTv"
@@ -70,7 +74,8 @@
                 android:layout_height="60dp"
                 android:paddingStart="10dp"
                 android:textAlignment="center"
-                android:textSize="18sp" />
+                android:fontFamily="@font/coustard"
+                android:textSize="20sp" />
 
 
         </LinearLayout>
