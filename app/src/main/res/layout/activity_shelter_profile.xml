@@ -28,7 +28,7 @@
                 android:paddingBottom="40dp"
                 android:text="My Profile"
                 android:textAlignment="center"
-                android:textSize="20sp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
 
@@ -38,7 +38,8 @@
                 android:layout_height="60dp"
                 android:paddingStart="10dp"
                 android:textAlignment="center"
-                android:textSize="18sp" />
+                android:fontFamily="@font/coustard"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/shelterEmailTv"
@@ -46,7 +47,8 @@
                 android:layout_height="60dp"
                 android:paddingStart="10dp"
                 android:textAlignment="center"
-                android:textSize="18sp" />
+                android:fontFamily="@font/coustard"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/shelterPhoneTv"
@@ -54,7 +56,8 @@
                 android:layout_height="60dp"
                 android:paddingStart="10dp"
                 android:textAlignment="center"
-                android:textSize="18sp" />
+                android:fontFamily="@font/coustard"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/shelterAddressTv"
@@ -62,7 +65,8 @@
                 android:layout_height="60dp"
                 android:paddingStart="10dp"
                 android:textAlignment="center"
-                android:textSize="18sp" />
+                android:fontFamily="@font/coustard"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/shelterDescriptionTv"
@@ -70,7 +74,8 @@
                 android:layout_height="60dp"
                 android:paddingStart="10dp"
                 android:textAlignment="center"
-                android:textSize="18sp" />
+                android:fontFamily="@font/coustard"
+                android:textSize="20sp" />
 
 
             <EditText
@@ -79,7 +84,8 @@
                 android:layout_height="74dp"
                 android:paddingStart="10dp"
                 android:textAlignment="center"
-                android:textSize="18sp" />
+                android:fontFamily="@font/coustard"
+                android:textSize="20sp" />
 
 
 

@@ -28,7 +28,8 @@
             android:layout_weight="1"
             android:gravity="center|left"
             android:text="UserName"
-            android:textSize="16sp" />
+            android:fontFamily="@font/coustard"
+            android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -44,6 +45,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="Wishlist"
+            android:fontFamily="@font/coustard"
             android:textSize="24sp" />
     </LinearLayout>
 
