@@ -79,7 +79,7 @@ public class FindPetActivity extends AppCompatActivity {
             }
         };
 
-        findAllPetsGridRV.setHasFixedSize(true);
+        //findAllPetsGridRV.setHasFixedSize(true);
         findAllPetsGridRV.setLayoutManager(new GridLayoutManager(this,3));
         findAllPetsGridRV.setAdapter(adapter);
 
