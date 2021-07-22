@@ -43,7 +43,7 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/petBreedEdited"
+                android:id="@+id/petBreedNew"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
@@ -52,35 +52,49 @@
                 android:hint="Breed"
                 android:inputType="textPersonName" />
 
-            <EditText
-                android:id="@+id/petTypeEdited"
+            <TextView
+                android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/coustard"
-                android:textSize="20sp"
-                android:layout_marginTop="25dp"
-                android:hint="Type"
-                android:inputType="textPersonName" />
+                android:text="Pet type"
+                android:textSize="20sp" />
+
+            <Spinner
+                android:id="@+id/spinnerType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:dropDownWidth="wrap_content" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pet size"
+                android:textSize="20sp" />
+
+            <Spinner
+                android:id="@+id/spinnerSize"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:dropDownWidth="match_parent" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/petSizeEdited"
+                android:id="@+id/petDescriptionNew"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:fontFamily="@font/coustard"
-                android:textSize="20sp"
-                android:hint="Size"
-                android:inputType="textPersonName" />
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="Describe the pet here"
+                android:inputType="textMultiLine"
+                android:lines="5" />
 
-            <EditText
-                android:id="@+id/petDescriptionEdited"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/coustard"
-                android:textSize="20sp"
-                android:layout_marginTop="25dp"
-                android:hint="Description"
-                android:inputType="textPersonName" />
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/floatingActionButtonPetEdit"
                 android:layout_width="match_parent"
@@ -91,17 +105,17 @@
                 app:srcCompat="@drawable/ic_photo_camera_black_48dp" />
 
             <ImageView
-                android:id="@+id/petImageEdited"
+                android:id="@+id/petImageNew"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="90dp"
+                android:layout_marginTop="15dp"
                 tools:srcCompat="@tools:sample/avatars" />
 
 
             <Button
-                android:id="@+id/petEditBtn"
+                android:id="@+id/petAddBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="draw"
                 android:fontFamily="@font/coustard"
                 android:text="Add Pet"
                 android:textColor="@color/design_default_color_error"

@@ -61,7 +61,6 @@ public class PetDetailsActivity extends AppCompatActivity {
         DocumentReference selectedShelter = firebaseFirestore.collection("Shelters").document(shelterID);
         DocumentReference user = firebaseFirestore.collection("Adopters").document(userID);
 
-
         //Gets the information from the Selected pet and writes into the Screen
         selectedPet.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -78,14 +77,12 @@ public class PetDetailsActivity extends AppCompatActivity {
                         String imageLink = document.getString("petImage");
                         Picasso.get().load(imageLink).into(petImage);
 
-
                     } else {
                         Log.d("DATABASE ERROR", "No such document");
                     }
                 } else {
                     Log.d("DATABASE ERROR", "get failed with ", task.getException());
                 }
-
             }
         });
 
@@ -107,10 +104,8 @@ public class PetDetailsActivity extends AppCompatActivity {
                 } else {
                     Log.d("DATABASE ERROR", "get failed with ", task.getException());
                 }
-
             }
         });
-
 
         wishListBtn = findViewById(R.id.addWishListBtn);
 
@@ -155,7 +150,6 @@ public class PetDetailsActivity extends AppCompatActivity {
 
                     }
                 });
-
             }
         });
 

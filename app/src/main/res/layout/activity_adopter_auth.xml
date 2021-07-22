@@ -132,7 +132,6 @@
                 android:textStyle="bold"
                 android:textSize="24sp"
                 app:rippleColor="@android:color/holo_red_dark"
-                android:background="draw"
                 android:text="Register" />
 
             <TextView

@@ -7,9 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.SearchView;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -40,6 +41,8 @@ public class FindPetActivity extends AppCompatActivity {
     private ImageView profilePic;
     public String selectedType, selectedSize;
     public List<String> selectedSizes;
+    public EditText searchTextView;
+    public SearchView searchView;
 
 
     @Override
@@ -52,6 +55,9 @@ public class FindPetActivity extends AppCompatActivity {
         typeSpinner = findViewById(R.id.spinnerTypes);
         sizeSpinner = findViewById(R.id.spinnerSizes);
         profilePic = findViewById(R.id.imageViewAdopterPetFinder);
+        //searchTextView = findViewById(R.id.searchTV);
+        searchView = findViewById(R.id.searchV);
+
 
         //Sizes types
         List<String> types = new ArrayList<String>();
@@ -85,7 +91,7 @@ public class FindPetActivity extends AppCompatActivity {
         String imageLink = PersistentData.getAdopterImage(this);
         Picasso.get().load(imageLink).into(profilePic);
 
-        loadPets(selectedType,selectedSize);
+        loadPets(setFilters(selectedType,selectedSize));
 
         //Event listeners for Spinners
         typeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -93,11 +99,9 @@ public class FindPetActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 //Make the type filter here
                 selectedType = typeSpinner.getSelectedItem().toString().trim();
-
-                loadPets(selectedType,selectedSize);
+                loadPets(setFilters(selectedType,selectedSize));
                 adapter.stopListening();
                 adapter.startListening();
-                adapter.notifyDataSetChanged();
             }
 
             @Override
@@ -110,9 +114,10 @@ public class FindPetActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 selectedSize = sizeSpinner.getSelectedItem().toString().trim();
-                loadPets(selectedType,selectedSize);
+                loadPets(setFilters(selectedType,selectedSize));
                 adapter.stopListening();
                 adapter.startListening();
+
             }
 
             @Override
@@ -121,28 +126,59 @@ public class FindPetActivity extends AppCompatActivity {
             }
         });
 
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                loadPets(setSearch(query));
+                adapter.stopListening();
+                adapter.startListening();
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                if(newText == "" || newText == null){
+                    loadPets(setFilters("All types","All sizes"));
+                    adapter.stopListening();
+                    adapter.startListening();
+                }
+                return false;
+            }
+        });
+
+
     }
 
-    public void loadPets(String type,String size){
-
+    public Query setFilters(String type, String size){
         Query query = firebaseFirestore.collection("Pets").whereNotEqualTo("petName","No pet found");
 
         if(type != "All types" && size != "All sizes"){
-            Toast.makeText(getApplicationContext(), "Type 3", Toast.LENGTH_LONG).show();
             query = query.whereEqualTo("type",type).whereEqualTo("size",size);
         }else if(size != "All sizes"){
-            Toast.makeText(getApplicationContext(), "Type 2", Toast.LENGTH_LONG).show();
             query = query.whereEqualTo("size",size);
         }else if(type != "All types"){
-            Toast.makeText(getApplicationContext(), "Type 1", Toast.LENGTH_LONG).show();
             query = query.whereEqualTo("type",type);
         }
+        return query;
+    }
+
+    public Query setSearch(String searchBreed){
+        Query query = firebaseFirestore.collection("Pets").orderBy("breed").startAt(searchBreed).endAt(searchBreed+"\uf8ff");
+        return query;
+    }
+
+    //Looks for pets using the filters
+    public void loadPets(Query finalQuery){
+
+        Query query = finalQuery;
+
+
 
         //This is the code that builds the cells of each pet
         FirestoreRecyclerOptions<PetInShelterModel> options = new FirestoreRecyclerOptions.Builder<PetInShelterModel>()
                 .setQuery(query, PetInShelterModel.class)
                 .build();
-
 
         //Adapter
         adapter =  new FirestoreRecyclerAdapter<PetInShelterModel, PetsGridViewHolder>(options) {
@@ -178,6 +214,12 @@ public class FindPetActivity extends AppCompatActivity {
         findAllPetsGridRV.setLayoutManager(new GridLayoutManager(this,3));
         findAllPetsGridRV.setAdapter(adapter);
 
+    }
+
+
+    private void resetSpinners() {
+        sizeSpinner.setSelection(0,true);
+        typeSpinner.setSelection(0);
     }
 
 

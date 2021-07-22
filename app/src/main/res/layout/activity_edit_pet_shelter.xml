@@ -103,7 +103,6 @@
                 android:layout_height="wrap_content"
                 android:text="Update Pet"
                 android:textSize="24sp"
-                android:background="draw"
                 app:rippleColor="@android:color/holo_red_dark"
                 android:fontFamily="@font/coustard"
                 android:textColor="@color/design_default_color_error"

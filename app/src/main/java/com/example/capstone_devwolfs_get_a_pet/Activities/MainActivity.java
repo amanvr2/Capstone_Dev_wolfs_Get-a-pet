@@ -1,9 +1,5 @@
 package com.example.capstone_devwolfs_get_a_pet.Activities;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -17,8 +13,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.capstone_devwolfs_get_a_pet.R;
-import com.example.capstone_devwolfs_get_a_pet.classes.Pet;
 import com.example.capstone_devwolfs_get_a_pet.classes.Shelter;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -79,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ImagePicker.with(MainActivity.this)
-                        .crop()	    			//Crop image(Optional), Check Customization for more option
+                        .cropSquare()	    			//Crop image(Optional), Check Customization for more option
                         .compress(1024)			//Final image size will be less than 1 MB(Optional)
                         .maxResultSize(1080, 1080)	//Final image resolution will be less than 1080 x 1080(Optional)
                         .start();
@@ -147,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
                         .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
                             @Override
                             public void onProgress(@NonNull @NotNull UploadTask.TaskSnapshot snapshot) {
-                                float percent =(100*snapshot.getBytesTransferred())/snapshot.getTotalByteCount();
+                                float percent = (100*snapshot.getBytesTransferred())/snapshot.getTotalByteCount();
                                 dialog.setMessage("uploaded: " +(int)percent +"%");
                             }
                         });

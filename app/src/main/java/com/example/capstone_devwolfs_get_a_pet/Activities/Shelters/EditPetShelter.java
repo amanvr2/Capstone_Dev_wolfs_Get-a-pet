@@ -36,7 +36,7 @@ public class EditPetShelter extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_pet_shelter);
 
-        //Retrieves the pet's Id you cliked
+        //Retrieves the pet's Id you clicked
         String petID = (String) getIntent().getExtras().get("editedPetID");
 
         //Selects the Pets in the database
@@ -67,7 +67,6 @@ public class EditPetShelter extends AppCompatActivity {
 
                         String imageLink = document.getString("petImage");
                         Picasso.get().load(imageLink).into(petPhoto);
-
 
                     } else {
                         Log.d("DATABASE ERROR", "No such document");

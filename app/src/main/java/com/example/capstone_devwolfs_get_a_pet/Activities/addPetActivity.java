@@ -7,9 +7,12 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -33,15 +36,19 @@ import com.google.firebase.storage.UploadTask;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 public class addPetActivity extends AppCompatActivity {
 
-    EditText pName, pBreed,pType,pDescription,pSize;
+    EditText pName, pBreed,pType,pSize,pDescription;
+    Spinner spinType,spinSize;
     ImageView petImage;
     Uri petImageUri;
     FloatingActionButton FabPet;
     Button save;
     Bitmap bitmap;
+    String selectedType,selectedSize;
 
     public static final String TAG = "test";
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -57,13 +64,37 @@ public class addPetActivity extends AppCompatActivity {
                 SafetyNetAppCheckProviderFactory.getInstance());
 
         pName = findViewById(R.id.petNameEdited);
-        pBreed = findViewById(R.id.petBreedEdited);
-        pType = findViewById(R.id.petTypeEdited);
-        pDescription = findViewById(R.id.petDescriptionEdited);
-        pSize = findViewById(R.id.petSizeEdited);
-        save = findViewById(R.id.petEditBtn);
-        petImage = findViewById(R.id.petImageEdited);
+        pDescription = findViewById(R.id.petDescriptionNew);
+        pBreed = findViewById(R.id.petBreedNew);
+        save = findViewById(R.id.petAddBtn);
+        petImage = findViewById(R.id.petImageNew);
         FabPet = findViewById(R.id.floatingActionButtonPetEdit);
+        spinType = findViewById(R.id.spinnerType);
+        spinSize = findViewById(R.id.spinnerSize);
+
+        //Type options
+        List<String> types = new ArrayList<String>();
+        types.add("Cat");
+        types.add("Dog");
+        types.add("Bird");
+
+        //Sizes options
+        List<String> sizes = new ArrayList<String>();
+        sizes.add("Small");
+        sizes.add("Medium");
+        sizes.add("Big");
+
+        //Spinner Adapters
+        ArrayAdapter<String> dataAdapterTypeSpinner = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, types);
+        ArrayAdapter<String> dataAdapterSizeSpinner = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, sizes);
+
+        //Spinners Resources
+        dataAdapterTypeSpinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        dataAdapterSizeSpinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        //Attaching data adapters to spinners
+        spinType.setAdapter(dataAdapterTypeSpinner);
+        spinSize.setAdapter(dataAdapterSizeSpinner);
 
         FabPet.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -83,6 +114,32 @@ public class addPetActivity extends AppCompatActivity {
             }
         });
 
+        //Event listeners for Spinners
+        spinType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                selectedType = spinType.getSelectedItem().toString();
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        spinSize.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                selectedSize = spinSize.getSelectedItem().toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
     }
 
     private void uploadtoFireBase() {
@@ -92,9 +149,9 @@ public class addPetActivity extends AppCompatActivity {
         String shelterid = ShelterLoginActivity.shelterUsID;
         String name = pName.getText().toString().trim();
         String breed = pBreed.getText().toString().trim();
-        String type = pType.getText().toString().trim();
+        String type = selectedType;
         String description = pDescription.getText().toString().trim();
-        String size = pSize.getText().toString().trim();
+        String size = selectedSize;
 
         FirebaseStorage storage = FirebaseStorage.getInstance();
         StorageReference storageRef = storage.getReferenceFromUrl("gs://capstone-100bc.appspot.com/");
@@ -141,9 +198,7 @@ public class addPetActivity extends AppCompatActivity {
     void clearFields(){
         pName.setText("");
         pBreed.setText("");
-        pType.setText("");
         pDescription.setText("");
-        pSize.setText("");
         petImage.setImageBitmap(null);
     }
 

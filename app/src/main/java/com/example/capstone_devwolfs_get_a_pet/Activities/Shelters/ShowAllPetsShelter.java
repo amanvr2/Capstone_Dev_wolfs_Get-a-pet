@@ -120,7 +120,6 @@ public class ShowAllPetsShelter extends AppCompatActivity {
 
         }
 
-
     }
 
     @Override
