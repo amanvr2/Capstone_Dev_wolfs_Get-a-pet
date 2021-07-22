@@ -41,7 +41,7 @@ import java.util.List;
 
 public class addPetActivity extends AppCompatActivity {
 
-    EditText pName, pBreed,pType,pSize,pDescription;
+    EditText pName, pBreed,pDescription;
     Spinner spinType,spinSize;
     ImageView petImage;
     Uri petImageUri;

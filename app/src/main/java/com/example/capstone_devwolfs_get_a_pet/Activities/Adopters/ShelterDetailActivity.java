@@ -96,6 +96,7 @@ public class ShelterDetailActivity extends AppCompatActivity {
 
                         intent.putExtra("petId",model.getPetID());
                         intent.putExtra("shelterId",model.getShelterId());
+                        intent.putExtra("petBreed", model.getBreed());
 
                         startActivity(intent);
 

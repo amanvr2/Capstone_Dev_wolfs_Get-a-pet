@@ -204,6 +204,7 @@ public class FindPetActivity extends AppCompatActivity {
                         Intent intent = new Intent(FindPetActivity.this, PetDetailsActivity.class);
                         intent.putExtra("petId",model.getPetID());
                         intent.putExtra("shelterId", model.getShelterId());
+                        intent.putExtra("petBreed", model.getBreed());
                         startActivity(intent);
 
                     }

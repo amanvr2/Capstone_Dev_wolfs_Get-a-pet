@@ -13,10 +13,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.capstone_devwolfs_get_a_pet.InternalData.PersistentData;
 import com.example.capstone_devwolfs_get_a_pet.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.squareup.picasso.Picasso;
 
 import org.jetbrains.annotations.NotNull;
@@ -25,12 +29,12 @@ public class PetDetailsActivity extends AppCompatActivity {
 
     private FirebaseFirestore firebaseFirestore;
 
-    ImageView petImage;
+    ImageView petImage, productImage;
     TextView textPetName, textPetDescription, textBreed, textPetSize;
     TextView textShelterName, textShelterDescription;
+    TextView productTextName, buyLink;
     TextView wishListBtn;
-
-
+    String productImageLink, productBuyLink, productStringName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +42,15 @@ public class PetDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pet_details);
 
         //Retrieve information form your last choice
-        String  shelterID = (String) getIntent().getExtras().get("shelterId");
-        String  petID = (String) getIntent().getExtras().get("petId");
-        String  userID = PersistentData.getAdopterId(getApplicationContext());
+        String shelterID = (String) getIntent().getExtras().get("shelterId");
+        String petID = (String) getIntent().getExtras().get("petId");
+        String petBreed = (String) getIntent().getExtras().get("petBreed");
+        String userID = PersistentData.getAdopterId(getApplicationContext());
+
+        //Product Details
+        productImage = findViewById(R.id.productImage);
+        productTextName = findViewById(R.id.productName);
+        buyLink = findViewById(R.id.buyLink);
 
         //Pet Texts
         textPetName = findViewById(R.id.petNameProfile);
@@ -60,6 +70,26 @@ public class PetDetailsActivity extends AppCompatActivity {
         DocumentReference selectedPet = firebaseFirestore.collection("Pets").document(petID);
         DocumentReference selectedShelter = firebaseFirestore.collection("Shelters").document(shelterID);
         DocumentReference user = firebaseFirestore.collection("Adopters").document(userID);
+        CollectionReference sponsorship = firebaseFirestore.collection("Sponsorship");
+
+        //Loads Sponsorship
+        sponsorship.whereEqualTo("petBreed",petBreed).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+            @Override
+            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
+                    productImageLink = documentSnapshot.getString("productImage");
+                    productBuyLink = documentSnapshot.getString("productLink");
+                    productStringName = documentSnapshot.getString("productName");
+
+                    Picasso.get().load(productImageLink).into(productImage);
+                    productTextName.setText(productStringName);
+
+
+                }
+            }
+
+
+        });
 
         //Gets the information from the Selected pet and writes into the Screen
         selectedPet.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {

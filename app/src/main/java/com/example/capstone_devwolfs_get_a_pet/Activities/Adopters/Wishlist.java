@@ -95,6 +95,7 @@ public class Wishlist extends AppCompatActivity {
                         Intent intent = new Intent(v.getContext(), PetDetailsActivity.class);
                         intent.putExtra("petId",model.getPetID());
                         intent.putExtra("shelterId",model.getShelterId());
+                        intent.putExtra("petBreed", model.getBreed());
                         startActivity(intent);
 
                     }
