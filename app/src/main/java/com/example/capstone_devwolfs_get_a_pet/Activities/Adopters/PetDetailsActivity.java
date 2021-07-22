@@ -1,9 +1,12 @@
 package com.example.capstone_devwolfs_get_a_pet.Activities.Adopters;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,6 +38,7 @@ public class PetDetailsActivity extends AppCompatActivity {
     TextView productTextName, buyLink;
     TextView wishListBtn;
     String productImageLink, productBuyLink, productStringName;
+    LinearLayout sponsorArea;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,9 +52,12 @@ public class PetDetailsActivity extends AppCompatActivity {
         String userID = PersistentData.getAdopterId(getApplicationContext());
 
         //Product Details
+        sponsorArea = findViewById(R.id.sponsorBox);
         productImage = findViewById(R.id.productImage);
         productTextName = findViewById(R.id.productName);
         buyLink = findViewById(R.id.buyLink);
+
+        sponsorArea.setVisibility(View.GONE);
 
         //Pet Texts
         textPetName = findViewById(R.id.petNameProfile);
@@ -76,18 +83,33 @@ public class PetDetailsActivity extends AppCompatActivity {
         sponsorship.whereEqualTo("petBreed",petBreed).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
-                    productImageLink = documentSnapshot.getString("productImage");
-                    productBuyLink = documentSnapshot.getString("productLink");
-                    productStringName = documentSnapshot.getString("productName");
 
-                    Picasso.get().load(productImageLink).into(productImage);
-                    productTextName.setText(productStringName);
+                Toast.makeText(getApplicationContext(), "Results: "+queryDocumentSnapshots.size(), Toast.LENGTH_LONG).show();
+
+                if(queryDocumentSnapshots.size() != 0){
+                    sponsorArea.setVisibility(View.VISIBLE);
+
+                    for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
+                        productImageLink = documentSnapshot.getString("productImage");
+                        productBuyLink = documentSnapshot.getString("productLink");
+                        productStringName = documentSnapshot.getString("productName");
+
+                        Picasso.get().load(productImageLink).into(productImage);
+                        productTextName.setText(productStringName);
 
 
+                        buyLink.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(productBuyLink));
+                                startActivity(browserIntent);
+                            }
+                        });
+
+                    }
                 }
+                
             }
-
 
         });
 

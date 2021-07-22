@@ -127,6 +127,18 @@ public class FindPetActivity extends AppCompatActivity {
         });
 
 
+        searchView.setOnCloseListener(new SearchView.OnCloseListener() {
+            @Override
+            public boolean onClose() {
+                loadPets(setFilters("All types","All sizes"));
+                adapter.stopListening();
+                adapter.startListening();
+                return false;
+            }
+        });
+
+
+
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -138,11 +150,6 @@ public class FindPetActivity extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                if(newText == "" || newText == null){
-                    loadPets(setFilters("All types","All sizes"));
-                    adapter.stopListening();
-                    adapter.startListening();
-                }
                 return false;
             }
         });
