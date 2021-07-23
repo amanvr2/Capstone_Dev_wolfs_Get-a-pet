@@ -29,7 +29,6 @@ import org.jetbrains.annotations.NotNull;
 
 public class ShowAllPetsShelter extends AppCompatActivity {
 
-
     SharedPreferences sharedPreferences;
 
     private FirebaseFirestore firebaseFirestore;

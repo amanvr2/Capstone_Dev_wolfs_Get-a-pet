@@ -28,18 +28,20 @@
         android:layout_gravity="center"
         android:layout_marginTop="32dp"
         app:srcCompat="@mipmap/adopter_icon_foreground" />
+
     <TextView
-         android:layout_width="wrap_content"
+        android:id="@+id/editProfileBtn"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:text="Edit Profile"
-        app:rippleColor="@android:color/holo_red_dark"
-        android:textSize="24sp"
         android:fontFamily="@font/coustard"
+        android:text="Edit Profile"
+        android:onClick="editProfile"
         android:textColor="@color/design_default_color_error"
+        android:textSize="24sp"
         android:textStyle="bold"
-      />
+        app:rippleColor="@android:color/holo_red_dark" />
 
 
     <LinearLayout

@@ -86,6 +86,7 @@ public class AdopterAuthActivity extends AppCompatActivity {
             public void onClick(View v) {
                 uploadtoFireBase();
                 /*
+
                 String name = aName.getText().toString().trim();
                 String email = aEmail.getText().toString().trim();
                 String password = aPassword.getText().toString().trim();

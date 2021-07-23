@@ -77,6 +77,12 @@
                 android:fontFamily="@font/coustard"
                 android:textSize="20sp" />
 
+            <Button
+                android:id="@+id/buttonSaveChangesAdopter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Save changes" />
+
 
         </LinearLayout>
     </ScrollView>

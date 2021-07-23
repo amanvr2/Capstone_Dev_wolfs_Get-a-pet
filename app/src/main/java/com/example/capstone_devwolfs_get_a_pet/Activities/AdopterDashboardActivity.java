@@ -42,10 +42,14 @@ public class AdopterDashboardActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void editProfile(View view) {
+        Intent intent = new Intent(AdopterDashboardActivity.this, AdopterProfileActivity.class);
+        startActivity(intent);
+    }
+
     public void openWishlist(View view){
         Intent intent = new Intent(AdopterDashboardActivity.this, Wishlist.class);
         startActivity(intent);
-
 
     }
 }

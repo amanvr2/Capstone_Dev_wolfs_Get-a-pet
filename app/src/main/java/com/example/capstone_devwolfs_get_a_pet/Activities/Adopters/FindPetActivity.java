@@ -142,7 +142,7 @@ public class FindPetActivity extends AppCompatActivity {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                loadPets(setSearch(query));
+                loadPets(setSearch(query.toUpperCase()));
                 adapter.stopListening();
                 adapter.startListening();
                 return false;

@@ -148,7 +148,7 @@ public class addPetActivity extends AppCompatActivity {
         dialog.show();
         String shelterid = ShelterLoginActivity.shelterUsID;
         String name = pName.getText().toString().trim();
-        String breed = pBreed.getText().toString().trim();
+        String breed = pBreed.getText().toString().trim().toUpperCase();
         String type = selectedType;
         String description = pDescription.getText().toString().trim();
         String size = selectedSize;

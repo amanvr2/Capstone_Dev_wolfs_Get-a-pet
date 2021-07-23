@@ -108,7 +108,7 @@ public class PetDetailsActivity extends AppCompatActivity {
 
                     }
                 }
-                
+
             }
 
         });

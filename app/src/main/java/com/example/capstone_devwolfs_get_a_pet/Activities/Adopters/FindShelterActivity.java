@@ -180,7 +180,7 @@ public class FindShelterActivity extends AppCompatActivity implements OnMapReady
                 .title("Your Location")
                 .snippet("You are here");
         map.addMarker(markerOptions);
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 1));
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 10));
         setShelters();
     }
 

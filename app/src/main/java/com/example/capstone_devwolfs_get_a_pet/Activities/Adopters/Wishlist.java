@@ -58,8 +58,6 @@ public class Wishlist extends AppCompatActivity {
             elements = new String[]{"noPet"};
             petsListWishlist.setVisibility(View.INVISIBLE);
         }
-        Toast.makeText(getApplicationContext(), wishlistStr, Toast.LENGTH_LONG).show();
-
 
         //This is the query
         Query query = firebaseFirestore.collection("Pets").whereIn(FieldPath.documentId(),Arrays.asList(elements));
@@ -121,8 +119,6 @@ public class Wishlist extends AppCompatActivity {
                             finalResult = sb.substring(0,sb.toString().length()-1);
                         }
 
-                        Toast.makeText(getApplicationContext(), sb.toString(), Toast.LENGTH_LONG).show();
-
                         String userID = PersistentData.getAdopterId(getApplicationContext());
                         DocumentReference selectedUser = firebaseFirestore.collection("Adopters").document(userID);
 
@@ -147,7 +143,6 @@ public class Wishlist extends AppCompatActivity {
 
         petsListWishlist.setHasFixedSize(true);
         petsListWishlist.setLayoutManager(new LinearLayoutManager(this));
-        //petsListWishlist.setLayoutManager(new GridLayoutManager(this,3));
         petsListWishlist.setAdapter(adapter);
 
     }

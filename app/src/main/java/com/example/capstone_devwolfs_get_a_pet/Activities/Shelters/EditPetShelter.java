@@ -91,7 +91,7 @@ public class EditPetShelter extends AppCompatActivity {
                         "description",petDescription.getText().toString().trim()
                 );
 
-                Toast.makeText(getApplicationContext(), "Pet Edited", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Pet Edited", Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(v.getContext(), ShowAllPetsShelter.class);
                 startActivity(intent);
