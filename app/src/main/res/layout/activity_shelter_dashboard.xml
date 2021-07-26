@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/DefaultBg"
     android:orientation="vertical"
     android:paddingLeft="45dp"
     android:paddingTop="24dp"
     android:paddingRight="45dp"
-    android:background="@drawable/background_act"
     tools:context=".Activities.ShelterDashboardActivity">
 
     <ImageView
@@ -23,10 +23,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/coustard"
         android:text="Shelter Name"
         android:textAlignment="center"
-        android:fontFamily="@font/coustard"
-        android:textColor="@color/design_default_color_error"
+        android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -35,47 +35,49 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="Add Pet"
-        app:rippleColor="@android:color/holo_red_dark"
+        android:backgroundTint="@color/DefaultColorBtnText"
         android:fontFamily="@font/coustard"
-        android:textColor="@color/design_default_color_error"
+        android:text="Add Pet"
+        android:textColor="@color/white"
         android:textSize="24sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        app:rippleColor="@android:color/holo_red_dark" />
 
     <Button
         android:id="@+id/allPetsShelterBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="All pets"
-        app:rippleColor="@android:color/holo_red_dark"
+        android:backgroundTint="@color/DefaultColorBtnText"
         android:fontFamily="@font/coustard"
-        android:textColor="@color/design_default_color_error"
+        android:text="All pets"
+        android:textColor="@color/white"
         android:textSize="24sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        app:rippleColor="@android:color/holo_red_dark" />
 
     <Button
         android:id="@+id/viewProfileBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="My Profile"
-        app:rippleColor="@android:color/holo_red_dark"
+        android:backgroundTint="@color/DefaultColorBtnText"
         android:fontFamily="@font/coustard"
-        android:textColor="@color/design_default_color_error"
+        android:text="My Profile"
+        android:textColor="@color/white"
         android:textSize="24sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        app:rippleColor="@android:color/holo_red_dark" />
 
     <TextView
         android:id="@+id/logoutBtnShelter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="45dp"
-        android:text="Logout"
-        app:rippleColor="@android:color/holo_red_dark"
         android:fontFamily="@font/coustard"
-        android:textColor="@color/design_default_color_error"
+        android:text="Logout"
+        android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:textAlignment="center" />
+        app:rippleColor="@android:color/holo_red_dark" />
 
 </LinearLayout>

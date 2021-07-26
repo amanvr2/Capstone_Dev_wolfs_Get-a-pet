@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/DefaultBg"
     android:orientation="vertical"
-    android:background="@drawable/background_act"
     tools:context=".Activities.MainActivity">
 
     <ScrollView
@@ -25,10 +25,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:paddingBottom="40dp"
+                android:paddingBottom="20dp"
                 android:text="My Profile"
                 android:textAlignment="center"
-                android:textSize="24sp"
+                android:textColor="@color/white"
+                android:textSize="34sp"
                 android:textStyle="bold" />
 
 
@@ -36,36 +37,36 @@
                 android:id="@+id/shelterNameTv"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:fontFamily="@font/coustard"
                 android:paddingStart="10dp"
                 android:textAlignment="center"
-                android:fontFamily="@font/coustard"
                 android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/shelterEmailTv"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:fontFamily="@font/coustard"
                 android:paddingStart="10dp"
                 android:textAlignment="center"
-                android:fontFamily="@font/coustard"
                 android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/shelterPhoneTv"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:fontFamily="@font/coustard"
                 android:paddingStart="10dp"
                 android:textAlignment="center"
-                android:fontFamily="@font/coustard"
                 android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/shelterAddressTv"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:fontFamily="@font/coustard"
                 android:paddingStart="10dp"
                 android:textAlignment="center"
-                android:fontFamily="@font/coustard"
                 android:textSize="20sp" />
 
             <EditText
@@ -81,6 +82,7 @@
                 android:id="@+id/saveChangesShelter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/DefaultColorBtnText"
                 android:text="Save changes" />
 
 

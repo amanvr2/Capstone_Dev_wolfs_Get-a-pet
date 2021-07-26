@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -31,17 +30,20 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import org.jetbrains.annotations.NotNull;
 
 import java.io.InputStream;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class MainActivity extends AppCompatActivity {
 
     EditText sName, sEmail,sPassword,sPhone,sAddress,sDescription;
-    TextView login;
     Button save;
     ImageView shelterImage;
+    CircleImageView shelterDefImag;
     Uri shelterImageUri;
     FloatingActionButton fabShelter;
     Bitmap sbitmap;
@@ -69,10 +71,14 @@ public class MainActivity extends AppCompatActivity {
         sAddress = findViewById(R.id.shelterAddress);
 
         save = findViewById(R.id.shelterSaveBtn);
-        login = findViewById(R.id.loginRedirect);
 
         shelterImage = findViewById(R.id.profile_shelterImage);
         fabShelter = findViewById(R.id.shelterImagefloatingActionButton);
+
+        shelterDefImag = findViewById(R.id.profile_shelterImage);
+
+        String linkDef = "https://firebasestorage.googleapis.com/v0/b/capstone-100bc.appspot.com/o/shelter.png?alt=media&token=abc6708a-8b6e-40f4-8fe9-95f1964e44c2";
+        Picasso.get().load(linkDef).into(shelterImage);
 
         fabShelter.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -153,15 +159,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), ShelterLoginActivity.class);
-                startActivity(intent);
-            }
-        });
-
 
     }
     @Override

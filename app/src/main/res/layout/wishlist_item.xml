@@ -32,12 +32,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
+                android:fontFamily="@font/coustard"
                 android:gravity="center"
                 android:text="PetName"
-                android:fontFamily="@font/coustard"
-                android:textColor="@color/design_default_color_error"
-                android:textSize="22sp"
-                />
+                android:textColor="@color/DefaultBg"
+                android:textSize="22sp" />
         </LinearLayout>
 
         <ImageButton
@@ -45,6 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="4"
+            android:backgroundTint="@color/DefaultColorBtnText"
             app:srcCompat="@drawable/delete_icon" />
 
     </LinearLayout>

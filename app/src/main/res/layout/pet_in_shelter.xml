@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#77FFEB3B">
+    android:background="@color/white"
+    android:backgroundTint="#79FFC600"
+    android:paddingTop="10dp"
+    android:paddingRight="10dp"
+    android:paddingBottom="10dp">
 
     <ImageView
         android:id="@+id/petImageWishList"
@@ -29,9 +33,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.7"
+            android:fontFamily="@font/coustard"
             android:gravity="center"
             android:text="PetName"
-            android:fontFamily="@font/coustard"
             android:textColor="@color/design_default_color_error"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -47,6 +51,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:backgroundTint="#FDD855"
                 app:srcCompat="@drawable/ic_action_name" />
 
             <ImageButton
@@ -54,6 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:backgroundTint="@color/DefaultColorBtnText"
                 app:srcCompat="@drawable/delete_icon" />
         </LinearLayout>
 

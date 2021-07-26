@@ -27,6 +27,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -177,6 +178,7 @@ public class FindShelterActivity extends AppCompatActivity implements OnMapReady
         currentLocation.setLatitude(location.latitude);
         currentLocation.setLongitude(location.longitude);
         MarkerOptions markerOptions = new MarkerOptions().position(location)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
                 .title("Your Location")
                 .snippet("You are here");
         map.addMarker(markerOptions);
@@ -193,12 +195,15 @@ public class FindShelterActivity extends AppCompatActivity implements OnMapReady
             // Setting the position for the marker
             LatLng coordinates = getLocationFromAddress(getApplicationContext(),shlter.getShelterAddress());
 
+            //Toast.makeText(getApplicationContext(), shlter.getShelterAddress() , Toast.LENGTH_LONG).show();
+
             if (coordinates != null){
                 markerOptions.position(coordinates);
+                markerOptions.title(shlter.getShelterName());
+                map.addMarker(markerOptions);
             }
 
-            markerOptions.title(shlter.getShelterName());
-            map.addMarker(markerOptions);
+
         }
     }
 

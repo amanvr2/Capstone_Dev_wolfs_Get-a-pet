@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#77FFEB3B">
+    android:background="@color/DefaultBg">
 
     <ImageView
         android:id="@+id/petImageMapShelter"
@@ -29,23 +29,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="@font/coustard"
             android:gravity="center"
             android:text="PetName"
-            android:fontFamily="@font/coustard"
             android:textColor="@color/design_default_color_error"
-            android:textSize="24sp"/>
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/petTypeMapShelter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="@font/coustard"
             android:gravity="center"
             android:text="PetType"
-            android:fontFamily="@font/coustard"
+            android:textAlignment="center"
             android:textColor="@color/design_default_color_error"
-            android:textSize="24sp"
-            android:textAlignment="center" />
+            android:textSize="24sp" />
 
 
     </LinearLayout>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/DefaultBg"
     android:orientation="vertical"
     tools:context=".Activities.Adopters.Wishlist">
 
@@ -26,9 +27,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:fontFamily="@font/coustard"
             android:gravity="center|left"
             android:text="UserName"
-            android:fontFamily="@font/coustard"
             android:textSize="20sp" />
     </LinearLayout>
 
@@ -43,9 +44,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:fontFamily="@font/coustard"
             android:gravity="center"
             android:text="Wishlist"
-            android:fontFamily="@font/coustard"
+            android:textColor="@color/white"
             android:textSize="24sp" />
     </LinearLayout>
 

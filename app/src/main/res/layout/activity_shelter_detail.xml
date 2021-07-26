@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/adopter_icon_background"
+    android:background="@color/DefaultBg"
     android:orientation="vertical"
     tools:context=".Activities.Adopters.ShelterDetailActivity">
 
@@ -28,7 +28,7 @@
                 android:fontFamily="@font/coustard"
                 android:text="Shelter Profile"
                 android:textAlignment="center"
-                android:textColor="@color/design_default_color_error"
+                android:textColor="@color/white"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 

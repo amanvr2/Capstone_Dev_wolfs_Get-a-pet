@@ -72,6 +72,13 @@ public class PersistentData {
 
     }
 
+    public static String getShelterId(Context context){
+
+        sharedpreferences = context.getSharedPreferences(SavedShelter, Context.MODE_PRIVATE);
+        return sharedpreferences.getString("UserID","");
+
+    }
+
     public static String getAdopterWishlist(Context context){
 
         sharedpreferences = context.getSharedPreferences(SavedAdopter, Context.MODE_PRIVATE);

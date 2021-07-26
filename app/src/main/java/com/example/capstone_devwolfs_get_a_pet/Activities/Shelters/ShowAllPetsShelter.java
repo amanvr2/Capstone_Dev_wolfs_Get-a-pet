@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.capstone_devwolfs_get_a_pet.InternalData.PersistentData;
 import com.example.capstone_devwolfs_get_a_pet.Models.PetInShelterModel;
 import com.example.capstone_devwolfs_get_a_pet.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
@@ -42,7 +43,9 @@ public class ShowAllPetsShelter extends AppCompatActivity {
 
         sharedPreferences = getSharedPreferences("Shelter", Context.MODE_PRIVATE);
 
-        String thisShelterID = sharedPreferences.getString("ShelterID","");
+        String thisShelterID = PersistentData.getShelterId(this);
+        Toast.makeText(getApplicationContext(), thisShelterID, Toast.LENGTH_LONG).show();
+
 
         firebaseFirestore = FirebaseFirestore.getInstance();
         petsListShelter = findViewById(R.id.petListShelter);
@@ -64,6 +67,9 @@ public class ShowAllPetsShelter extends AppCompatActivity {
             public PetsViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
                 View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.pet_in_shelter,parent, false);
                 return new PetsViewHolder(view);
+
+
+
             }
 
             @Override
@@ -96,10 +102,11 @@ public class ShowAllPetsShelter extends AppCompatActivity {
             }
         };
 
-        petsListShelter.setHasFixedSize(true);
+        //petsListShelter.setHasFixedSize(true);
         petsListShelter.setLayoutManager(new LinearLayoutManager(this));
         petsListShelter.setAdapter(adapter);
 
+        Toast.makeText(getApplicationContext(), "Pets :"+adapter.getItemCount(), Toast.LENGTH_LONG).show();
     }
 
     //View Holder

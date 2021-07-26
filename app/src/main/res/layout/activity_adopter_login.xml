@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/DefaultBg"
     android:orientation="vertical"
     android:paddingLeft="35dp"
     android:paddingRight="35dp"
-    android:background="@drawable/background_act"
     tools:context=".Activities.AdopterLoginActivity">
 
     <ImageView
@@ -21,11 +21,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
+        android:fontFamily="@font/coustard"
         android:text="Login as Adopter"
         android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="24sp"
-        android:fontFamily="@font/coustard"
-        android:textColor="@color/design_default_color_error"
         android:textStyle="bold" />
 
     <EditText
@@ -35,9 +35,9 @@
         android:layout_marginTop="56dp"
         android:ems="10"
         android:fontFamily="@font/coustard"
-        android:textSize="20sp"
         android:hint="Email"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/adopterPass"
@@ -46,19 +46,20 @@
         android:layout_marginTop="45dp"
         android:ems="10"
         android:fontFamily="@font/coustard"
-        android:textSize="20sp"
         android:hint="Password"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/adopterLoginBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="72dp"
-        android:text="Login"
-        app:rippleColor="@android:color/holo_red_dark"
-        android:textSize="24sp"
+        android:backgroundTint="@color/DefaultColorBtnText"
         android:fontFamily="@font/coustard"
-        android:textColor="@color/design_default_color_error"
-        android:textStyle="bold"/>
+        android:text="Login"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:rippleColor="@android:color/holo_red_dark" />
 </LinearLayout>

@@ -31,8 +31,8 @@ public class ShelterProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_shelter_profile);
 
         sharedPreferences = getSharedPreferences("Shelter", Context.MODE_PRIVATE);
-        String AdopterId = PersistentData.getAdopterId(this);
-        DocumentReference user = db.collection("Shelters").document(AdopterId);
+        String ShelterId = PersistentData.getShelterId(this);
+        DocumentReference user = db.collection("Shelters").document(ShelterId);
 
         //Fields
         name = findViewById(R.id.shelterNameTv);

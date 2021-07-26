@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/DefaultBg"
     android:orientation="vertical"
-    android:background="@drawable/background_act"
     tools:context=".Activities.AdopterDashboardActivity">
 
     <TextView
@@ -13,13 +13,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Welcome"
         android:layout_marginTop="10dp"
-        android:textSize="26sp"
         android:fontFamily="@font/coustard"
+        android:text="Welcome"
         android:textColor="@color/design_default_color_error"
-        android:textStyle="bold"
-        />
+        android:textSize="26sp"
+        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/imageViewAdopterPetFinder"
@@ -36,9 +35,9 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/coustard"
-        android:text="Edit Profile"
         android:onClick="editProfile"
-        android:textColor="@color/design_default_color_error"
+        android:text="Edit Profile"
+        android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
         app:rippleColor="@android:color/holo_red_dark" />
@@ -47,101 +46,101 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="2"
         android:orientation="horizontal"
-        >
+        android:weightSum="2">
+
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_margin="20dp"
             android:layout_weight="1">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="WishList"
-                android:onClick="openWishlist"
-                app:rippleColor="@android:color/holo_red_dark"
                 android:layout_centerInParent="true"
-                android:textSize="24sp"
+                android:layout_gravity="center"
                 android:fontFamily="@font/coustard"
-                android:textColor="@color/design_default_color_error"
+                android:onClick="openWishlist"
+                android:text="WishList"
+                android:textColor="@color/white"
+                android:textSize="24sp"
                 android:textStyle="bold"
-                />
+                app:rippleColor="@android:color/holo_red_dark" />
 
         </RelativeLayout>
+
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_margin="20dp"
-            android:onClick="findPet"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:onClick="findPet">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                app:rippleColor="@android:color/holo_red_dark"
-                android:text="Find a Pet"
-                android:layout_centerInParent="true"
-                android:textSize="24sp"
                 android:fontFamily="@font/coustard"
-                android:textColor="@color/design_default_color_error"
+                android:text="Find a Pet"
+                android:textColor="@color/white"
+                android:textSize="24sp"
                 android:textStyle="bold"
-                />
+                app:rippleColor="@android:color/holo_red_dark" />
 
         </RelativeLayout>
     </LinearLayout>
 
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="2"
         android:orientation="horizontal"
-        >
+        android:weightSum="2">
+
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_margin="20dp"
-            android:onClick="findShelter"
+            android:layout_weight="1"
 
-            android:layout_weight="1">
+            android:onClick="findShelter">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Find a Shelter"
-                app:rippleColor="@android:color/holo_red_dark"
                 android:layout_centerInParent="true"
-                android:textSize="24sp"
+                android:layout_gravity="center"
                 android:fontFamily="@font/coustard"
-                android:textColor="@color/design_default_color_error"
+                android:text="Find a Shelter"
+                android:textColor="@color/white"
+                android:textSize="24sp"
                 android:textStyle="bold"
-                />
+                app:rippleColor="@android:color/holo_red_dark" />
 
         </RelativeLayout>
+
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_margin="20dp"
 
             android:layout_weight="1">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:text="Donation"
-                app:rippleColor="@android:color/holo_red_dark"
-                android:layout_centerInParent="true"
-                android:textSize="24sp"
                 android:fontFamily="@font/coustard"
-                android:textColor="@color/design_default_color_error"
+                android:text="Donation"
+                android:textColor="@color/white"
+                android:textSize="24sp"
                 android:textStyle="bold"
-                />
+                app:rippleColor="@android:color/holo_red_dark" />
 
         </RelativeLayout>
 

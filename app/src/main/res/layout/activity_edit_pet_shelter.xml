@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/DefaultBg"
     android:orientation="vertical"
     android:paddingLeft="25dp"
     android:paddingRight="25dp"
-    android:background="@drawable/background_act"
     tools:context=".Activities.Shelters.EditPetShelter">
 
     <ScrollView
@@ -24,13 +24,13 @@
                 android:id="@+id/shelterNameDetail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/coustard"
                 android:text="Edit Pet"
                 android:textAlignment="center"
-                android:textSize="24sp"
-                android:fontFamily="@font/coustard"
-                android:textColor="@color/design_default_color_error"
-                android:textStyle="bold"/>
+                android:textColor="@color/white"
+                android:textSize="34sp"
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/petImageEdited"
@@ -38,77 +38,78 @@
                 android:layout_height="wrap_content"
                 tools:srcCompat="@tools:sample/avatars" />
 
-            <EditText
-                android:id="@+id/petNameEdited"
-                android:fontFamily="@font/coustard"
-                android:textSize="20sp"
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButtonPetEdit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:clickable="true"
+                android:cropToPadding="false"
+                app:srcCompat="@drawable/ic_photo_camera_black_48dp" />
+
+            <EditText
+                android:id="@+id/petNameEdited"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/coustard"
                 android:hint="Name"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/petBreedEdited"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
-                android:hint="Breed"
                 android:fontFamily="@font/coustard"
-                android:textSize="20sp"
-                android:inputType="textPersonName" />
+                android:hint="Breed"
+                android:inputType="textPersonName"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/petTypeEdited"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
-                android:hint="Type"
                 android:fontFamily="@font/coustard"
-                android:textSize="20sp"
-                android:inputType="textPersonName" />
+                android:hint="Type"
+                android:inputType="textPersonName"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/petSizeEdited"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
-                android:hint="Size"
                 android:fontFamily="@font/coustard"
-                android:textSize="20sp"
-                android:inputType="textPersonName" />
+                android:hint="Size"
+                android:inputType="textPersonName"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/petDescriptionEdited"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
-                android:hint="Description"
                 android:fontFamily="@font/coustard"
-                android:textSize="20sp"
-                android:inputType="textPersonName" />
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/floatingActionButtonPetEdit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:clickable="true"
-                android:cropToPadding="false"
-                app:srcCompat="@drawable/ic_photo_camera_black_48dp" />
+                android:hint="Description"
+                android:inputType="textPersonName"
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/petEditBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Update Pet"
-                android:textSize="24sp"
-                app:rippleColor="@android:color/holo_red_dark"
+                android:layout_marginTop="25dp"
+                android:backgroundTint="@color/DefaultColorBtnText"
                 android:fontFamily="@font/coustard"
-                android:textColor="@color/design_default_color_error"
-                android:textStyle="bold"/>
-
-
+                android:text="Update Pet"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:rippleColor="@android:color/holo_red_dark" />
 
 
         </LinearLayout>

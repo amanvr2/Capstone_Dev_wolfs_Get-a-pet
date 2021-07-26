@@ -25,8 +25,7 @@ public class HomeActivity extends AppCompatActivity {
         regShelter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent intent = new Intent(v.getContext(), MainActivity.class);
+                Intent intent = new Intent(v.getContext(), ShelterLoginActivity.class);
                 startActivity(intent);
             }
         });
@@ -35,7 +34,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(v.getContext(), AdopterAuthActivity.class);
+                Intent intent = new Intent(v.getContext(), AdopterLoginActivity.class);
                 startActivity(intent);
             }
         });

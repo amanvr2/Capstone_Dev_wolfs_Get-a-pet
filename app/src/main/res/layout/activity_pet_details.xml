@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_act"
+    android:background="@color/DefaultBg"
     android:orientation="vertical"
     tools:context=".Activities.Adopters.PetDetailsActivity">
 
@@ -37,7 +37,7 @@
                 android:layout_toRightOf="@+id/imageViewAdopterPetFinder"
                 android:fontFamily="@font/coustard"
                 android:text="Pet Name"
-                android:textColor="@color/design_default_color_error"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -51,9 +51,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
             android:fontFamily="@font/coustard"
             android:text="Add To WishList"
-            android:textColor="@color/design_default_color_error"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -124,6 +125,9 @@
             android:id="@+id/sponsorBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:layout_marginBottom="22dp"
+            android:background="@color/white"
             android:orientation="vertical"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
@@ -134,11 +138,13 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
                 android:fontFamily="@font/coustard"
                 android:text="Recommended Products"
                 android:textAlignment="center"
-                android:textColor="@android:color/black"
-                android:textSize="25sp" />
+                android:textColor="@color/DefaultColorBtnText"
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:id="@+id/sponsorArea"
@@ -160,25 +166,26 @@
 
                     <TextView
                         android:id="@+id/productName"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
-                        android:layout_marginTop="10dp"
                         android:fontFamily="@font/coustard"
+                        android:paddingLeft="5dp"
                         android:text="Product Name"
-                        android:textColor="@android:color/black"
+                        android:textColor="@color/DefaultColorBtnText"
                         android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/buyLink"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="20dp"
                         android:fontFamily="@font/coustard"
+                        android:paddingLeft="5dp"
                         android:text="Buy"
-                        android:textColor="@android:color/black"
+                        android:textColor="@color/DefaultColorBtnText"
                         android:textSize="16sp" />
                 </LinearLayout>
 
@@ -233,6 +240,7 @@
             android:id="@+id/buttonCall"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/DefaultColorBtnText"
             android:text="Call Shelter"
             app:icon="@android:drawable/stat_sys_phone_call" />
 
@@ -240,6 +248,7 @@
             android:id="@+id/buttonEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/DefaultColorBtnText"
             android:text="email Shelter"
             app:icon="@android:drawable/ic_dialog_email" />
 

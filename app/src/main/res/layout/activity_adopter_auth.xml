@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/DefaultBg"
     android:orientation="vertical"
-    android:background="@drawable/background_act"
     tools:context=".Activities.MainActivity">
 
 
@@ -16,7 +16,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView3"
@@ -28,6 +28,21 @@
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_adopterImage"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="2dp" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/adopterProfileImagefloatingActionButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:clickable="true"
+                app:srcCompat="@drawable/ic_photo_camera_black_48dp" />
+
             <EditText
                 android:id="@+id/adopterName"
                 android:layout_width="match_parent"
@@ -37,9 +52,9 @@
                 android:layout_marginRight="25dp"
                 android:ems="10"
                 android:fontFamily="@font/coustard"
-                android:textSize="20sp"
                 android:hint="Name"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/adopterEmail"
@@ -50,9 +65,9 @@
                 android:layout_marginRight="25dp"
                 android:ems="10"
                 android:fontFamily="@font/coustard"
-                android:textSize="20sp"
                 android:hint="Email"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/adopterPhone"
@@ -63,9 +78,9 @@
                 android:layout_marginRight="25dp"
                 android:ems="10"
                 android:fontFamily="@font/coustard"
-                android:textSize="20sp"
                 android:hint="Phone"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/adopterDescription"
@@ -76,9 +91,9 @@
                 android:layout_marginRight="25dp"
                 android:ems="10"
                 android:fontFamily="@font/coustard"
-                android:textSize="20sp"
                 android:hint="Description"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/adopterAddress"
@@ -89,9 +104,9 @@
                 android:layout_marginRight="25dp"
                 android:ems="10"
                 android:fontFamily="@font/coustard"
-                android:textSize="20sp"
                 android:hint="Address"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/adopterPassword"
@@ -102,23 +117,9 @@
                 android:layout_marginRight="25dp"
                 android:ems="10"
                 android:fontFamily="@font/coustard"
-                android:textSize="20sp"
                 android:hint="Password"
-                android:inputType="textPersonName" />
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/adopterProfileImagefloatingActionButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                app:srcCompat="@drawable/ic_photo_camera_black_48dp" />
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/profile_adopterImage"
-                android:layout_width="121dp"
-                android:layout_height="92dp"
-                app:civ_border_color="#FF000000"
-                app:civ_border_width="2dp" />
+                android:inputType="textPersonName"
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/adoptersaveBtn"
@@ -127,12 +128,13 @@
                 android:layout_marginLeft="45dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="45dp"
+                android:backgroundTint="@color/white"
                 android:fontFamily="@font/coustard"
-                android:textColor="@color/design_default_color_error"
-                android:textStyle="bold"
+                android:text="Register"
+                android:textColor="@color/DefaultColorBtnText"
                 android:textSize="24sp"
-                app:rippleColor="@android:color/holo_red_dark"
-                android:text="Register" />
+                android:textStyle="bold"
+                app:rippleColor="@android:color/holo_red_dark" />
 
             <TextView
                 android:id="@+id/adopterLoginRedirect"
