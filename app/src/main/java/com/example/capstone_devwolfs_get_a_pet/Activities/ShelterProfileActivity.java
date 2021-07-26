@@ -65,11 +65,11 @@ public class ShelterProfileActivity extends AppCompatActivity {
 
 
                 user.update(
-                        "adopterAddress", newAddress,
-                        "adopterDescription", newDescription,
-                        "adopterEmail", newEmail,
-                        "adopterPhone", newPhone,
-                        "adopterName", newName
+                        "shelterAddress", newAddress,
+                        "shelterDescription", newDescription,
+                        "shelterEmail", newEmail,
+                        "shelterPhone", newPhone,
+                        "shelterName", newName
                 );
 
                 sharedPreferences = getSharedPreferences("Shelter",  Context.MODE_PRIVATE);

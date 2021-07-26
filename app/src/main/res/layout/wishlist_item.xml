@@ -35,7 +35,7 @@
                 android:fontFamily="@font/coustard"
                 android:gravity="center"
                 android:text="PetName"
-                android:textColor="@color/DefaultBg"
+                android:textColor="@color/DefaultColorBtnText"
                 android:textSize="22sp" />
         </LinearLayout>
 

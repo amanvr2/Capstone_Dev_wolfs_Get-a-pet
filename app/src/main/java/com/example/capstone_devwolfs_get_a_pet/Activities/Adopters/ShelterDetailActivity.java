@@ -138,7 +138,6 @@ public class ShelterDetailActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         adapter.startListening();
-        Toast.makeText(getApplicationContext(), "Listing Started", Toast.LENGTH_LONG).show();
     }
 
 }

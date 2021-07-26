@@ -66,4 +66,20 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:rippleColor="@android:color/holo_red_dark" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Don't have an account yet?"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/registerShelterLk2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Register as Shelter"
+        android:textAlignment="center"
+        android:textColor="@color/purple_700" />
 </LinearLayout>

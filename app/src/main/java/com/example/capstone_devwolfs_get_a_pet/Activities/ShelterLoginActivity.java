@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +22,7 @@ public class ShelterLoginActivity extends AppCompatActivity {
 
     EditText userName,password;
     Button login;
+    TextView registerLink;
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference userRef = db.collection("Shelters");
@@ -41,6 +43,7 @@ public class ShelterLoginActivity extends AppCompatActivity {
         userName = findViewById(R.id.userName);
         password = findViewById(R.id.password);
         login = findViewById(R.id.shelterLoginBtn);
+        registerLink = findViewById(R.id.registerShelterLk2);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,5 +87,15 @@ public class ShelterLoginActivity extends AppCompatActivity {
 
             }
         });
+
+        registerLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 }

@@ -48,7 +48,7 @@ public class PetDetailsActivity extends AppCompatActivity implements OnMapReadyC
     ImageView petImage, productImage;
     private GoogleMap mapShelterDetail;
     TextView textPetName, textPetDescription, textBreed, textPetSize;
-    TextView textShelterName, textShelterDescription;
+    TextView textShelterName, textShelterDescription, petNameTxt;
     TextView productTextName, buyLink;
     TextView wishListBtn;
     String productImageLink, productBuyLink, productStringName, shelterAddress, shelterEmail, shelterPhone;
@@ -85,6 +85,7 @@ public class PetDetailsActivity extends AppCompatActivity implements OnMapReadyC
         textPetDescription = findViewById(R.id.petDescProfile);
         textBreed = findViewById(R.id.petBreedProfile);
         textPetSize = findViewById(R.id.petSizeProfile);
+        petNameTxt = findViewById(R.id.backToProfile);
 
         //Shelter Texts
         textShelterName = findViewById(R.id.shelterNamePetProfile);
@@ -145,6 +146,7 @@ public class PetDetailsActivity extends AppCompatActivity implements OnMapReadyC
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
                         textPetName.setText(document.getString("petName"));
+                        petNameTxt.setText(document.getString("petName"));
                         textBreed.setText(document.getString("breed"));
                         textPetSize.setText(document.getString("size"));
                         textPetDescription.setText(document.getString("description"));

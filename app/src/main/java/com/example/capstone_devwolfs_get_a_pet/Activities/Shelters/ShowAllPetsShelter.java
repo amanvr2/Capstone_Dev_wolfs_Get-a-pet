@@ -46,7 +46,6 @@ public class ShowAllPetsShelter extends AppCompatActivity {
         String thisShelterID = PersistentData.getShelterId(this);
         Toast.makeText(getApplicationContext(), thisShelterID, Toast.LENGTH_LONG).show();
 
-
         firebaseFirestore = FirebaseFirestore.getInstance();
         petsListShelter = findViewById(R.id.petListShelter);
 

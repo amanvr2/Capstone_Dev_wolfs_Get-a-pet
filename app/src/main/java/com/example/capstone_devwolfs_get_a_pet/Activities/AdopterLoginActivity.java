@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +22,7 @@ public class AdopterLoginActivity extends AppCompatActivity {
 
     EditText userName,password;
     Button login;
+    TextView registerLnkAdopter;
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference userRef = db.collection("Adopters");
@@ -46,6 +48,7 @@ public class AdopterLoginActivity extends AppCompatActivity {
         userName = findViewById(R.id.adopterUsername);
         password = findViewById(R.id.adopterPass);
         login = findViewById(R.id.adopterLoginBtn);
+        registerLnkAdopter = findViewById(R.id.registerAdopterLk);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,5 +95,14 @@ public class AdopterLoginActivity extends AppCompatActivity {
 
             }
         });
+
+        registerLnkAdopter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), AdopterAuthActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

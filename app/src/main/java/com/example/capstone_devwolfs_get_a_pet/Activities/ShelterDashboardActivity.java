@@ -19,7 +19,7 @@ public class ShelterDashboardActivity extends AppCompatActivity {
 
     Button addPet,viewProfile,seeAllPets;
     ImageView ShelterPhoto;
-    TextView shelterLogoff;
+    TextView shelterLogoff,shelterNameTV;
 
 
     @Override
@@ -37,7 +37,10 @@ public class ShelterDashboardActivity extends AppCompatActivity {
         viewProfile = findViewById(R.id.viewProfileBtn);
         seeAllPets = findViewById(R.id.allPetsShelterBtn);
         shelterLogoff = findViewById(R.id.logoutBtnShelter);
+        shelterNameTV = findViewById(R.id.ShelterUserName);
 
+
+        shelterNameTV.setText(PersistentData.getShelterName(this));
 
         addPet.setOnClickListener(new View.OnClickListener() {
             @Override
