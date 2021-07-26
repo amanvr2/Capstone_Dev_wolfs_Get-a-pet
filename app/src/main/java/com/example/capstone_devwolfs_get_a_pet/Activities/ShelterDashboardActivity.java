@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,6 +19,7 @@ public class ShelterDashboardActivity extends AppCompatActivity {
 
     Button addPet,viewProfile,seeAllPets;
     ImageView ShelterPhoto;
+    TextView shelterLogoff;
 
 
     @Override
@@ -34,6 +36,7 @@ public class ShelterDashboardActivity extends AppCompatActivity {
         addPet = findViewById(R.id.addPetRedirect);
         viewProfile = findViewById(R.id.viewProfileBtn);
         seeAllPets = findViewById(R.id.allPetsShelterBtn);
+        shelterLogoff = findViewById(R.id.logoutBtnShelter);
 
 
         addPet.setOnClickListener(new View.OnClickListener() {
@@ -56,6 +59,16 @@ public class ShelterDashboardActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), ShowAllPetsShelter.class);
+                startActivity(intent);
+            }
+        });
+
+        shelterLogoff.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PersistentData.logoutAdopter(v.getContext());
+                PersistentData.logoutShelter(v.getContext());
+                Intent intent = new Intent(ShelterDashboardActivity.this, HomeActivity.class);
                 startActivity(intent);
             }
         });

@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -42,7 +41,13 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         if(PersistentData.getLoggedStatusAdopter(this)){
-            Toast.makeText(getApplicationContext(), "Logged as Adopter", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(HomeActivity.this, AdopterDashboardActivity.class);
+            startActivity(intent);
+        }
+
+        if(PersistentData.getLoggedStatusShelter(this)){
+            Intent intent = new Intent(HomeActivity.this, ShelterDashboardActivity.class);
+            startActivity(intent);
         }
 
     }

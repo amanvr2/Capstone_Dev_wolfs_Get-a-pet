@@ -108,6 +108,7 @@
             android:onClick="findShelter"
 
             android:layout_weight="1">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -143,5 +144,20 @@
                 />
 
         </RelativeLayout>
+
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/logOutAdopter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:fontFamily="@font/coustard"
+        android:text="Logout"
+        android:textColor="@color/design_default_color_error"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:rippleColor="@android:color/holo_red_dark" />
 </LinearLayout>

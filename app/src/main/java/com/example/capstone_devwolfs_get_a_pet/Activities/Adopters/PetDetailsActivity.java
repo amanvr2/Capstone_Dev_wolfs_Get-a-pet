@@ -52,6 +52,7 @@ public class PetDetailsActivity extends AppCompatActivity implements OnMapReadyC
     TextView productTextName, buyLink;
     TextView wishListBtn;
     String productImageLink, productBuyLink, productStringName, shelterAddress, shelterEmail, shelterPhone;
+
     LinearLayout sponsorArea;
     public Button callBtn, emailBtn;
 

@@ -96,13 +96,13 @@ public class PersistentData {
         SharedPreferences.Editor editor = sharedpreferences.edit();
 
         editor.putString("LoginStatus", "logged");
-        editor.putString("ShelterID", ShelterID);
+        editor.putString("UserID",ShelterID);
         editor.putString("Address",Address);
         editor.putString("Description",Description);
         editor.putString("Email",email);
         editor.putString("Name", name);
         editor.putString("Phone", phone);
-        editor.putString("Photo",photo);
+        editor.putString("Photo", photo);
 
         editor.commit();
 
@@ -112,6 +112,43 @@ public class PersistentData {
 
         sharedpreferences = context.getSharedPreferences(SavedShelter, Context.MODE_PRIVATE);
         return sharedpreferences.getString("Photo",DefaultShelterImage);
+
+    }
+
+    public static void logoutAdopter(Context context){
+
+        sharedpreferences = context.getSharedPreferences(SavedAdopter, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+
+        editor.putString("LoginStatus", "");
+        editor.putString("ShelterID", "");
+        editor.putString("Address","");
+        editor.putString("Description","");
+        editor.putString("Email","");
+        editor.putString("Name", "");
+        editor.putString("Phone", "");
+        editor.putString("Photo","");
+        editor.putString("Wishlist", "");
+
+        editor.commit();
+
+    }
+
+    public static void logoutShelter(Context context){
+
+        sharedpreferences = context.getSharedPreferences(SavedShelter, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+
+        editor.putString("LoginStatus", "");
+        editor.putString("ShelterID", "");
+        editor.putString("Address","");
+        editor.putString("Description","");
+        editor.putString("Email","");
+        editor.putString("Name", "");
+        editor.putString("Phone", "");
+        editor.putString("Photo","");
+
+        editor.commit();
 
     }
 
