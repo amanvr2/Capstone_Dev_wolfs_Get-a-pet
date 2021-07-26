@@ -10,12 +10,14 @@ import android.location.Location;
 import android.os.Bundle;
 import android.os.Looper;
 import android.util.Log;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.example.capstone_devwolfs_get_a_pet.InternalData.PersistentData;
 import com.example.capstone_devwolfs_get_a_pet.R;
 import com.example.capstone_devwolfs_get_a_pet.classes.Shelter;
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -36,6 +38,7 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -48,6 +51,7 @@ public class FindShelterActivity extends AppCompatActivity implements OnMapReady
     private CollectionReference userRef = db.collection("Shelters");
     private ArrayList<Shelter> shelters = new ArrayList<Shelter>();
     private Location currentLocation;
+    ImageView adopterProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +62,13 @@ public class FindShelterActivity extends AppCompatActivity implements OnMapReady
         assert mapFragment != null;
         mapFragment.getMapAsync(this);
         getShelters();
+
+        adopterProfile = findViewById(R.id.imageViewAdopterPetFinder);
+        String imageLinkProfile = PersistentData.getAdopterImage(this);
+
+        Picasso.get().load(imageLinkProfile).into(adopterProfile);
+
+
     }
 
     private  void getShelters(){
@@ -202,8 +213,6 @@ public class FindShelterActivity extends AppCompatActivity implements OnMapReady
                 markerOptions.title(shlter.getShelterName());
                 map.addMarker(markerOptions);
             }
-
-
         }
     }
 
