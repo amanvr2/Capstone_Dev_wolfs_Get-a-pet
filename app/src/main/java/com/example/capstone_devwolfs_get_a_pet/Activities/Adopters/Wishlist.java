@@ -128,6 +128,7 @@ public class Wishlist extends AppCompatActivity {
                         selectedUser.update("wishlist",finalResult);
                         Toast.makeText(getApplicationContext(), "Removing pet from the wishlist", Toast.LENGTH_LONG).show();
 
+                        //Refreshing the activity
                         finish();
                         overridePendingTransition(0, 0);
                         startActivity(getIntent());
@@ -135,9 +136,7 @@ public class Wishlist extends AppCompatActivity {
 
                     }
                 });
-
-
-
+                
             }
         };
 

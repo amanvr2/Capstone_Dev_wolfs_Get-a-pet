@@ -94,6 +94,7 @@ public class FindPetActivity extends AppCompatActivity {
         loadPets(setFilters(selectedType,selectedSize));
 
         //Event listeners for Spinners
+        //Type Spinner
         typeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -109,7 +110,7 @@ public class FindPetActivity extends AppCompatActivity {
 
             }
         });
-
+        //Size Spinner
         sizeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -179,8 +180,6 @@ public class FindPetActivity extends AppCompatActivity {
     public void loadPets(Query finalQuery){
 
         Query query = finalQuery;
-
-
 
         //This is the code that builds the cells of each pet
         FirestoreRecyclerOptions<PetInShelterModel> options = new FirestoreRecyclerOptions.Builder<PetInShelterModel>()

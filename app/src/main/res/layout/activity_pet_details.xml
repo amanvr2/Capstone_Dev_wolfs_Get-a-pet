@@ -11,7 +11,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -33,8 +35,8 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="20dp"
                 android:layout_toRightOf="@+id/imageViewAdopterPetFinder"
-                android:text="Pet Name"
                 android:fontFamily="@font/coustard"
+                android:text="Pet Name"
                 android:textColor="@color/design_default_color_error"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -49,8 +51,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginEnd="20dp"
-            android:text="Add To WishList"
             android:fontFamily="@font/coustard"
+            android:text="Add To WishList"
             android:textColor="@color/design_default_color_error"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -73,8 +75,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
                 android:layout_marginEnd="20dp"
-                android:text="Bruno "
                 android:fontFamily="@font/coustard"
+                android:text="Bruno"
                 android:textColor="@color/design_default_color_error"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -85,8 +87,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
                 android:layout_marginStart="50dp"
-                android:text="Dog Size"
                 android:fontFamily="@font/coustard"
+                android:text="Dog Size"
                 android:textColor="@color/design_default_color_error"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -99,8 +101,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:layout_marginStart="20dp"
-            android:text="Dog Race"
             android:fontFamily="@font/coustard"
+            android:text="Dog Race"
             android:textColor="@color/design_default_color_error"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -112,8 +114,8 @@
             android:layout_gravity="start"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
-            android:text="Discription about the pet"
             android:fontFamily="@font/coustard"
+            android:text="Discription about the pet"
             android:textColor="@color/design_default_color_error"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -200,34 +202,46 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/coustard"
             android:text="Shelter Name"
             android:textColor="#000000"
-            android:fontFamily="@font/coustard"
             android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textShelterDescPetProfile"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="25dp"
             android:fontFamily="@font/coustard"
             android:text="Description about the Shelter."
             android:textColor="@android:color/black"
             android:textSize="16sp" />
 
-        <TextView
+        <fragment
+            android:id="@+id/mapShelter"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginBottom="15dp"
+            tools:context=".Activities.Adopters.FindShelterActivity" />
+
+
+        <Button
+            android:id="@+id/buttonCall"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:layout_margin="20dp"
-            android:gravity="center"
-            android:padding="15dp"
-            android:text="Contact Shelter"
-            android:fontFamily="@font/coustard"
-            android:textColor="@android:color/black"
-            android:textSize="18sp" />
+            android:text="Call Shelter"
+            app:icon="@android:drawable/stat_sys_phone_call" />
+
+        <Button
+            android:id="@+id/buttonEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="email Shelter"
+            app:icon="@android:drawable/ic_dialog_email" />
 
     </LinearLayout>
 

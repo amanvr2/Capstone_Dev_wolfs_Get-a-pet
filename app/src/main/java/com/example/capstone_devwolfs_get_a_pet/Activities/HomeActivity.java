@@ -1,12 +1,14 @@
 package com.example.capstone_devwolfs_get_a_pet.Activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.capstone_devwolfs_get_a_pet.InternalData.PersistentData;
 import com.example.capstone_devwolfs_get_a_pet.R;
 
 public class HomeActivity extends AppCompatActivity {
@@ -38,5 +40,10 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        if(PersistentData.getLoggedStatusAdopter(this)){
+            Toast.makeText(getApplicationContext(), "Logged as Adopter", Toast.LENGTH_LONG).show();
+        }
+
     }
 }

@@ -32,6 +32,32 @@ public class PersistentData {
 
     }
 
+    public static boolean getLoggedStatusAdopter(Context context){
+
+        boolean isLogged = false;
+        sharedpreferences = context.getSharedPreferences(SavedAdopter, Context.MODE_PRIVATE);
+        String loginStatus = sharedpreferences.getString("LoginStatus", "notLogged");
+
+        if(loginStatus.equals("logged")){
+            isLogged = true;
+        }
+        return isLogged;
+    }
+
+    public static boolean getLoggedStatusShelter(Context context){
+
+        boolean isLogged = false;
+        sharedpreferences = context.getSharedPreferences(SavedShelter, Context.MODE_PRIVATE);
+        String loginStatus = sharedpreferences.getString("LoginStatus", "notLogged");
+
+        if(loginStatus.equals("logged")){
+            isLogged = true;
+        }
+        return isLogged;
+    }
+
+
+
     public static String getAdopterImage(Context context){
 
         sharedpreferences = context.getSharedPreferences(SavedAdopter, Context.MODE_PRIVATE);
